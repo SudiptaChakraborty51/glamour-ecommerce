@@ -27,6 +27,7 @@ const Navbar = () => {
       <div className="bottom-navbar">
         <NavLink className="navlink">Makeup</NavLink>
         <NavLink className="navlink">Skin Care</NavLink>
+        <NavLink className="navlink">Appliances</NavLink>
         <NavLink className="navlink">Hair</NavLink>
         <NavLink className="navlink">Bath & Body</NavLink>
         <NavLink className="navlink">Fragrance</NavLink>

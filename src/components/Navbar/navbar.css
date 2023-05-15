@@ -61,7 +61,7 @@ nav h1 {
 }
 
 .search-bar input:focus {
-  border: 1px solid var(--primary-color);
+  border: 2px solid var(--primary-color);
 }
 
 .search-bar i {
@@ -77,7 +77,7 @@ nav h1 {
 .nav-icons {
   display: flex;
   gap: 2rem;
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .nav-icons i {
