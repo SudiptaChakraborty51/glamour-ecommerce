@@ -1,3 +1,36 @@
 .home {
-    margin: 2rem;
+  margin: 2rem;
+}
+
+.offers {
+  display: flex;
+  justify-content: space-between;
+}
+
+.offer-card {
+  height: 100px;
+  width: 580px;
+  border-radius: 10px;
+  background: rgb(243, 232, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(243, 232, 255, 1) 0%,
+    rgba(216, 180, 254, 1) 37%,
+    rgba(192, 132, 252, 1) 71%
+  );
+  text-align: center;
+}
+
+.offer-text {
+    font-size: 18px;
+    font-weight: bold; 
+    animation: 2s anim-lineUp ease-out infinite;
+}
+
+.code {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }
