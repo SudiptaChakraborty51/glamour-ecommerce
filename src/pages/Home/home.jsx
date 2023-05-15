@@ -1,7 +1,6 @@
 import React from "react";
 import Slider from "../../components/Slider/slider";
 import "./home.css";
-import background from "../../assets/background.png";
 
 const Home = () => {
   return (
