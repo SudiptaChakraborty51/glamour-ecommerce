@@ -44,21 +44,21 @@ const Slider = () => {
         <div className="slider-card">
           <img src={dotKey} alt="dotKey" />
           <div class="content">
-            <p>Up to 30% off on summer sale</p>
+            <p>Up to 50% off on summer sale</p>
             <button><i class="fa-solid fa-angle-right"></i></button>
           </div>
         </div>
         <div className="slider-card">
           <img src={lakme} alt="lakme" />
           <div class="content">
-            <p>Up to 20% off on brand products</p>
+            <p>Up to 30% off on brand products</p>
             <button><i class="fa-solid fa-angle-right"></i></button>
           </div>
         </div>
         <div className="slider-card">
           <img src={veet} alt="veet" />
           <div class="content">
-            <p>Up to 35% off get smooth skin</p>
+            <p>Up to 20% off get smooth skin</p>
             <button><i class="fa-solid fa-angle-right"></i></button>
           </div>
         </div>
