@@ -48,11 +48,11 @@ const Home = () => {
           </div>
           <div>
             <i class="fa-solid fa-cloud-arrow-up facilities-icon"></i>
-            <p>100% Original Products</p>
+            <p>100% ORIGINAL PRODUCTS</p>
           </div>
           <div>
             <i class="fa-solid fa-tag facilities-icon"></i>
-            <p>Top Brands</p>
+            <p>TOP BRANDS</p>
           </div>
           <div>
             <p>Show some love on social media</p>
