@@ -63,7 +63,7 @@ export const products = [
       count: "2980"
     },
     inStock: false,
-    isBestSeller: true,
+    isBestSeller: false,
     quantity: 0
   },
   {
@@ -103,7 +103,7 @@ export const products = [
       count: "3982"
     },
     inStock: true,
-    isBestSeller: true,
+    isBestSeller: false,
     quantity: 0
   },
   {
@@ -203,7 +203,7 @@ export const products = [
       count: "19823"
     },
     inStock: true,
-    isBestSeller: true,
+    isBestSeller: false,
     quantity: 0
   },
   {
@@ -223,7 +223,7 @@ export const products = [
       count: "16856"
     },
     inStock: true,
-    isBestSeller: false,
+    isBestSeller: true,
     quantity: 0
   },
   {
@@ -241,6 +241,46 @@ export const products = [
     ratings: {
       value: "4.5",
       count: "28553"
+    },
+    inStock: true,
+    isBestSeller: true,
+    quantity: 0
+  },
+  {
+    _id: uuid(),
+    name: "Plum BodyLovin' Hawaiian Rumba Eau de Parfum, Beachy Fragance, Mini Perfume Spray for Women",
+    image: "https://cdn.shopify.com/s/files/1/0390/2985/products/HR_15ml_EDP_1080x1080_01_1024x1024.jpg?v=1666769564",
+    brand: "Plum",
+    size: "(15ml)",
+    price: "280",
+    originalPrice: "295",
+    off: "5%",
+    offer: "",
+    categoryName: "Fragrance",
+    productType: "perfume",
+    ratings: {
+      value: "4.5",
+      count: "17780"
+    },
+    inStock: true,
+    isBestSeller: false,
+    quantity: 0
+  },
+  {
+    _id: uuid(),
+    name: "Plum BodyLovin' Vanilla Vibes Body Mist, Perfume Body Spray, Sweet Vanilla Fragrance for Women",
+    image: "https://cdn.shopify.com/s/files/1/0390/2985/products/VV_150ml_BodyMist1080x1080_01_750x.jpg?v=1665560484",
+    brand: "Plum",
+    size: "(150ml)",
+    price: "446",
+    originalPrice: "525",
+    off: "15%",
+    offer: "",
+    categoryName: "Fragrance",
+    productType: "perfume",
+    ratings: {
+      value: "3.2",
+      count: "1580"
     },
     inStock: true,
     isBestSeller: true,
@@ -303,7 +343,7 @@ export const products = [
       count: "9593"
     },
     inStock: true,
-    isBestSeller: true,
+    isBestSeller: false,
     quantity: 0
   },
   {
@@ -424,6 +464,46 @@ export const products = [
     },
     inStock: true,
     isBestSeller: false,
+    quantity: 0
+  },
+  {
+    _id: uuid(),
+    name: "Philips Heated Straightening Brush (BHH880/10)",
+    image: "https://m.media-amazon.com/images/I/51F4Fsq42SL._SL1000_.jpg",
+    brand: "Philips",
+    size: "",
+    price: "2956",
+    originalPrice: "3695",
+    off: "20%",
+    offer: "",
+    categoryName: "Appliances",
+    productType: "straightners",
+    ratings: {
+      value: "4",
+      count: "12078"
+    },
+    inStock: true,
+    isBestSeller: false,
+    quantity: 0
+  },
+  {
+    _id: uuid(),
+    name: "Philips Hair Dryer (HP8120/00)",
+    image: "https://m.media-amazon.com/images/I/51F4Fsq42SL._SL1000_.jpg",
+    brand: "Philips",
+    size: "",
+    price: "1076",
+    originalPrice: "1345",
+    off: "20%",
+    offer: "",
+    categoryName: "Appliances",
+    productType: "dryer",
+    ratings: {
+      value: "4.2",
+      count: "1258"
+    },
+    inStock: true,
+    isBestSeller: true,
     quantity: 0
   },
 ];
