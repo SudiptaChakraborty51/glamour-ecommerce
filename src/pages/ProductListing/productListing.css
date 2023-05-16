@@ -7,6 +7,5 @@
 .productListing ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    row-gap: 30px;
-    margin: 0
+    row-gap: 30px
 }
