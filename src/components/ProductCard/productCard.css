@@ -67,3 +67,8 @@
     font-size: 18px;
     cursor: pointer;
 }
+
+.size {
+    margin: 0;
+    padding: 0;
+}

@@ -36,6 +36,7 @@ const ProductCard = ({ productsData }) => {
             <i className="fa fa-star"></i>
           </div>
         </div>
+        <p className="size">{size}</p>
         <p className="price-text">
           MRP: <strong>₹{price}</strong>{" "}
           <span className="originalPrice">₹{originalPrice}</span> |{" "}
