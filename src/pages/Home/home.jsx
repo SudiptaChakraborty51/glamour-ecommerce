@@ -2,6 +2,7 @@ import React from "react";
 import Slider from "../../components/Slider/slider";
 import "./home.css";
 import summer from "../../assets/summer.jpg";
+import { NavLink } from "react-router-dom";
 const Home = () => {
   return (
     <div className="home">
@@ -13,7 +14,7 @@ const Home = () => {
           <p>The Summer Sale</p>
           <p>Up to 30% off</p>
           <button>
-            <span>Shop Now</span>
+            <NavLink className="shopnow-btn" to="/products"><span>Shop Now</span></NavLink>
           </button>
         </div>
       </div>

@@ -103,6 +103,10 @@ footer {
     bottom: 0;
 }
 
+footer i {
+  color: var(--primary-color);
+}
+
 .newsletter {
     height: 40vh;
     background-color: var(--dark-purple);
@@ -172,4 +176,9 @@ footer {
 .copyright div a {
     color: white;
     text-decoration: none;
+}
+
+.shopnow-btn {
+  text-decoration: none;
+  color: white;
 }
