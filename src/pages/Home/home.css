@@ -50,9 +50,9 @@
 .sales .sales-content {
   position: absolute;
   bottom: 0;
-  right: 0;
+  left: 0;
   text-align: center;
-  margin: 5rem;
+  margin: 6rem;
 }
 
 .sales-content p {
