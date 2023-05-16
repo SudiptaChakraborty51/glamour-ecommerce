@@ -18,8 +18,10 @@ const ProductProvider = ({ children }) => {
     getData();
   }, []);
 
+  const bestSellerProductData = productData?.filter(({isBestSeller}) => isBestSeller);
+
   return (
-    <ProductContext.Provider value={{ productData }}>
+    <ProductContext.Provider value={{ productData, bestSellerProductData }}>
       {children}
     </ProductContext.Provider>
   );
