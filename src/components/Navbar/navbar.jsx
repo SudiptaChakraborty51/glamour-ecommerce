@@ -1,6 +1,7 @@
 import React from "react";
 import "./navbar.css";
 import { NavLink } from "react-router-dom";
+import { categories } from "../../backend/db/categories";
 
 const Navbar = () => {
   return (
@@ -25,12 +26,9 @@ const Navbar = () => {
         </div>
       </nav>
       <div className="bottom-navbar">
-        <NavLink className="navlink">Makeup</NavLink>
-        <NavLink className="navlink">Skin Care</NavLink>
-        <NavLink className="navlink">Appliances</NavLink>
-        <NavLink className="navlink">Hair</NavLink>
-        <NavLink className="navlink">Bath & Body</NavLink>
-        <NavLink className="navlink">Fragrance</NavLink>
+        {
+          categories?.map(({_id, categoryName}) =>  <NavLink className="navlink" key={_id}>{categoryName}</NavLink>)
+        }
         <NavLink className="navlink">Offers</NavLink>
       </div>
     </div>
