@@ -5,8 +5,8 @@ import { ProductContext } from "../../contexts/productContext";
 
 const ProductDetails = () => {
   const { productID } = useParams();
-  const { productData } = useContext(ProductContext);
-  const selectedProduct = productData.find(
+  const { productState } = useContext(ProductContext);
+  const selectedProduct = productState?.products?.find(
     (product) => product._id === productID
   );
   const {

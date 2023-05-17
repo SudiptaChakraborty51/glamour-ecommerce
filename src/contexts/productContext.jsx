@@ -1,14 +1,36 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useReducer, useState } from "react";
+import productReducer from "../reducer/productReducer";
+import axios from "axios";
 
 export const ProductContext = createContext();
 
 const ProductProvider = ({ children }) => {
-  const [productData, setProductData] = useState([]);
+  const initialState = {
+    products: [],
+    cart: [],
+    wishlist: [],
+    categories: [],
+  };
+
+  const [productState, dispatch] = useReducer(productReducer, initialState);
+
   const getData = async () => {
     try {
-      const res = await fetch("/api/products");
-      const data = await res.json();
-      setProductData(data?.products);
+      const { status, data } = await axios.get("/api/products");
+      if (status === 200) {
+        dispatch({ type: "INITIALIZE_PRODUCTS", payload: data.products });
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const getCategories = async () => {
+    try {
+      const { status, data } = await axios.get("/api/categories");
+      if (status === 200) {
+        dispatch({ type: "INITIALIZE_CATEGORIES", payload: data.categories });
+      }
     } catch (error) {
       console.error(error);
     }
@@ -18,10 +40,18 @@ const ProductProvider = ({ children }) => {
     getData();
   }, []);
 
-  const bestSellerProductData = productData?.filter(({isBestSeller}) => isBestSeller);
+  useEffect(() => {
+    getCategories();
+  }, []);
+
+  const bestSellerProductData = productState?.products?.filter(
+    ({ isBestSeller }) => isBestSeller
+  );
 
   return (
-    <ProductContext.Provider value={{ productData, bestSellerProductData }}>
+    <ProductContext.Provider
+      value={{ productState, dispatch, bestSellerProductData }}
+    >
       {children}
     </ProductContext.Provider>
   );

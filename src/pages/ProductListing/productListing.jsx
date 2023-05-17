@@ -5,7 +5,7 @@ import "./productListing.css";
 import Sidebar from "../../components/Sidebar/sidebar";
 
 const ProductListing = () => {
-  const { productData } = useContext(ProductContext);
+  const { productState } = useContext(ProductContext);
   return (
     <div className="products">
       <div className="sidebar-filter">
@@ -14,7 +14,7 @@ const ProductListing = () => {
       <div className="productListing">
         <h2>Showing All Products</h2>
         <ul>
-          {productData?.map((product) => (
+          {productState?.products?.map((product) => (
             <ProductCard productsData={product} key={product._id} />
           ))}
         </ul>

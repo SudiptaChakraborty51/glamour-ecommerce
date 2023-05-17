@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
-import { categories } from "../../backend/db/categories";
 import { ProductContext } from "../../contexts/productContext";
 import "./sidebar.css";
 
 const Sidebar = () => {
-  const { productData } = useContext(ProductContext);
+  const { productState } = useContext(ProductContext);
 
-  const brandArr = productData.reduce(
+  const brandArr = productState?.products?.reduce(
     (acc, { brand }) => (!acc.includes(brand) ? [...acc, brand] : acc),
     []
   );
@@ -25,7 +24,7 @@ const Sidebar = () => {
 
         <h3>Category</h3>
         <div className="category-filter">
-          {categories?.map(({ _id, categoryName }) => (
+          {productState?.categories?.map(({ _id, categoryName }) => (
             <label key={_id}>
               <input type="checkbox" key={categoryName} /> {categoryName}
             </label>

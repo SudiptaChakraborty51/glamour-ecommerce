@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./navbar.css";
 import { NavLink } from "react-router-dom";
-import { categories } from "../../backend/db/categories";
+import { ProductContext } from "../../contexts/productContext";
 
 const Navbar = () => {
+  const {productState} = useContext(ProductContext);
+
   return (
     <div className="navbar">
       <div className="top-navbar">
@@ -29,7 +31,7 @@ const Navbar = () => {
         </div>
       </nav>
       <div className="bottom-navbar">
-        {categories?.map(({ _id, categoryName }) => (
+        {productState?.categories?.map(({ _id, categoryName }) => (
           <NavLink className="navlink" key={_id}>
             {categoryName}
           </NavLink>
