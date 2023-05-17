@@ -1,7 +1,9 @@
 import React from "react";
 import "./productCard.css";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({ productsData }) => {
+  const navigate=useNavigate();
   const {
     _id,
     name,
@@ -21,7 +23,7 @@ const ProductCard = ({ productsData }) => {
   } = productsData;
   return (
     <div>
-      <li className="product-card">
+      <li className="product-card" onClick={() => navigate(`/products/${_id}`)}>
         <div className="card-tag">
           {isBestSeller && <span className="card-badge">BESTSELLER</span>}
           <span role="button" disabled={true}>

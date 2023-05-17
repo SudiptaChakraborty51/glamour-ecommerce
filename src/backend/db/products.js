@@ -489,7 +489,7 @@ export const products = [
   {
     _id: uuid(),
     name: "Philips Hair Dryer (HP8120/00)",
-    image: "https://m.media-amazon.com/images/I/51F4Fsq42SL._SL1000_.jpg",
+    image: "https://m.media-amazon.com/images/I/51pxIjmlLAL._SL1227_.jpg",
     brand: "Philips",
     size: "",
     price: "1076",
