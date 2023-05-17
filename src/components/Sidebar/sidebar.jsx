@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useCallback, useContext } from "react";
 import { categories } from "../../backend/db/categories";
+import { ProductContext } from "../../contexts/productContext";
 
 const Sidebar = () => {
+  const { productData } = useContext(ProductContext);
+
+  const brandArr = productData.reduce(
+    (acc, { brand }) => (!acc.includes(brand) ? [...acc, brand] : acc),
+    []
+  );
+
   return (
     <>
       <div className="filters">
@@ -26,9 +34,11 @@ const Sidebar = () => {
 
         <h4>Brands</h4>
         <div className="brand-filter">
-          <label>
-            <input type="checkbox" /> MAC
-          </label>
+          {brandArr?.map((brand) => (
+            <label key={brand}>
+              <input type="checkbox" key={brand}/> {brand}
+            </label>
+          ))}
         </div>
 
         <h4>Ratings</h4>
