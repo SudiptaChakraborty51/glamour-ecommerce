@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { categories } from "../../backend/db/categories";
 import { ProductContext } from "../../contexts/productContext";
+import "./sidebar.css";
 
 const Sidebar = () => {
   const { productData } = useContext(ProductContext);
@@ -11,19 +12,18 @@ const Sidebar = () => {
   );
 
   return (
-    <>
       <div className="filters">
-        <div className="filter">
+        <div className="filter-heading">
           <h2>Filters</h2>
           <button>Clear</button>
         </div>
 
-        <h4>Price</h4>
-        <div className="rating-filter">
+        <h3>Price</h3>
+        <div className="price-range-filter">
           <input type="range" className="slider" />
         </div>
 
-        <h4>Category</h4>
+        <h3>Category</h3>
         <div className="category-filter">
           {categories?.map(({ _id, categoryName }) => (
             <label key={_id}>
@@ -32,7 +32,7 @@ const Sidebar = () => {
           ))}
         </div>
 
-        <h4>Brands</h4>
+        <h3>Brands</h3>
         <div className="brand-filter">
           {brandArr?.map((brand) => (
             <label key={brand}>
@@ -41,8 +41,8 @@ const Sidebar = () => {
           ))}
         </div>
 
-        <h4>Ratings</h4>
-        <div className="price-filter">
+        <h3>Ratings</h3>
+        <div className="rating-filter">
           <label>
             <input type="radio" name="rating" /> 4⭐ and above
           </label>
@@ -57,7 +57,7 @@ const Sidebar = () => {
           </label>
         </div>
 
-        <h4>Sort By Price:</h4>
+        <h3>Sort By Price:</h3>
         <div className="price-filter">
           <label>
             <input type="radio" name="sort" /> High to Low
@@ -70,7 +70,6 @@ const Sidebar = () => {
           </label>
         </div>
       </div>
-    </>
   );
 };
 

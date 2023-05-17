@@ -1,0 +1,44 @@
+.filters {
+    border-right: 2px solid var(--primary-color);
+    padding: 10px 30px;
+}
+
+.filters .filter-heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filters .filter-heading button {
+    background-color: transparent;
+    text-decoration: underline;
+    border: none;
+    color: var(--primary-color);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.filters .filter-heading button:hover {
+    color: var(--dark-purple);
+}
+
+.filters .price-filter,
+.rating-filter,
+.category-filter,
+.brand-filter,
+.price-range-filter {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 15px;
+}
+
+.filters div label {
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.slider, .filters input[type="checkbox"], .filters input[type="radio"] {
+    accent-color: var(--primary-color);
+}

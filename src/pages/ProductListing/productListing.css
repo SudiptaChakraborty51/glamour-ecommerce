@@ -1,11 +1,14 @@
+.products {
+    display: flex;
+}
+
 .productListing {
     text-align: center;
-    width: 100%;
-    height: 100vh
 }
 
 .productListing ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    row-gap: 30px
-}
+    row-gap: 30px;
+    column-gap: 20px;
+};

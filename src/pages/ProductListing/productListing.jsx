@@ -7,8 +7,10 @@ import Sidebar from "../../components/Sidebar/sidebar";
 const ProductListing = () => {
   const { productData } = useContext(ProductContext);
   return (
-    <>
-      <Sidebar />
+    <div className="products">
+      <div className="sidebar-filter">
+        <Sidebar />
+      </div>
       <div className="productListing">
         <h2>Showing All Products</h2>
         <ul>
@@ -17,7 +19,7 @@ const ProductListing = () => {
           ))}
         </ul>
       </div>
-    </>
+    </div>
   );
 };
 
