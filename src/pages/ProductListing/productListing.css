@@ -1,9 +1,11 @@
 .products {
     display: flex;
+    flex-grow: 1;
 }
 
 .productListing {
     text-align: center;
+    border-left: 2px solid var(--primary-color);
 }
 
 .productListing ul {
@@ -12,3 +14,8 @@
     row-gap: 30px;
     column-gap: 20px;
 };
+
+.sidebar-filter {
+    height: 100vh;
+    border-right: 2px solid var(--primary-color);
+}
