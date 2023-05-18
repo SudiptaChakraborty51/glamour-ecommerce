@@ -1,10 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./navbar.css";
 import { NavLink } from "react-router-dom";
 import { ProductContext } from "../../contexts/productContext";
+import { FilterContext } from "../../contexts/filterContext";
 
 const Navbar = () => {
-  const {productState} = useContext(ProductContext);
+  const { productState } = useContext(ProductContext);
+  const { filterDispatch } = useContext(FilterContext);
+  const [searchText, setSearchText] = useState("");
+
+  useEffect(() => {
+    filterDispatch({ type: "SEARCH", payload: searchText });
+  }, [searchText, filterDispatch]);
 
   return (
     <div className="navbar">
@@ -20,13 +27,27 @@ const Navbar = () => {
         <div className="right-nav">
           <div className="search-bar">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <input placeholder="Search on Glamour" />
+            <input
+              placeholder="Search on Glamour"
+              value={searchText}
+              type="search"
+              name="search"
+              onChange={(e) => setSearchText(e.target.value)}
+            />
           </div>
           <div className="nav-icons">
-            <NavLink to="/products"><i class="fa-solid fa-bag-shopping"></i></NavLink>
-            <NavLink to="/cart"><i class="fa-solid fa-cart-shopping"></i></NavLink>
-            <NavLink to="/wishlist"><i class="fa-solid fa-heart"></i></NavLink>
-            <NavLink to="/login"><i class="fa-solid fa-user"></i></NavLink>
+            <NavLink to="/products">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </NavLink>
+            <NavLink to="/cart">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </NavLink>
+            <NavLink to="/wishlist">
+              <i class="fa-solid fa-heart"></i>
+            </NavLink>
+            <NavLink to="/login">
+              <i class="fa-solid fa-user"></i>
+            </NavLink>
           </div>
         </div>
       </nav>

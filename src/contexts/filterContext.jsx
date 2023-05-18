@@ -5,8 +5,8 @@ import { ProductContext } from "./productContext";
 export const FilterContext = createContext();
 
 const FilterProvider = ({ children }) => {
-  const {productState} = useContext(ProductContext);
-  
+  const { productState } = useContext(ProductContext);
+
   const initialFilter = {
     search: "",
     priceRange: 10000,
@@ -24,11 +24,18 @@ const FilterProvider = ({ children }) => {
   console.log(".........................");
   console.log("productState", productState);
 
-  const priceRangeFilteredProducts = productState?.products?.filter(
+  const searchFilteredProducts =
+    filterState?.search?.length > 0
+      ? productState?.products?.filter(({ name }) =>
+          name.toLowerCase().includes(filterState?.search.toLowerCase())
+        )
+      : productState?.products;
+
+  const priceRangeFilteredProducts = searchFilteredProducts?.filter(
     ({ price }) => Number(price) <= Number(filterState?.priceRange)
   );
 
-  console.log("priceRangeProducts",priceRangeFilteredProducts);
+  console.log("priceRangeProducts", priceRangeFilteredProducts);
 
   const categoryFilteredProducts =
     filterState?.categoryFilter?.length > 0
@@ -82,7 +89,9 @@ const FilterProvider = ({ children }) => {
   console.log(".........................");
 
   return (
-    <FilterContext.Provider value={{ filterState, filterDispatch, sortByPriceFilteredProducts }}>
+    <FilterContext.Provider
+      value={{ filterState, filterDispatch, sortByPriceFilteredProducts }}
+    >
       {children}
     </FilterContext.Provider>
   );
