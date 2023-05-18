@@ -41,3 +41,9 @@
 .slider, .filters input[type="checkbox"], .filters input[type="radio"] {
     accent-color: var(--primary-color);
 }
+
+.price-range-filter .price-range {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
