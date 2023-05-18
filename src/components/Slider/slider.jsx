@@ -9,8 +9,9 @@ import plum from "../../assets/plum.jpg";
 import veet from "../../assets/veet.webp";
 import "./slider.css";
 
-import React from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { FilterContext } from "../../contexts/filterContext";
 
 const Slider = () => {
   const responsive = {
@@ -34,10 +35,18 @@ const Slider = () => {
   };
 
   const navigate = useNavigate();
+  const { filterDispatch } = useContext(FilterContext);
+
   return (
     <div className="slider">
       <Carousel responsive={responsive}>
-        <div className="slider-card" onClick={() => navigate("/products")}>
+        <div
+          className="slider-card"
+          onClick={() => {
+            filterDispatch({ type: "CLEAR_ALL_FILTERS", payload: "" });
+            navigate("/products");
+          }}
+        >
           <img src={bestSeller} alt="bestSeller" />
           <div class="content">
             <p>Up to 25% off on makeup kit</p>
@@ -46,7 +55,13 @@ const Slider = () => {
             </button>
           </div>
         </div>
-        <div className="slider-card" onClick={() => navigate("/products")}>
+        <div
+          className="slider-card"
+          onClick={() => {
+            filterDispatch({ type: "CLEAR_ALL_FILTERS", payload: "" });
+            navigate("/products");
+          }}
+        >
           <img src={dotKey} alt="dotKey" />
           <div class="content">
             <p>Up to 50% off on summer sale</p>
@@ -55,7 +70,13 @@ const Slider = () => {
             </button>
           </div>
         </div>
-        <div className="slider-card" onClick={() => navigate("/products")}>
+        <div
+          className="slider-card"
+          onClick={() => {
+            filterDispatch({ type: "CLEAR_ALL_FILTERS", payload: "" });
+            navigate("/products");
+          }}
+        >
           <img src={lakme} alt="lakme" />
           <div class="content">
             <p>Up to 30% off on brand products</p>
@@ -64,7 +85,13 @@ const Slider = () => {
             </button>
           </div>
         </div>
-        <div className="slider-card" onClick={() => navigate("/products")}>
+        <div
+          className="slider-card"
+          onClick={() => {
+            filterDispatch({ type: "CLEAR_ALL_FILTERS", payload: "" });
+            navigate("/products");
+          }}
+        >
           <img src={veet} alt="veet" />
           <div class="content">
             <p>Up to 20% off get smooth skin</p>
@@ -73,7 +100,13 @@ const Slider = () => {
             </button>
           </div>
         </div>
-        <div className="slider-card" onClick={() => navigate("/products")}>
+        <div
+          className="slider-card"
+          onClick={() => {
+            filterDispatch({ type: "CLEAR_ALL_FILTERS", payload: "" });
+            navigate("/products");
+          }}
+        >
           <img src={mac} alt="mac" />
           <div class="content">
             <p>Bestsellers starting at ₹700</p>
@@ -82,7 +115,13 @@ const Slider = () => {
             </button>
           </div>
         </div>
-        <div className="slider-card" onClick={() => navigate("/products")}>
+        <div
+          className="slider-card"
+          onClick={() => {
+            filterDispatch({ type: "CLEAR_ALL_FILTERS", payload: "" });
+            navigate("/products");
+          }}
+        >
           <img src={mamaearth} alt="mamaearth" />
           <div class="content">
             <p>Buy 1 Get 1 Free offer</p>
@@ -91,7 +130,13 @@ const Slider = () => {
             </button>
           </div>
         </div>
-        <div className="slider-card" onClick={() => navigate("/products")}>
+        <div
+          className="slider-card"
+          onClick={() => {
+            filterDispatch({ type: "CLEAR_ALL_FILTERS", payload: "" });
+            navigate("/products");
+          }}
+        >
           <img src={plum} alt="plum" />
           <div class="content">
             <p>Up to 25% off on skincare products</p>
