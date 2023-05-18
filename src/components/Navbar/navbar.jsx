@@ -53,7 +53,18 @@ const Navbar = () => {
       </nav>
       <div className="bottom-navbar">
         {productState?.categories?.map(({ _id, categoryName }) => (
-          <NavLink className="navlink" key={_id}>
+          <NavLink
+            className="navlink"
+            key={_id}
+            to="/products"
+            onClick={() => {
+              filterDispatch({ type: "CLEAR_ALL_FILTERS", payload: "" });
+                filterDispatch({
+                  type: "SET_CATEGORY_FILTER",
+                  payload: categoryName,
+                });
+            }}
+          >
             {categoryName}
           </NavLink>
         ))}
