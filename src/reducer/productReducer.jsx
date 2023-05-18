@@ -1,5 +1,3 @@
-import React from 'react'
-
 const productReducer = (state, action) => {
   switch(action.type) {
     case 'INITIALIZE_PRODUCTS':

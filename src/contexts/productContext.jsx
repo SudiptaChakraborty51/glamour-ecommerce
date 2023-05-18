@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useReducer, useState } from "react";
+import React, { createContext, useEffect, useReducer } from "react";
 import productReducer from "../reducer/productReducer";
 import axios from "axios";
 
@@ -12,13 +12,13 @@ const ProductProvider = ({ children }) => {
     categories: [],
   };
 
-  const [productState, dispatch] = useReducer(productReducer, initialState);
+  const [productState, productDispatch] = useReducer(productReducer, initialState);
 
   const getData = async () => {
     try {
       const { status, data } = await axios.get("/api/products");
       if (status === 200) {
-        dispatch({ type: "INITIALIZE_PRODUCTS", payload: data.products });
+        productDispatch({ type: "INITIALIZE_PRODUCTS", payload: data.products });
       }
     } catch (error) {
       console.error(error);
@@ -29,7 +29,7 @@ const ProductProvider = ({ children }) => {
     try {
       const { status, data } = await axios.get("/api/categories");
       if (status === 200) {
-        dispatch({ type: "INITIALIZE_CATEGORIES", payload: data.categories });
+        productDispatch({ type: "INITIALIZE_CATEGORIES", payload: data.categories });
       }
     } catch (error) {
       console.error(error);
@@ -50,7 +50,7 @@ const ProductProvider = ({ children }) => {
 
   return (
     <ProductContext.Provider
-      value={{ productState, dispatch, bestSellerProductData }}
+      value={{ productState, productDispatch, bestSellerProductData }}
     >
       {children}
     </ProductContext.Provider>
