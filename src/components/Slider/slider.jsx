@@ -10,6 +10,7 @@ import veet from "../../assets/veet.webp";
 import "./slider.css";
 
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Slider = () => {
   const responsive = {
@@ -31,56 +32,72 @@ const Slider = () => {
       items: 1,
     },
   };
+
+  const navigate = useNavigate();
   return (
     <div className="slider">
       <Carousel responsive={responsive}>
-        <div className="slider-card">
+        <div className="slider-card" onClick={() => navigate("/products")}>
           <img src={bestSeller} alt="bestSeller" />
           <div class="content">
             <p>Up to 25% off on makeup kit</p>
-            <button><i class="fa-solid fa-angle-right"></i></button>
+            <button>
+              <i class="fa-solid fa-angle-right"></i>
+            </button>
           </div>
         </div>
-        <div className="slider-card">
+        <div className="slider-card" onClick={() => navigate("/products")}>
           <img src={dotKey} alt="dotKey" />
           <div class="content">
             <p>Up to 50% off on summer sale</p>
-            <button><i class="fa-solid fa-angle-right"></i></button>
+            <button>
+              <i class="fa-solid fa-angle-right"></i>
+            </button>
           </div>
         </div>
-        <div className="slider-card">
+        <div className="slider-card" onClick={() => navigate("/products")}>
           <img src={lakme} alt="lakme" />
           <div class="content">
             <p>Up to 30% off on brand products</p>
-            <button><i class="fa-solid fa-angle-right"></i></button>
+            <button>
+              <i class="fa-solid fa-angle-right"></i>
+            </button>
           </div>
         </div>
-        <div className="slider-card">
+        <div className="slider-card" onClick={() => navigate("/products")}>
           <img src={veet} alt="veet" />
           <div class="content">
             <p>Up to 20% off get smooth skin</p>
-            <button><i class="fa-solid fa-angle-right"></i></button>
+            <button>
+              <i class="fa-solid fa-angle-right"></i>
+            </button>
           </div>
         </div>
-        <div className="slider-card">
+        <div className="slider-card" onClick={() => navigate("/products")}>
           <img src={mac} alt="mac" />
           <div class="content">
             <p>Bestsellers starting at ₹700</p>
-            <button><i class="fa-solid fa-angle-right"></i></button>
+            <button>
+              <i class="fa-solid fa-angle-right"></i>
+            </button>
           </div>
         </div>
-        <div className="slider-card">
+        <div className="slider-card" onClick={() => navigate("/products")}>
           <img src={mamaearth} alt="mamaearth" />
           <div class="content">
             <p>Buy 1 Get 1 Free offer</p>
-            <button><i class="fa-solid fa-angle-right"></i></button>
+            <button>
+              <i class="fa-solid fa-angle-right"></i>
+            </button>
           </div>
         </div>
-        <div className="slider-card">
+        <div className="slider-card" onClick={() => navigate("/products")}>
           <img src={plum} alt="plum" />
           <div class="content">
             <p>Up to 25% off on skincare products</p>
-            <button><i class="fa-solid fa-angle-right"></i></button>
+            <button>
+              <i class="fa-solid fa-angle-right"></i>
+            </button>
           </div>
         </div>
       </Carousel>
