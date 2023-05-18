@@ -19,7 +19,7 @@ export const products = [
     categoryName: "Skin Care",
     productType: "facewash",
     ratings: {
-      value: "4",
+      value: "3.5",
       count: "2345"
     },
     inStock: true,
@@ -59,7 +59,7 @@ export const products = [
     categoryName: "Hair",
     productType: "hairoil",
     ratings: {
-      value: "4.5",
+      value: "2.7",
       count: "2980"
     },
     inStock: false,
@@ -99,7 +99,7 @@ export const products = [
     categoryName: "Makeup",
     productType: "eyeliner",
     ratings: {
-      value: "4.2",
+      value: "3.6",
       count: "3982"
     },
     inStock: true,
@@ -119,7 +119,7 @@ export const products = [
     categoryName: "Makeup",
     productType: "blush",
     ratings: {
-      value: "4",
+      value: "4.0",
       count: "19820"
     },
     inStock: true,
@@ -139,7 +139,7 @@ export const products = [
     categoryName: "Makeup",
     productType: "kajal",
     ratings: {
-      value: "4.5",
+      value: "3.2",
       count: "39820"
     },
     inStock: true,
@@ -159,7 +159,7 @@ export const products = [
     categoryName: "Makeup",
     productType: "lipstick",
     ratings: {
-      value: "4.5",
+      value: "4.4",
       count: "25820"
     },
     inStock: true,
@@ -179,7 +179,7 @@ export const products = [
     categoryName: "Skin Care",
     productType: "toner",
     ratings: {
-      value: "4.2",
+      value: "2.9",
       count: "5820"
     },
     inStock: true,
@@ -199,7 +199,7 @@ export const products = [
     categoryName: "Skin Care",
     productType: "facewash",
     ratings: {
-      value: "4.5",
+      value: "3.5",
       count: "19823"
     },
     inStock: true,
@@ -239,7 +239,7 @@ export const products = [
     categoryName: "Skin Care",
     productType: "faceserum",
     ratings: {
-      value: "4.5",
+      value: "4.1",
       count: "28553"
     },
     inStock: true,
@@ -259,7 +259,7 @@ export const products = [
     categoryName: "Fragrance",
     productType: "perfume",
     ratings: {
-      value: "4.5",
+      value: "1.5",
       count: "17780"
     },
     inStock: true,
@@ -299,7 +299,7 @@ export const products = [
     categoryName: "Skin Care",
     productType: "sunscreen",
     ratings: {
-      value: "4",
+      value: "4.0",
       count: "2553"
     },
     inStock: true,
@@ -319,7 +319,7 @@ export const products = [
     categoryName: "Skin Care",
     productType: "moisturizer",
     ratings: {
-      value: "4.2",
+      value: "1.2",
       count: "1553"
     },
     inStock: false,
@@ -339,7 +339,7 @@ export const products = [
     categoryName: "Makeup",
     productType: "foundation",
     ratings: {
-      value: "4.7",
+      value: "2.9",
       count: "9593"
     },
     inStock: true,
@@ -359,7 +359,7 @@ export const products = [
     categoryName: "Makeup",
     productType: "lipstick",
     ratings: {
-      value: "4.2",
+      value: "4.4",
       count: "1981"
     },
     inStock: true,

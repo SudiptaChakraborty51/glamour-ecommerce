@@ -17,7 +17,7 @@ const Sidebar = () => {
   const sortByPriceArr = [
     { label: "High To Low", value: "HTL" },
     { label: "Low To High", value: "LTH" },
-    { label: "Reset", value: "" },
+    { label: "Reset", value: "RESET" },
   ];
 
   return (
@@ -90,21 +90,20 @@ const Sidebar = () => {
       </div>
 
       <h3>Ratings</h3>
-      <div className="rating-filter">
+      <div
+        className="rating-filter"
+        value={filterState?.ratingFilter}
+        onChange={(e) =>
+          filterDispatch({
+            type: "SET_RATING_FILTER",
+            payload: e.target.value,
+          })
+        }
+      >
         {ratingArr?.map((rating) => {
           return (
             <label key={rating}>
-              <input
-                type="radio"
-                name="rating"
-                value={filterState?.ratingFilter}
-                onChange={(e) =>
-                  filterDispatch({
-                    type: "SET_RATING_FILTER",
-                    payload: e.target.value,
-                  })
-                }
-              />
+              <input type="radio" name="rating" value={rating} />
               {rating}⭐ and above
             </label>
           );
@@ -112,20 +111,19 @@ const Sidebar = () => {
       </div>
 
       <h3>Sort By Price:</h3>
-      <div className="price-filter">
+      <div
+        className="price-filter"
+        value={filterState?.sortByPriceFilter}
+        onChange={(e) =>
+          filterDispatch({
+            type: "SET_SORTBYPRICE_FILTER",
+            payload: e.target.value,
+          })
+        }
+      >
         {sortByPriceArr?.map(({ label, value }) => (
           <label key={value}>
-            <input
-              type="radio"
-              name="sort"
-              value={filterState?.sortByPriceFilter}
-              onChange={(e) =>
-                filterDispatch({
-                  type: "SET_SORTBYPRICE_FILTER",
-                  payload: e.target.value,
-                })
-              }
-            />
+            <input type="radio" name="sort" value={value} />
             {label}
           </label>
         ))}
