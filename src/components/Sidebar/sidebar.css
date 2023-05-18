@@ -38,7 +38,7 @@
     padding: 5px 0;
 }
 
-.slider, .filters input[type="checkbox"], .filters input[type="radio"] {
+.filters input[type="checkbox"], .filters input[type="radio"], .filters input[type="range"] {
     accent-color: var(--primary-color);
 }
 
