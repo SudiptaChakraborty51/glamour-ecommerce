@@ -21,10 +21,6 @@ const FilterProvider = ({ children }) => {
     initialFilter
   );
 
-  console.log(".........................");
-  console.log("rating", filterState?.ratingFilter);
-  console.log("productState", productState);
-
   const searchFilteredProducts =
     filterState?.search?.length > 0
       ? productState?.products?.filter(({ name }) =>
@@ -36,16 +32,12 @@ const FilterProvider = ({ children }) => {
     ({ price }) => Number(price) <= Number(filterState?.priceRange)
   );
 
-  console.log("priceRangeProducts", priceRangeFilteredProducts);
-
   const categoryFilteredProducts =
     filterState?.categoryFilter?.length > 0
       ? priceRangeFilteredProducts?.filter(({ categoryName }) =>
           filterState?.categoryFilter?.includes(categoryName)
         )
       : priceRangeFilteredProducts;
-
-  console.log("categoryProducts", categoryFilteredProducts);
 
   const brandFilteredProducts =
     filterState?.brandFilter?.length > 0
@@ -54,8 +46,6 @@ const FilterProvider = ({ children }) => {
         )
       : categoryFilteredProducts;
 
-  console.log("brandProducts", brandFilteredProducts);
-
   const ratingFilteredProducts =
     filterState?.ratingFilter?.length > 0
       ? brandFilteredProducts?.filter(
@@ -63,8 +53,6 @@ const FilterProvider = ({ children }) => {
             Number(value) >= Number(filterState?.ratingFilter)
         )
       : brandFilteredProducts;
-
-  console.log("ratingProducts", ratingFilteredProducts);
 
   const sortByPriceFilteredProducts =
     filterState?.sortByPriceFilter?.length > 0
@@ -85,9 +73,6 @@ const FilterProvider = ({ children }) => {
           }
         })()
       : ratingFilteredProducts;
-
-  console.log("SortProducts", sortByPriceFilteredProducts);
-  console.log(".........................");
 
   return (
     <FilterContext.Provider
