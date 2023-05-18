@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./navbar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { ProductContext } from "../../contexts/productContext";
 import { FilterContext } from "../../contexts/filterContext";
 
@@ -8,6 +8,8 @@ const Navbar = () => {
   const { productState } = useContext(ProductContext);
   const { filterDispatch } = useContext(FilterContext);
   const [searchText, setSearchText] = useState("");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     filterDispatch({ type: "SEARCH", payload: searchText });
@@ -32,7 +34,11 @@ const Navbar = () => {
               value={searchText}
               type="search"
               name="search"
-              onChange={(e) => setSearchText(e.target.value)}
+              onChange={(e) => {
+                setSearchText(e.target.value);
+                searchText.trim() !== "" && navigate("/products");
+                filterDispatch({ type: "CLEAR_ALL_FILTERS", payload: "" });
+              }}
             />
           </div>
           <div className="nav-icons">
@@ -59,10 +65,10 @@ const Navbar = () => {
             to="/products"
             onClick={() => {
               filterDispatch({ type: "CLEAR_ALL_FILTERS", payload: "" });
-                filterDispatch({
-                  type: "SET_CATEGORY_FILTER",
-                  payload: categoryName,
-                });
+              filterDispatch({
+                type: "SET_CATEGORY_FILTER",
+                payload: categoryName,
+              });
             }}
           >
             {categoryName}
