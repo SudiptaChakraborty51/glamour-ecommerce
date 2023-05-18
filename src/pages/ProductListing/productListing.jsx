@@ -11,12 +11,18 @@ const ProductListing = () => {
   console.log(".........................");
   console.log("productState", productState);
 
+  const priceRangeFilteredProducts = productState?.products?.filter(
+    ({ price }) => Number(price) <= Number(filterState?.priceRange)
+  );
+
+  console.log("priceRangeProducts",priceRangeFilteredProducts);
+
   const categoryFilteredProducts =
     filterState?.categoryFilter?.length > 0
-      ? productState?.products?.filter(({ categoryName }) =>
+      ? priceRangeFilteredProducts?.filter(({ categoryName }) =>
           filterState?.categoryFilter?.includes(categoryName)
         )
-      : productState?.products;
+      : priceRangeFilteredProducts;
 
   console.log("categoryProducts", categoryFilteredProducts);
 
@@ -27,12 +33,12 @@ const ProductListing = () => {
         )
       : categoryFilteredProducts;
 
-  console.log("brandProducts",brandFilteredProducts);
+  console.log("brandProducts", brandFilteredProducts);
 
   const ratingFilteredProducts =
     filterState?.ratingFilter?.length > 0
       ? brandFilteredProducts?.filter(
-          ({ ratings: {value} }) =>
+          ({ ratings: { value } }) =>
             Number(value) >= Number(filterState?.ratingFilter)
         )
       : brandFilteredProducts;
@@ -68,7 +74,10 @@ const ProductListing = () => {
         <Sidebar />
       </div>
       <div className="productListing">
-        <h2>Showing All Products<small>({sortByPriceFilteredProducts?.length})</small></h2>
+        <h2>
+          Showing All Products
+          <small>({sortByPriceFilteredProducts?.length})</small>
+        </h2>
         <ul>
           {sortByPriceFilteredProducts?.map((product) => (
             <ProductCard productsData={product} key={product._id} />
