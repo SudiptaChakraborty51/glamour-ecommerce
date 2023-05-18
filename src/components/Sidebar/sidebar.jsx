@@ -90,20 +90,22 @@ const Sidebar = () => {
       </div>
 
       <h3>Ratings</h3>
-      <div
-        className="rating-filter"
-        value={filterState?.ratingFilter}
-        onChange={(e) =>
-          filterDispatch({
-            type: "SET_RATING_FILTER",
-            payload: e.target.value,
-          })
-        }
-      >
+      <div className="rating-filter">
         {ratingArr?.map((rating) => {
           return (
             <label key={rating}>
-              <input type="radio" name="rating" value={rating} />
+              <input
+                type="radio"
+                name="rating"
+                value={rating}
+                checked={Number(filterState?.ratingFilter) === Number(rating)}
+                onChange={(e) =>
+                  filterDispatch({
+                    type: "SET_RATING_FILTER",
+                    payload: e.target.value,
+                  })
+                }
+              />
               {rating}⭐ and above
             </label>
           );
@@ -111,19 +113,21 @@ const Sidebar = () => {
       </div>
 
       <h3>Sort By Price:</h3>
-      <div
-        className="price-filter"
-        value={filterState?.sortByPriceFilter}
-        onChange={(e) =>
-          filterDispatch({
-            type: "SET_SORTBYPRICE_FILTER",
-            payload: e.target.value,
-          })
-        }
-      >
+      <div className="price-filter">
         {sortByPriceArr?.map(({ label, value }) => (
           <label key={value}>
-            <input type="radio" name="sort" value={value} />
+            <input
+              type="radio"
+              name="sort"
+              value={value}
+              checked={filterState?.sortByPriceFilter === value}
+              onChange={(e) =>
+                filterDispatch({
+                  type: "SET_SORTBYPRICE_FILTER",
+                  payload: e.target.value,
+                })
+              }
+            />
             {label}
           </label>
         ))}

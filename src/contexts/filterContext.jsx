@@ -22,6 +22,7 @@ const FilterProvider = ({ children }) => {
   );
 
   console.log(".........................");
+  console.log("rating", filterState?.ratingFilter);
   console.log("productState", productState);
 
   const searchFilteredProducts =
