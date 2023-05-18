@@ -28,19 +28,59 @@ export const products = [
   },
   {
     _id: uuid(),
-    name: "Mamaearth Onion Shampoo For Hair Growth & Hair Fall Control With Onion & Plant Keratin",
-    image: "https://images.mamaearth.in/catalog/product/o/n/onion-shampoo-600ml_1.jpg?fit=contain&width=640",
-    brand: "mamaearth",
-    size: "(600ml)",
-    price: "674",
-    originalPrice: "749",
-    off: "10%",
-    offer: "Buy 1 Get 1 Free",
-    categoryName: "Hair",
-    productType: "shampoo",
+    name: "Lakme 9 To 5 Complexion Care Face CC Cream SPF 30 PA++ - Beige",
+    image: "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max,dpr-2/static/img/product/255657/lakme-9-to-5-complexion-care-cc-cream-almond-30-g-11-11_8_display_1631683598_6c1169a0.jpg",
+    brand: "Lakme",
+    size: "(30g)",
+    price: "252",
+    originalPrice: "360",
+    off: "30%",
+    offer: "",
+    categoryName: "Makeup",
+    productType: "cream",
     ratings: {
-      value: "4.2",
-      count: "2035"
+      value: "4.4",
+      count: "1982"
+    },
+    inStock: true,
+    isBestSeller: true,
+    quantity: 0
+  },
+  {
+    _id: uuid(),
+    name: "Veet 5 In 1 Skin Benefits Hair Removal Cream- Sensitive Skin",
+    image: "https://pixiesmediapull-145ca.kxcdn.com/pub/media/catalog/product/cache/39500cf9d88472c26e1ec72addc15f3a/v/e/veet-5-in-1-skin-benefits-hair-removal-cream-sensitive-skin-50gm_.jpg",
+    brand: "Veet",
+    size: "(50gm)",
+    price: "108",
+    originalPrice: "135",
+    off: "20%",
+    offer: "",
+    categoryName: "Bath & Body",
+    productType: "bodywax",
+    ratings: {
+      value: "3.5",
+      count: "6041"
+    },
+    inStock: false,
+    isBestSeller: false,
+    quantity: 0
+  },
+  {
+    _id: uuid(),
+    name: "Lakme 9 to 5 Weightless Matte Mousse Lip & Cheek Color - Blush Velvet",
+    image: "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/original/891919/IIC0tVaJB-8901030601750_1.jpg?dpr=2",
+    brand: "Lakme",
+    size: "(9gm)",
+    price: "580",
+    originalPrice: "725",
+    off: "20%",
+    offer: "",
+    categoryName: "Makeup",
+    productType: "blush",
+    ratings: {
+      value: "4.0",
+      count: "19820"
     },
     inStock: true,
     isBestSeller: true,
@@ -64,66 +104,6 @@ export const products = [
     },
     inStock: false,
     isBestSeller: false,
-    quantity: 0
-  },
-  {
-    _id: uuid(),
-    name: "Lakme 9 To 5 Complexion Care Face CC Cream SPF 30 PA++ - Beige",
-    image: "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max,dpr-2/static/img/product/255657/lakme-9-to-5-complexion-care-cc-cream-almond-30-g-11-11_8_display_1631683598_6c1169a0.jpg",
-    brand: "Lakme",
-    size: "(30g)",
-    price: "252",
-    originalPrice: "360",
-    off: "30%",
-    offer: "",
-    categoryName: "Makeup",
-    productType: "cream",
-    ratings: {
-      value: "4.4",
-      count: "1982"
-    },
-    inStock: true,
-    isBestSeller: true,
-    quantity: 0
-  },
-  {
-    _id: uuid(),
-    name: "Lakme Eyeconic Liquid Eyeliner - Black",
-    image: "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/original/1080053/e7wQPkZ-WD-493214232_1.jpg?dpr=2",
-    brand: "Lakme",
-    size: "(4.5ml)",
-    price: "234",
-    originalPrice: "260",
-    off: "10%",
-    offer: "",
-    categoryName: "Makeup",
-    productType: "eyeliner",
-    ratings: {
-      value: "3.6",
-      count: "3982"
-    },
-    inStock: true,
-    isBestSeller: false,
-    quantity: 0
-  },
-  {
-    _id: uuid(),
-    name: "Lakme 9 to 5 Weightless Matte Mousse Lip & Cheek Color - Blush Velvet",
-    image: "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/original/891919/IIC0tVaJB-8901030601750_1.jpg?dpr=2",
-    brand: "Lakme",
-    size: "(9gm)",
-    price: "580",
-    originalPrice: "725",
-    off: "20%",
-    offer: "",
-    categoryName: "Makeup",
-    productType: "blush",
-    ratings: {
-      value: "4.0",
-      count: "19820"
-    },
-    inStock: true,
-    isBestSeller: true,
     quantity: 0
   },
   {
@@ -201,6 +181,26 @@ export const products = [
     ratings: {
       value: "3.5",
       count: "19823"
+    },
+    inStock: true,
+    isBestSeller: false,
+    quantity: 0
+  },
+  {
+    _id: uuid(),
+    name: "Lakme Eyeconic Liquid Eyeliner - Black",
+    image: "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/original/1080053/e7wQPkZ-WD-493214232_1.jpg?dpr=2",
+    brand: "Lakme",
+    size: "(4.5ml)",
+    price: "234",
+    originalPrice: "260",
+    off: "10%",
+    offer: "",
+    categoryName: "Makeup",
+    productType: "eyeliner",
+    ratings: {
+      value: "3.6",
+      count: "3982"
     },
     inStock: true,
     isBestSeller: false,
@@ -408,26 +408,6 @@ export const products = [
   },
   {
     _id: uuid(),
-    name: "Veet 5 In 1 Skin Benefits Hair Removal Cream- Sensitive Skin",
-    image: "https://pixiesmediapull-145ca.kxcdn.com/pub/media/catalog/product/cache/39500cf9d88472c26e1ec72addc15f3a/v/e/veet-5-in-1-skin-benefits-hair-removal-cream-sensitive-skin-50gm_.jpg",
-    brand: "Veet",
-    size: "(50gm)",
-    price: "108",
-    originalPrice: "135",
-    off: "20%",
-    offer: "",
-    categoryName: "Bath & Body",
-    productType: "bodywax",
-    ratings: {
-      value: "3.5",
-      count: "6041"
-    },
-    inStock: false,
-    isBestSeller: false,
-    quantity: 0
-  },
-  {
-    _id: uuid(),
     name: "NIVEA Body Wash, Fresh Powerfruit Shower Gel, with Antioxidants & Blueberry Scent",
     image: "https://m.media-amazon.com/images/I/41NR0sXI8UL.jpg",
     brand: "NIVEA",
@@ -501,6 +481,26 @@ export const products = [
     ratings: {
       value: "4.2",
       count: "1258"
+    },
+    inStock: true,
+    isBestSeller: true,
+    quantity: 0
+  },
+  {
+    _id: uuid(),
+    name: "Mamaearth Onion Shampoo For Hair Growth & Hair Fall Control With Onion & Plant Keratin",
+    image: "https://images.mamaearth.in/catalog/product/o/n/onion-shampoo-600ml_1.jpg?fit=contain&width=640",
+    brand: "mamaearth",
+    size: "(600ml)",
+    price: "674",
+    originalPrice: "749",
+    off: "10%",
+    offer: "Buy 1 Get 1 Free",
+    categoryName: "Hair",
+    productType: "shampoo",
+    ratings: {
+      value: "4.2",
+      count: "2035"
     },
     inStock: true,
     isBestSeller: true,

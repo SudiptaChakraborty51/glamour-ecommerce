@@ -7,7 +7,7 @@ import { FilterContext } from "../../contexts/filterContext";
 
 const ProductListing = () => {
   const { productState } = useContext(ProductContext);
-  const { filterState, filterDispatch } = useContext(FilterContext);
+  const { filterState } = useContext(FilterContext);
   console.log(".........................");
   console.log("productState", productState);
 
