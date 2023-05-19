@@ -14,6 +14,7 @@ const sign = require("jwt-encode");
  * */
 
 export const signupHandler = function (schema, request) {
+  console.log(process.env.REACT_APP_JWT_SECRET);
   const { email, password, ...rest } = JSON.parse(request.requestBody);
   try {
     // check if email already exists

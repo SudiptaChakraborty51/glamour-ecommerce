@@ -9,6 +9,12 @@
   gap: 1rem;
 }
 
+.signup form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
 .signup h2 {
   text-align: center;
 }
