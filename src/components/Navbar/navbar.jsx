@@ -53,7 +53,10 @@ const Navbar = () => {
             <NavLink to="/wishlist">
               <i class="fa-solid fa-heart"></i>
             </NavLink>
-            <NavLink to="/login" className={authState?.isLoggedIn ? "login-user" : ""}>
+            <NavLink
+              to={authState?.isLoggedIn ? "/account-details" : "/login"}
+              className={authState?.isLoggedIn ? "login-user" : ""}
+            >
               {authState?.isLoggedIn ? (
                 authState?.user.firstName
               ) : (

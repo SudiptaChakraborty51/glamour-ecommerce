@@ -100,6 +100,7 @@ nav h1 {
   font-weight: bold;
   padding: 0.2rem;
   border-radius: 5px;
+  color: var(--primary-color);
 } 
 
 .bottom-navbar {

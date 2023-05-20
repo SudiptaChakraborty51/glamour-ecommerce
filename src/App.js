@@ -11,6 +11,7 @@ import Wishlist from "./pages/Wishlist/wishlist";
 import Login from "./pages/Login/login";
 import Signup from "./pages/Signup/signup";
 import RequireAuth from "./components/Auth/requireAuth";
+import AccountDetails from "./pages/AccountDetails/accountDetails";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/account-details" element={<AccountDetails />} />
       </Routes>
     </div>
   );

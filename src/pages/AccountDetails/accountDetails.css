@@ -1,0 +1,21 @@
+.account-details {
+    text-align: center;
+}
+
+.account-details div {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 30%;
+    margin: auto;
+    text-align: left;
+    padding: 1rem;
+}
+
+.account-details button {
+    background-color: red;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
