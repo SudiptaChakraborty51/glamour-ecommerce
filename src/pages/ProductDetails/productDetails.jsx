@@ -1,14 +1,25 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "./productDetails.css";
 import { useParams } from "react-router-dom";
 import { ProductContext } from "../../contexts/productContext";
 
 const ProductDetails = () => {
   const { productID } = useParams();
-  const { productState } = useContext(ProductContext);
-  const selectedProduct = productState?.products?.find(
-    (product) => product._id === productID
-  );
+  const { productState, getProduct, productDispatch } = useContext(ProductContext);
+  
+  const getSingleProduct = async () => {
+    try {
+      const product = await getProduct(productID);
+      productDispatch({type: "SET_SINGLE_PRODUCT", payload: product?.product})
+    }catch(e) {
+      console.error(e);
+    }
+  }
+
+  useEffect(() => {
+    getSingleProduct();
+  }, []);
+
   const {
     _id,
     name,
@@ -25,7 +36,7 @@ const ProductDetails = () => {
     inStock,
     isBestSeller,
     quantity,
-  } = selectedProduct;
+  } = productState?.singleProduct;
 
   return (
     <div className="product-details">
@@ -43,7 +54,7 @@ const ProductDetails = () => {
           <p>{size}</p>
           <p>Brand: {brand}</p>
           <p>
-            {ratings?.value} <i className="fa fa-star"></i> ({ratings.count}{" "}
+            {ratings?.value} <i className="fa fa-star"></i> ({ratings?.count}{" "}
             reviews)
           </p>
           </div>
