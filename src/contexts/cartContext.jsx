@@ -5,7 +5,7 @@ import { ProductContext } from "./productContext";
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
-  const {productDispatch} = useContext(ProductContext);
+  const {productState, productDispatch} = useContext(ProductContext);
   const encodedToken = localStorage.getItem("token");
 
   const getCartData = async () => {
@@ -38,7 +38,7 @@ const CartProvider = ({ children }) => {
       );
       if (status === 201) {
         productDispatch({ type: "SET_CART", payload: data?.cart });
-        alert("Item Added to Cart!")
+        alert("Item Added to Cart!");
       }
     } catch (e) {
       console.log(e);
@@ -64,9 +64,12 @@ const CartProvider = ({ children }) => {
     return data?.find(item => item._id === id ) ? true : false
   } 
 
+  console.log(productState?.cart);
+
   useEffect(() => {
     getCartData();
-  }, []);
+    // eslint-disable-next-line
+  },[]);
 
   return <CartContext.Provider value={{getCartData, addToCartHandler, removeFromCartHandler, isItemInCart}}>{children}</CartContext.Provider>;
 };

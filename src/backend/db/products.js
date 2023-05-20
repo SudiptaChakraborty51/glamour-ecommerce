@@ -1,5 +1,3 @@
-import { v4 as uuid } from "uuid";
-
 /**
  * Product Database can be added here.
  * You can add products of your wish with different attributes
@@ -7,7 +5,7 @@ import { v4 as uuid } from "uuid";
 
 export const products = [
   {
-    _id: uuid(),
+    _id: 'bef7e043-ad2b-4f56-bf27-6201e26473b0',
     name: "Mamaearth Ubtan Natural Face Wash for Tan Removal",
     image: "https://images.mamaearth.in/catalog/product/u/b/ubtan-face-wash_1_1_2.jpg?fit=contain&width=640",
     brand: "mamaearth",
@@ -27,7 +25,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: 'ce9a4bbf-0bbf-4fd9-a8b5-2890612c1aac',
     name: "Lakme 9 To 5 Complexion Care Face CC Cream SPF 30 PA++ - Beige",
     image: "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max,dpr-2/static/img/product/255657/lakme-9-to-5-complexion-care-cc-cream-almond-30-g-11-11_8_display_1631683598_6c1169a0.jpg",
     brand: "Lakme",
@@ -47,7 +45,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: 'fa7e7bf3-f858-4d29-9717-3af872823d20',
     name: "Veet 5 In 1 Skin Benefits Hair Removal Cream- Sensitive Skin",
     image: "https://pixiesmediapull-145ca.kxcdn.com/pub/media/catalog/product/cache/39500cf9d88472c26e1ec72addc15f3a/v/e/veet-5-in-1-skin-benefits-hair-removal-cream-sensitive-skin-50gm_.jpg",
     brand: "Veet",
@@ -67,7 +65,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: '9b94a23b-f366-4955-a5f3-b797f0310fea',
     name: "Lakme 9 to 5 Weightless Matte Mousse Lip & Cheek Color - Blush Velvet",
     image: "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/original/891919/IIC0tVaJB-8901030601750_1.jpg?dpr=2",
     brand: "Lakme",
@@ -87,7 +85,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: '67190caa-369e-4d9a-ac46-0614b2fe3138',
     name: "Mamaearth Onion Hair Oil with Onion & Redensyl for Hair Fall Control",
     image: "https://images.mamaearth.in/catalog/product/_/o/_onion-oil-250ml__1.jpg?fit=contain&width=640",
     brand: "mamaearth",
@@ -107,7 +105,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: '4030410b-68a1-46f9-a8ad-82e3f5929dbe',
     name: "Lakme Eyeconic Kajal - Twin Pack",
     image: "https://www.jiomart.com/images/product/600x600/491450421/lakme-eyeconic-kajal-twin-deep-black-0-35-g-product-images-o491450421-p491450421-0-202203170715.jpg",
     brand: "Lakme",
@@ -127,7 +125,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: '8332f751-1305-49a0-83c2-c25138bd44cc',
     name: "Lakme 9 To 5 Primer + Matte Lipstick - MP8 Rosy Sunday",
     image: "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/original/lakme/949643/0/uCjwpvyiuE-u9GJeYC9N9-949643_2.jpg?dpr=2",
     brand: "Lakme",
@@ -147,7 +145,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: '40cdc285-b45b-4eb6-ad26-d8fdb2c1c43f',
     name: "Plum Green Tea Alcohol-Free Toner",
     image: "https://cdn.shopify.com/s/files/1/0390/2985/products/1_WBG_2_1024x1024.jpg?v=1658470167",
     brand: "Plum",
@@ -167,7 +165,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: 'aaa7c2ae-9dda-4352-a25a-d15f26f2c0f6',
     name: "Plum Green Tea Pore Cleansing Face Wash",
     image: "https://cdn.shopify.com/s/files/1/0390/2985/products/1_WBG_f0e36b22-42a8-40e7-810a-907d18b4f0f9_750x_1_1024x1024.webp?v=1682335169",
     brand: "Plum",
@@ -187,7 +185,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: '0f231b44-7b5d-4d50-a9bd-8ac86f365f88',
     name: "Lakme Eyeconic Liquid Eyeliner - Black",
     image: "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/original/1080053/e7wQPkZ-WD-493214232_1.jpg?dpr=2",
     brand: "Lakme",
@@ -207,7 +205,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: 'b94e51fb-31bc-466f-ac1a-6dc2902c2f77',
     name: "Plum Green Tea Renewed Clarity Night Gel",
     image: "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/original/plum/915846/0/9rocG1Yk91-ilfCwB4oC9d-915846_1.jpg?dpr=2",
     brand: "Plum",
@@ -227,7 +225,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: 'f878445c-00fe-40c1-9f33-25992f9c51d6',
     name: "Plum 15% Vitamin C Face Serum with Mandarin for Glow Boost with Pure Ethyl Ascorbic Acid",
     image: "https://media6.ppl-media.com/tr:h-750,w-750,c-at_max,dpr-2/static/img/product/242992/plum-15-percentage-vitamin-c-face-serum-with-mandarin-30-ml-for-glowing-skin-with-pure-ethyl-ascorbic-acid_8_display_1651477544_61d2d400.jpg",
     brand: "Plum",
@@ -247,7 +245,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: '1b0e535b-0ce8-4f2f-8536-d33e7109d429',
     name: "Plum BodyLovin' Hawaiian Rumba Eau de Parfum, Beachy Fragance, Mini Perfume Spray for Women",
     image: "https://cdn.shopify.com/s/files/1/0390/2985/products/HR_15ml_EDP_1080x1080_01_1024x1024.jpg?v=1666769564",
     brand: "Plum",
@@ -267,7 +265,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: '96913dc6-0b50-48e7-81dd-273c4713a484',
     name: "Plum BodyLovin' Vanilla Vibes Body Mist, Perfume Body Spray, Sweet Vanilla Fragrance for Women",
     image: "https://cdn.shopify.com/s/files/1/0390/2985/products/VV_150ml_BodyMist1080x1080_01_750x.jpg?v=1665560484",
     brand: "Plum",
@@ -287,7 +285,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: '01289a80-b93e-4f78-956f-e266059338b7',
     name: "Dot & Key Vitamin C + E Face Sunscreen With SPF 50 PA+++ For Glowing Skin, 100% No White Cast",
     image: "https://m.media-amazon.com/images/I/51i5cMLD8eL._SL1500_.jpg",
     brand: "Dot & Key",
@@ -307,7 +305,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: 'd839864c-3a6a-4f86-a170-f0f3d5eec78b',
     name: "Dot & Key Vitamin C + E Super Bright Moisturizer For Glowing Skin-Fades Pigmentation & Dark Spots",
     image: "https://m.media-amazon.com/images/I/61BefSVVmTL._SL1500_.jpg",
     brand: "Dot & Key",
@@ -327,7 +325,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: '4a202a31-7833-4501-9a37-36927e9379aa',
     name: "M.A.C Studio Fix Powder Plus Foundation - NC42",
     image: "https://sdcdn.io/mac/in/mac_sku_M51071_1x1_1.png?width=1080&height=1080",
     brand: "MAC",
@@ -347,7 +345,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: '90ec8c76-3c9d-4728-b4f1-bb788b0288a0',
     name: "M.A.C Powder Kiss Lipstick - Marrakesh-mere",
     image: "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/original/1082169/PgIFdoA5cU-773602588749_1.jpg?dpr=2",
     brand: "MAC",
@@ -367,7 +365,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: 'f09cbec0-ee09-4fe0-aed6-d52b875ebbe5',
     name: "M.A.C Studio Fix Fluid SPF 15 Mini - NC15",
     image: "https://cdn.tirabeauty.com/v2/billowing-snowflake-434234/tira-p/wrkr/products/pictures/item/free/original/pfr4G6eKc-M.A.C-Mini-Studio-Fix-Fluid-Foundation-SPF-15-NC15-(15ml).jpeg?dpr=2",
     brand: "MAC",
@@ -387,7 +385,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: '3278e20d-fa04-4793-8f61-6d8dee3d5b34',
     name: "Veet Full Body Waxing Kit Easy-Gelwax Technology Dry Skin - 20 Strips",
     image: "https://chhotudihatti.com/wp-content/uploads/2022/08/Veet-Full-Body-Waxing-Kit-Easy-Gelwax-Technology-Dry-Skin-20-Strips.jpg",
     brand: "Veet",
@@ -407,7 +405,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: 'b5c17b38-1777-4613-8104-4582b7e3a4af',
     name: "NIVEA Body Wash, Fresh Powerfruit Shower Gel, with Antioxidants & Blueberry Scent",
     image: "https://m.media-amazon.com/images/I/41NR0sXI8UL.jpg",
     brand: "NIVEA",
@@ -427,7 +425,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: 'ff6cbcd5-4233-4bc6-81ad-2da168649bb5',
     name: "NIVEA Nourishing Body Milk Lotion With Deep Moisture Serum",
     image: "https://m.media-amazon.com/images/I/41YYjKKbruL._SL1001_.jpg",
     brand: "NIVEA",
@@ -447,7 +445,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: '532ca778-4e5c-4888-a050-40adb5e27dde',
     name: "Philips Heated Straightening Brush (BHH880/10)",
     image: "https://m.media-amazon.com/images/I/51F4Fsq42SL._SL1000_.jpg",
     brand: "Philips",
@@ -467,7 +465,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: 'b25ea8c2-c182-4548-a1db-c0530a96deaa',
     name: "Philips Hair Dryer (HP8120/00)",
     image: "https://m.media-amazon.com/images/I/51pxIjmlLAL._SL1227_.jpg",
     brand: "Philips",
@@ -487,7 +485,7 @@ export const products = [
     quantity: 0
   },
   {
-    _id: uuid(),
+    _id: '52073a4a-7521-4c97-90c4-f0e9e73169af',
     name: "Mamaearth Onion Shampoo For Hair Growth & Hair Fall Control With Onion & Plant Keratin",
     image: "https://images.mamaearth.in/catalog/product/o/n/onion-shampoo-600ml_1.jpg?fit=contain&width=640",
     brand: "mamaearth",

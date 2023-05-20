@@ -1,27 +1,32 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./productDetails.css";
 import { useParams } from "react-router-dom";
 import { ProductContext } from "../../contexts/productContext";
 
 const ProductDetails = () => {
   const { productID } = useParams();
-  const { productState, getProduct, productDispatch } = useContext(ProductContext);
-  
+  const { productState, getProduct } =
+    useContext(ProductContext);
+
+    const [singleProduct, setSingleProduct] = useState({});
+
+  console.log(productState?.products);
+
   const getSingleProduct = async () => {
     try {
       const product = await getProduct(productID);
-      productDispatch({type: "SET_SINGLE_PRODUCT", payload: product?.product})
-    }catch(e) {
+      setSingleProduct(product?.product);
+    } catch (e) {
       console.error(e);
     }
-  }
+  };
 
   useEffect(() => {
     getSingleProduct();
+    // eslint-disable-next-line
   }, []);
 
   const {
-    _id,
     name,
     image,
     brand,
@@ -30,13 +35,10 @@ const ProductDetails = () => {
     originalPrice,
     off,
     offer,
-    categoryName,
-    productType,
     ratings,
     inStock,
-    isBestSeller,
-    quantity,
-  } = productState?.singleProduct;
+    isBestSeller
+  } = singleProduct;
 
   return (
     <div className="product-details">
@@ -51,12 +53,12 @@ const ProductDetails = () => {
         <div className="details-content">
           <h2>{name}</h2>
           <div className="size-brand-reviews">
-          <p>{size}</p>
-          <p>Brand: {brand}</p>
-          <p>
-            {ratings?.value} <i className="fa fa-star"></i> ({ratings?.count}{" "}
-            reviews)
-          </p>
+            <p>{size}</p>
+            <p>Brand: {brand}</p>
+            <p>
+              {ratings?.value} <i className="fa fa-star"></i> ({ratings?.count}{" "}
+              reviews)
+            </p>
           </div>
           <p className="price-content">
             MRP: <strong>₹{price}</strong>{" "}

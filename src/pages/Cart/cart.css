@@ -1,0 +1,23 @@
+.empty-cart {
+    text-align: center;
+    line-height: 0.5;
+}
+
+.empty-cart img {
+    width: 30%;
+    height: auto;
+}
+
+.empty-cart h2 {
+    color: var(--primary-color);
+}
+
+.empty-cart button {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+}
