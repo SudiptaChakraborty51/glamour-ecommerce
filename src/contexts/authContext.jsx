@@ -1,7 +1,7 @@
 import React, { createContext, useReducer } from "react";
 import authReducer from "../reducer/authReducer";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 
@@ -12,11 +12,13 @@ const AuthProvider = ({ children }) => {
     token: "",
   };
 
-  const navigate=useNavigate();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const [authState, authDispatch] = useReducer(authReducer, initialAuth);
 
   const userLogin = async (loginData) => {
+    console.log(location?.state?.from?.pathname);
     try {
       const { status, data } = await axios.post(`/api/auth/login`, loginData);
       console.log(loginData);
@@ -26,7 +28,11 @@ const AuthProvider = ({ children }) => {
         authDispatch({ type: "SET_TOKEN", payload: data?.encodedToken });
         localStorage.setItem("token", data?.encodedToken);
         alert("Login Successful!");
-        navigate("/");
+        navigate(
+          location?.state?.from?.pathname 
+            ? location?.state?.from?.pathname
+            : "/"
+        );
       }
     } catch (e) {
       authDispatch({ type: "SET_LOGGEDIN", payload: false });
@@ -59,6 +65,7 @@ const AuthProvider = ({ children }) => {
     authDispatch({ type: "SET_TOKEN", payload: "" });
     localStorage.setItem("token", "");
     alert("You're logged out!");
+    navigate("/");
   };
 
   return (

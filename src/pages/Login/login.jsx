@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
 import "./login.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/authContext";
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const { userLogin } = useContext(AuthContext);
 
   const [userData, setUserData] = useState({
