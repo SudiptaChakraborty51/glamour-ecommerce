@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./productCard.css";
 import { useNavigate } from "react-router-dom";
+import { CartContext } from "../../contexts/cartContext";
+import { ProductContext } from "../../contexts/productContext";
+import { AuthContext } from "../../contexts/authContext";
 
 const ProductCard = ({ productsData }) => {
   const navigate = useNavigate();
+  const { authState } = useContext(AuthContext);
+  const { productState } = useContext(ProductContext);
+  const { isItemInCart, addToCartHandler } = useContext(CartContext);
   const {
     _id,
     name,
@@ -43,9 +49,23 @@ const ProductCard = ({ productsData }) => {
         <span className="originalPrice">₹{originalPrice}</span> |{" "}
         <span className="off">{off} Off</span>
       </p>
-      <button className="add-to-cart">
+      <button
+        className="add-to-cart"
+        onClick={() => {
+          if (authState.isLoggedIn) {
+            if (isItemInCart(productState?.cart, _id)) {
+              navigate("/cart");
+            } else {
+              addToCartHandler(productsData);
+            }
+          } else {
+            alert("Please login to proceed!");
+          }
+        }}
+      >
         {" "}
-        <i className="fa fa-shopping-cart"></i> Add to Cart{" "}
+        <i className="fa fa-shopping-cart"></i>{" "}
+        {isItemInCart(productState?.cart, _id) ? "Go to Cart" : "Add to Cart"}
       </button>
     </div>
   );

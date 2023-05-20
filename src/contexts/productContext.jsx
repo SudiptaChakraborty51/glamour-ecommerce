@@ -7,6 +7,7 @@ export const ProductContext = createContext();
 const ProductProvider = ({ children }) => {
   const initialState = {
     products: [],
+    singleProduct: {},
     cart: [],
     wishlist: [],
     categories: [],
@@ -36,6 +37,17 @@ const ProductProvider = ({ children }) => {
     }
   };
 
+  const getProduct = async (productID) => {
+    try {
+      const {status, data} = await axios.get(`/api/products/${productID}`);
+      if(status === 200) {
+        return data;
+      }
+    }catch(e) {
+      console.error(e);
+    }
+  }
+
   useEffect(() => {
     getData();
   }, []);
@@ -50,7 +62,7 @@ const ProductProvider = ({ children }) => {
 
   return (
     <ProductContext.Provider
-      value={{ productState, productDispatch, bestSellerProductData }}
+      value={{ productState, productDispatch, bestSellerProductData, getProduct }}
     >
       {children}
     </ProductContext.Provider>

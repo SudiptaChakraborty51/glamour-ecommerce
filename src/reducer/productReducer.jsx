@@ -4,6 +4,12 @@ const productReducer = (state, action) => {
         return {...state, products: action.payload};
     case 'INITIALIZE_CATEGORIES':
         return {...state, categories: action.payload};
+    case "SET_CART":
+        return {...state, cart: [action.payload]};
+    case "SET_WISHLIST":
+        return {...state, wishlist: [action.payload]};
+    case "SET_SINGLE_PRODUCT":
+        return {...state, singleProduct: action.payload};
     default:
         return state;
   }
