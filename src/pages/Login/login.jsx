@@ -26,7 +26,8 @@ const Login = () => {
     }
   };
 
-  const loginAsGuestHandler = () => {
+  const loginAsGuestHandler = (e) => {
+    e.preventDefault();
     setUserData(guestUserData);
     userLogin(guestUserData);
   };

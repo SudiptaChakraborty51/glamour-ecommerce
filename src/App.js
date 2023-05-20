@@ -10,6 +10,7 @@ import Cart from "./pages/Cart/cart";
 import Wishlist from "./pages/Wishlist/wishlist";
 import Login from "./pages/Login/login";
 import Signup from "./pages/Signup/signup";
+import RequireAuth from "./components/Auth/requireAuth";
 
 function App() {
   return (
@@ -20,8 +21,22 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<ProductListing />} />
         <Route path="/products/:productID" element={<ProductDetails />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/wishlist" element={<Wishlist />} />
+        <Route
+          path="/cart"
+          element={
+            <RequireAuth>
+              <Cart />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/wishlist"
+          element={
+            <RequireAuth>
+              <Wishlist />
+            </RequireAuth>
+          }
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>

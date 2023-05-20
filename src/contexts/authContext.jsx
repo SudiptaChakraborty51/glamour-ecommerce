@@ -31,6 +31,7 @@ const AuthProvider = ({ children }) => {
     } catch (e) {
       authDispatch({ type: "SET_LOGGEDIN", payload: false });
       console.error(e);
+      alert(e.response.data.errors);
     }
   };
 
@@ -48,6 +49,7 @@ const AuthProvider = ({ children }) => {
     } catch (e) {
       authDispatch({ type: "SET_LOGGEDIN", payload: false });
       console.error(e);
+      alert(e.response.data.errors);
     }
   };
 
