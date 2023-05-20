@@ -1,0 +1,28 @@
+.emptyWishlist {
+    text-align: center;
+    line-height: 0.5;
+}
+
+.emptyWishlist img {
+    width: 20%;
+    height: auto;
+    object-fit: cover;
+}
+
+.emptyWishlist h2 {
+    color: var(--primary-color);
+}
+
+.emptyWishlist button {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.wishlist {
+    text-align: center;
+}
