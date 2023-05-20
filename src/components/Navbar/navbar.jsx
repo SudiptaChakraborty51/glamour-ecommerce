@@ -3,6 +3,7 @@ import "./navbar.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { ProductContext } from "../../contexts/productContext";
 import { FilterContext } from "../../contexts/filterContext";
+import { AuthContext } from "../../contexts/authContext";
 
 const Navbar = () => {
   const { productState } = useContext(ProductContext);
@@ -10,6 +11,7 @@ const Navbar = () => {
   const [searchText, setSearchText] = useState("");
 
   const navigate = useNavigate();
+  const { authState } = useContext(AuthContext);
 
   useEffect(() => {
     filterDispatch({ type: "SEARCH", payload: searchText });
@@ -51,8 +53,12 @@ const Navbar = () => {
             <NavLink to="/wishlist">
               <i class="fa-solid fa-heart"></i>
             </NavLink>
-            <NavLink to="/login">
-              <i class="fa-solid fa-user"></i>
+            <NavLink to="/login" className={authState?.isLoggedIn ? "login-user" : ""}>
+              {authState?.isLoggedIn ? (
+                authState?.user.firstName
+              ) : (
+                <i class="fa-solid fa-user"></i>
+              )}
             </NavLink>
           </div>
         </div>

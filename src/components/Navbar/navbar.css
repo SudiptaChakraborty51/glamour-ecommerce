@@ -93,6 +93,15 @@ nav h1 {
   cursor: pointer;
 }
 
+.nav-icons .login-user {
+  background-color: var(--light-purple);
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0.2rem;
+  border-radius: 5px;
+} 
+
 .bottom-navbar {
   display: flex;
   justify-content: space-evenly;

@@ -19,7 +19,9 @@ const ProductListing = () => {
         </h2>
         <ul>
           {sortByPriceFilteredProducts?.map((product) => (
-            <ProductCard productsData={product} key={product._id} />
+            <li>
+              <ProductCard productsData={product} key={product._id} />
+            </li>
           ))}
         </ul>
       </div>
