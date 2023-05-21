@@ -21,8 +21,7 @@ export const products = [
       count: "2345"
     },
     inStock: true,
-    isBestSeller: false,
-    quantity: 0
+    isBestSeller: false
   },
   {
     _id: 'ce9a4bbf-0bbf-4fd9-a8b5-2890612c1aac',
@@ -41,8 +40,7 @@ export const products = [
       count: "1982"
     },
     inStock: true,
-    isBestSeller: true,
-    quantity: 0
+    isBestSeller: true
   },
   {
     _id: 'fa7e7bf3-f858-4d29-9717-3af872823d20',
@@ -61,8 +59,7 @@ export const products = [
       count: "6041"
     },
     inStock: false,
-    isBestSeller: false,
-    quantity: 0
+    isBestSeller: false
   },
   {
     _id: '9b94a23b-f366-4955-a5f3-b797f0310fea',
@@ -81,8 +78,7 @@ export const products = [
       count: "19820"
     },
     inStock: true,
-    isBestSeller: true,
-    quantity: 0
+    isBestSeller: true
   },
   {
     _id: '67190caa-369e-4d9a-ac46-0614b2fe3138',
@@ -101,8 +97,7 @@ export const products = [
       count: "2980"
     },
     inStock: false,
-    isBestSeller: false,
-    quantity: 0
+    isBestSeller: false
   },
   {
     _id: '4030410b-68a1-46f9-a8ad-82e3f5929dbe',
@@ -121,8 +116,7 @@ export const products = [
       count: "39820"
     },
     inStock: true,
-    isBestSeller: false,
-    quantity: 0
+    isBestSeller: false
   },
   {
     _id: '8332f751-1305-49a0-83c2-c25138bd44cc',
@@ -141,8 +135,7 @@ export const products = [
       count: "25820"
     },
     inStock: true,
-    isBestSeller: true,
-    quantity: 0
+    isBestSeller: true
   },
   {
     _id: '40cdc285-b45b-4eb6-ad26-d8fdb2c1c43f',
@@ -161,8 +154,7 @@ export const products = [
       count: "5820"
     },
     inStock: true,
-    isBestSeller: false,
-    quantity: 0
+    isBestSeller: false
   },
   {
     _id: 'aaa7c2ae-9dda-4352-a25a-d15f26f2c0f6',
@@ -181,8 +173,7 @@ export const products = [
       count: "19823"
     },
     inStock: true,
-    isBestSeller: false,
-    quantity: 0
+    isBestSeller: false
   },
   {
     _id: '0f231b44-7b5d-4d50-a9bd-8ac86f365f88',
@@ -201,8 +192,7 @@ export const products = [
       count: "3982"
     },
     inStock: true,
-    isBestSeller: false,
-    quantity: 0
+    isBestSeller: false
   },
   {
     _id: 'b94e51fb-31bc-466f-ac1a-6dc2902c2f77',
@@ -221,8 +211,7 @@ export const products = [
       count: "16856"
     },
     inStock: true,
-    isBestSeller: true,
-    quantity: 0
+    isBestSeller: true
   },
   {
     _id: 'f878445c-00fe-40c1-9f33-25992f9c51d6',
@@ -241,8 +230,7 @@ export const products = [
       count: "28553"
     },
     inStock: true,
-    isBestSeller: true,
-    quantity: 0
+    isBestSeller: true
   },
   {
     _id: '1b0e535b-0ce8-4f2f-8536-d33e7109d429',
@@ -261,8 +249,7 @@ export const products = [
       count: "17780"
     },
     inStock: true,
-    isBestSeller: false,
-    quantity: 0
+    isBestSeller: false
   },
   {
     _id: '96913dc6-0b50-48e7-81dd-273c4713a484',
@@ -281,8 +268,7 @@ export const products = [
       count: "1580"
     },
     inStock: true,
-    isBestSeller: true,
-    quantity: 0
+    isBestSeller: true
   },
   {
     _id: '01289a80-b93e-4f78-956f-e266059338b7',
@@ -301,8 +287,7 @@ export const products = [
       count: "2553"
     },
     inStock: true,
-    isBestSeller: true,
-    quantity: 0
+    isBestSeller: true
   },
   {
     _id: 'd839864c-3a6a-4f86-a170-f0f3d5eec78b',
@@ -321,8 +306,7 @@ export const products = [
       count: "1553"
     },
     inStock: false,
-    isBestSeller: false,
-    quantity: 0
+    isBestSeller: false
   },
   {
     _id: '4a202a31-7833-4501-9a37-36927e9379aa',
@@ -341,8 +325,7 @@ export const products = [
       count: "9593"
     },
     inStock: true,
-    isBestSeller: false,
-    quantity: 0
+    isBestSeller: false
   },
   {
     _id: '90ec8c76-3c9d-4728-b4f1-bb788b0288a0',
@@ -361,8 +344,7 @@ export const products = [
       count: "1981"
     },
     inStock: true,
-    isBestSeller: true,
-    quantity: 0
+    isBestSeller: true
   },
   {
     _id: 'f09cbec0-ee09-4fe0-aed6-d52b875ebbe5',
@@ -381,8 +363,7 @@ export const products = [
       count: "1081"
     },
     inStock: true,
-    isBestSeller: false,
-    quantity: 0
+    isBestSeller: false
   },
   {
     _id: '3278e20d-fa04-4793-8f61-6d8dee3d5b34',
@@ -401,8 +382,7 @@ export const products = [
       count: "19072"
     },
     inStock: true,
-    isBestSeller: true,
-    quantity: 0
+    isBestSeller: true
   },
   {
     _id: 'b5c17b38-1777-4613-8104-4582b7e3a4af',
@@ -421,8 +401,7 @@ export const products = [
       count: "1678"
     },
     inStock: true,
-    isBestSeller: true,
-    quantity: 0
+    isBestSeller: true
   },
   {
     _id: 'ff6cbcd5-4233-4bc6-81ad-2da168649bb5',
@@ -441,8 +420,7 @@ export const products = [
       count: "1678"
     },
     inStock: true,
-    isBestSeller: false,
-    quantity: 0
+    isBestSeller: false
   },
   {
     _id: '532ca778-4e5c-4888-a050-40adb5e27dde',
@@ -461,8 +439,7 @@ export const products = [
       count: "12078"
     },
     inStock: true,
-    isBestSeller: false,
-    quantity: 0
+    isBestSeller: false
   },
   {
     _id: 'b25ea8c2-c182-4548-a1db-c0530a96deaa',
@@ -481,8 +458,7 @@ export const products = [
       count: "1258"
     },
     inStock: true,
-    isBestSeller: true,
-    quantity: 0
+    isBestSeller: true
   },
   {
     _id: '52073a4a-7521-4c97-90c4-f0e9e73169af',
@@ -501,8 +477,7 @@ export const products = [
       count: "2035"
     },
     inStock: true,
-    isBestSeller: true,
-    quantity: 0
+    isBestSeller: true
   },
 ];
 
