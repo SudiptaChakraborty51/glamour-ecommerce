@@ -26,3 +26,15 @@
 .wishlist {
     text-align: center;
 }
+
+.wishlist-container {
+    padding: 2rem;
+}
+
+.wishlist-container ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-evenly;
+    list-style: none;
+}

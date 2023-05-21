@@ -44,3 +44,7 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+.apply-coupon-btn:hover {
+    background-color: transparent;
+}

@@ -30,6 +30,7 @@
 .cart-container {
     display: flex;
     justify-content: space-evenly;
+    padding: 2rem;
 }
 
 .cart-item-container {
