@@ -5,7 +5,6 @@ import EmptyCart from "./emptyCart";
 
 const Cart = () => {
   const { productState } = useContext(ProductContext);
-  console.log(productState?.cart);
   return (
       productState?.cart?.length === 0 ? <EmptyCart /> :
       <div className="cart">

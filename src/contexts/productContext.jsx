@@ -1,7 +1,8 @@
-import React, { createContext, useEffect, useReducer } from "react";
+import React, { createContext, useContext, useEffect, useReducer } from "react";
 import productReducer from "../reducer/productReducer";
 import axios from "axios";
-
+import { getCartItems } from "../utils/getCartItems";
+import { AuthContext } from "./authContext";
 export const ProductContext = createContext();
 
 const ProductProvider = ({ children }) => {
@@ -16,6 +17,10 @@ const ProductProvider = ({ children }) => {
     productReducer,
     initialState
   );
+
+  const {authState} = useContext(AuthContext);
+
+  const encodedToken = localStorage.getItem("token");
 
   const getData = async () => {
     try {
@@ -56,13 +61,26 @@ const ProductProvider = ({ children }) => {
     }
   };
 
-  useEffect(() => {
-    getData();
-  }, []);
+  const setItems = async () => {
+    try {
+      const cartResponse = await getCartItems(encodedToken);
+      if(cartResponse.status === 200) {
+        productDispatch({
+          type: "SET_CART",
+          payload: cartResponse?.data?.cart
+        });
+      }
+    }catch(error) {
+      console.error(error);
+    }
+  }
 
   useEffect(() => {
+    getData();
     getCategories();
-  }, []);
+    authState?.isLoggedIn && setItems();
+    // eslint-disable-next-line 
+  }, [productDispatch, authState?.isLoggedIn]);
 
   const bestSellerProductData = productState?.products?.filter(
     ({ isBestSeller }) => isBestSeller

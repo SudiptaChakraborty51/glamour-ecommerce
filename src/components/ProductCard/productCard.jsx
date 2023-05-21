@@ -1,15 +1,15 @@
 import React, { useContext } from "react";
 import "./productCard.css";
 import { useNavigate } from "react-router-dom";
-import { CartContext } from "../../contexts/cartContext";
 import { ProductContext } from "../../contexts/productContext";
 import { AuthContext } from "../../contexts/authContext";
+import { isItemInCart } from "../../utils/isItemInCart";
+import { addToCartHandler } from "../../utils/addToCartHandler";
 
 const ProductCard = ({ productsData }) => {
   const navigate = useNavigate();
   const { authState } = useContext(AuthContext);
-  const { productState } = useContext(ProductContext);
-  const { isItemInCart, addToCartHandler } = useContext(CartContext);
+  const { productState, productDispatch } = useContext(ProductContext);
   const {
     _id,
     name,
@@ -21,6 +21,7 @@ const ProductCard = ({ productsData }) => {
     ratings,
     isBestSeller,
   } = productsData;
+  
   return (
     <div className="product-card">
       <div className="card-tag">
@@ -55,10 +56,12 @@ const ProductCard = ({ productsData }) => {
             if (isItemInCart(productState?.cart, _id)) {
               navigate("/cart");
             } else {
-              addToCartHandler(productsData);
+              addToCartHandler(productsData, productDispatch);
+              alert("Item is added to Cart!");
             }
           } else {
             alert("Please login to proceed!");
+            navigate("/login");
           }
         }}
       >
