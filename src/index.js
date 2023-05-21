@@ -4,7 +4,6 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import "./index.css";
 import App from "./App";
-
 import ProductProvider from "./contexts/productContext";
 import FilterProvider from "./contexts/filterContext";
 import AuthProvider from "./contexts/authContext";

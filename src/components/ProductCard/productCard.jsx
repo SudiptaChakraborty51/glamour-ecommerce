@@ -5,6 +5,9 @@ import { ProductContext } from "../../contexts/productContext";
 import { AuthContext } from "../../contexts/authContext";
 import { isItemInCart } from "../../utils/isItemInCart";
 import { addToCartHandler } from "../../utils/addToCartHandler";
+import { addToWishlistHandler } from "../../utils/addToWishlistHandler";
+import {isItemInWishlist} from "../../utils/isItemInWishlist";
+import { removeFromWishlistHandler } from "../../utils/removeFromWishlistHandler";
 
 const ProductCard = ({ productsData }) => {
   const navigate = useNavigate();
@@ -26,7 +29,20 @@ const ProductCard = ({ productsData }) => {
     <div className="product-card">
       <div className="card-tag">
         {isBestSeller && <span className="card-badge">BESTSELLER</span>}
-        <span role="button" disabled={true}>
+        <span role="button" className={`${isItemInWishlist(productState?.wishlist, _id) ? `wishlist-toggle` : `wishlist-icon`}`} onClick={() => {
+          if (authState.isLoggedIn) {
+            if (isItemInWishlist(productState?.wishlist, _id)) {
+              removeFromWishlistHandler(productDispatch, _id);
+              alert("Item is removed from Wishlist!");
+            } else {
+              addToWishlistHandler(productsData, productDispatch);
+              alert("Item is added to Wishlist!");
+            }
+          } else {
+            alert("Please login to proceed!");
+            navigate("/login");
+          }
+        }}>
           <i className="fa fa-heart" aria-hidden="true"></i>
         </span>
       </div>
@@ -50,7 +66,7 @@ const ProductCard = ({ productsData }) => {
         </p>
       </div>
       <button
-        className="add-to-cart"
+        className={`${isItemInCart(productState?.cart, _id) ? `go-to-cart` : `add-to-cart`}`}
         onClick={() => {
           if (authState.isLoggedIn) {
             if (isItemInCart(productState?.cart, _id)) {

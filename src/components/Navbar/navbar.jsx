@@ -8,10 +8,11 @@ import { AuthContext } from "../../contexts/authContext";
 const Navbar = () => {
   const { productState } = useContext(ProductContext);
   const { filterDispatch } = useContext(FilterContext);
+  const { authState } = useContext(AuthContext);
+
   const [searchText, setSearchText] = useState("");
 
   const navigate = useNavigate();
-  const { authState } = useContext(AuthContext);
 
   useEffect(() => {
     filterDispatch({ type: "SEARCH", payload: searchText });
@@ -47,11 +48,19 @@ const Navbar = () => {
             <NavLink to="/products">
               <i class="fa-solid fa-bag-shopping"></i>
             </NavLink>
-            <NavLink to="/cart">
+            <NavLink to="/cart" className="icon-navlink">
               <i class="fa-solid fa-cart-shopping"></i>
+              {productState?.cart?.length > 0 && (
+                <span className="icon-badge">{productState?.cart?.length}</span>
+              )}
             </NavLink>
-            <NavLink to="/wishlist">
+            <NavLink to="/wishlist" className="icon-navlink">
               <i class="fa-solid fa-heart"></i>
+              {productState?.wishlist?.length > 0 && (
+                <span className="icon-badge">
+                  {productState?.wishlist?.length}
+                </span>
+              )}
             </NavLink>
             <NavLink
               to={authState?.isLoggedIn ? "/account-details" : "/login"}

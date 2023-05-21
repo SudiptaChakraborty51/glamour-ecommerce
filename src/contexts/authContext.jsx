@@ -18,24 +18,22 @@ const AuthProvider = ({ children }) => {
   const [authState, authDispatch] = useReducer(authReducer, initialAuth);
 
   const userLogin = async (loginData) => {
-    console.log(location?.state?.from?.pathname);
     try {
       const { status, data } = await axios.post(`/api/auth/login`, loginData);
-      console.log(loginData);
       if (status === 200) {
-        authDispatch({ type: "SET_LOGGEDIN", payload: true });
+        localStorage.setItem("token", data?.encodedToken);
+        authDispatch({ type: "SET_LOGGEDIN_TRUE", payload: true });
         authDispatch({ type: "SET_USER", payload: data?.foundUser });
         authDispatch({ type: "SET_TOKEN", payload: data?.encodedToken });
-        localStorage.setItem("token", data?.encodedToken);
         alert("Login Successful!");
         navigate(
-          location?.state?.from?.pathname 
+          location?.state?.from?.pathname
             ? location?.state?.from?.pathname
             : "/"
         );
       }
     } catch (e) {
-      authDispatch({ type: "SET_LOGGEDIN", payload: false });
+      authDispatch({ type: "SET_LOGGEDIN_FALSE", payload: false });
       console.error(e);
       alert(e.response.data.errors);
     }
@@ -45,25 +43,25 @@ const AuthProvider = ({ children }) => {
     try {
       const { status, data } = await axios.post(`/api/auth/signup`, signupData);
       if (status === 201) {
-        authDispatch({ type: "SET_LOGGEDIN", payload: true });
+        localStorage.setItem("token", data?.encodedToken);
+        authDispatch({ type: "SET_LOGGEDIN_TRUE", payload: true });
         authDispatch({ type: "SET_USER", payload: data?.createdUser });
         authDispatch({ type: "SET_TOKEN", payload: data?.encodedToken });
-        localStorage.setItem("token", data?.encodedToken);
         alert("Signup Successful!");
         navigate("/");
       }
     } catch (e) {
-      authDispatch({ type: "SET_LOGGEDIN", payload: false });
+      authDispatch({ type: "SET_LOGGEDIN_FALSE", payload: false });
       console.error(e);
       alert(e.response.data.errors);
     }
   };
 
   const userLogout = () => {
-    authDispatch({ type: "SET_LOGGEDIN", payload: false });
+    localStorage.removeItem("token");
+    authDispatch({ type: "SET_LOGGEDIN_FALSE", payload: false });
     authDispatch({ type: "SET_USER", payload: {} });
     authDispatch({ type: "SET_TOKEN", payload: "" });
-    localStorage.setItem("token", "");
     alert("You're logged out!");
     navigate("/");
   };
