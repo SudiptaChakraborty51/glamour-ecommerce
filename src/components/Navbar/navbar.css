@@ -57,6 +57,7 @@ nav h1 {
   display: flex;
   gap: 3rem;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .search-bar input {

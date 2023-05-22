@@ -1,97 +1,121 @@
 .product-card {
-    background-color: #fefffe;
-    cursor: pointer;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-radius: 10px;
-    width: 300px;
-    height: 32.5rem;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    padding: 5px;
+  background-color: #fefffe;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  width: 300px;
+  height: 32.5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 5px;
+}
+
+.out-of-stock-product-card {
+  opacity: 0.5;
+}
+
+.out-of-stock-overlay {
+  position: absolute;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  background-color: grey;
+  font-size: 1.5rem;
+  width: 300px;
+  height: 160px;
+  padding-top: 140px;
+  text-align: center;
+  opacity: 0.7;
 }
 
 .product-card .content-product-card {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .product-card:hover {
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .card-tag {
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+
+.card-tag button {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
 }
 
 .card-tag .wishlist-icon i {
-    color: lightgrey;
+  color: lightgrey;
 }
 
 .card-tag .wishlist-toggle i {
-    color: red;
+  color: red;
 }
 
 .card-badge {
-    color: green;
+  color: green;
 }
 
 .name-rating {
-    display: flex;
-    align-items: center;
-    padding: 0 10px;
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 1rem;
 }
 
 .card-star {
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 3px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
 }
 
 .card-star i {
-    color: #facc15;
+  color: #facc15;
 }
 
 .price-text {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .originalPrice {
-    text-decoration: line-through;
-    opacity: 0.5;
+  text-decoration: line-through;
+  opacity: 0.5;
 }
 
 .off {
-    color: green;
-    font-weight: bold;
+  color: green;
+  font-weight: bold;
 }
 
 .add-to-cart {
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 18px;
-    cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .go-to-cart {
-    background-color: var(--light-purple);
-    color: var(--primary-color);
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 18px;
-    cursor: pointer;
+  background-color: var(--light-purple);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 .size {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }

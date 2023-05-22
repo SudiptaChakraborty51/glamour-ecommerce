@@ -6,7 +6,7 @@ import { AuthContext } from "../../contexts/authContext";
 import { isItemInCart } from "../../utils/isItemInCart";
 import { addToCartHandler } from "../../utils/addToCartHandler";
 import { addToWishlistHandler } from "../../utils/addToWishlistHandler";
-import {isItemInWishlist} from "../../utils/isItemInWishlist";
+import { isItemInWishlist } from "../../utils/isItemInWishlist";
 import { removeFromWishlistHandler } from "../../utils/removeFromWishlistHandler";
 
 const ProductCard = ({ productsData }) => {
@@ -22,35 +22,50 @@ const ProductCard = ({ productsData }) => {
     originalPrice,
     off,
     ratings,
+    inStock,
     isBestSeller,
   } = productsData;
-  
+
   return (
-    <div className="product-card">
+    <div
+      className={
+        inStock ? "product-card" : "product-card out-of-stock-product-card"
+      }
+    >
       <div className="card-tag">
         {isBestSeller && <span className="card-badge">BESTSELLER</span>}
-        <span role="button" className={`${isItemInWishlist(productState?.wishlist, _id) ? `wishlist-toggle` : `wishlist-icon`}`} onClick={() => {
-          if (authState.isLoggedIn) {
-            if (isItemInWishlist(productState?.wishlist, _id)) {
-              removeFromWishlistHandler(productDispatch, _id);
-              alert("Item is removed from Wishlist!");
+        <button
+          className={`${
+            isItemInWishlist(productState?.wishlist, _id)
+              ? `wishlist-toggle`
+              : `wishlist-icon`
+          }`}
+          style={{ cursor: !inStock && "not-allowed" }}
+          disabled={!inStock && true}
+          onClick={() => {
+            if (authState.isLoggedIn) {
+              if (isItemInWishlist(productState?.wishlist, _id)) {
+                removeFromWishlistHandler(productDispatch, _id);
+                alert("Item is removed from Wishlist!");
+              } else {
+                addToWishlistHandler(productsData, productDispatch);
+                alert("Item is added to Wishlist!");
+              }
             } else {
-              addToWishlistHandler(productsData, productDispatch);
-              alert("Item is added to Wishlist!");
+              alert("Please login to proceed!");
+              navigate("/login");
             }
-          } else {
-            alert("Please login to proceed!");
-            navigate("/login");
-          }
-        }}>
+          }}
+        >
           <i className="fa fa-heart" aria-hidden="true"></i>
-        </span>
+        </button>
       </div>
       <div
         onClick={() => navigate(`/products/${_id}`)}
         className="content-product-card"
       >
         <img src={image} alt={name} />
+        {!inStock && <b className="out-of-stock-overlay">Out of Stock</b>}
         <div className="name-rating">
           <h4>{name.length > 50 ? name.substring(0, 50) + "..." : name}</h4>
           <div className="card-star">
@@ -66,7 +81,11 @@ const ProductCard = ({ productsData }) => {
         </p>
       </div>
       <button
-        className={`${isItemInCart(productState?.cart, _id) ? `go-to-cart` : `add-to-cart`}`}
+        style={{ cursor: !inStock && "not-allowed" }}
+        disabled={!inStock && true}
+        className={`${
+          isItemInCart(productState?.cart, _id) ? `go-to-cart` : `add-to-cart`
+        }`}
         onClick={() => {
           if (authState.isLoggedIn) {
             if (isItemInCart(productState?.cart, _id)) {

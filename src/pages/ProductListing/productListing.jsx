@@ -18,11 +18,11 @@ const ProductListing = () => {
           <small>({sortByPriceFilteredProducts?.length})</small>
         </h2>
         <ul>
-          {sortByPriceFilteredProducts?.map((product) => (
+          {sortByPriceFilteredProducts.length > 0 ? sortByPriceFilteredProducts?.map((product) => (
             <li>
               <ProductCard productsData={product} key={product._id} />
             </li>
-          ))}
+          )) : <h4>There are no products for selected filters.</h4>}
         </ul>
       </div>
     </div>
