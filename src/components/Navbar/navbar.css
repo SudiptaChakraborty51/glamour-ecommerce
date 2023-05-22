@@ -130,20 +130,6 @@ nav h1 {
   background-color: white;
 }
 
-.navlink:last-child {
-  background: rgb(243, 232, 255);
-  background: linear-gradient(
-    90deg,
-    rgba(243, 232, 255, 1) 0%,
-    rgba(216, 180, 254, 1) 37%,
-    rgba(192, 132, 252, 1) 71%
-  );
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  color: var(--primary-color);
-}
-
 .navlink {
   text-decoration: none;
   color: grey;

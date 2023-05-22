@@ -92,7 +92,6 @@ const Navbar = () => {
             {categoryName}
           </NavLink>
         ))}
-        <NavLink className="navlink">Offers</NavLink>
       </div>
     </div>
   );
