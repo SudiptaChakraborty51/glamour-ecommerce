@@ -1,0 +1,51 @@
+.modal-wrapper {
+    background: #342e2ebf;
+    width: 100vw;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    z-index: 9999;
+}
+
+.modal {
+    padding: 1rem 2rem 3rem 2rem;
+    background-color: white;
+    text-align: center;
+    width: 400px;
+    height: 200px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-main div {
+    border: 1px solid grey;
+    text-align: left;
+    padding: 0.5rem;
+    margin: 1rem 0;
+}
+
+.modal-main div label{
+    cursor: pointer;
+}
+
+.fa-times {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.modal button {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}

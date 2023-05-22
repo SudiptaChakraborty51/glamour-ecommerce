@@ -7,9 +7,13 @@
 .cart-price {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 300px;
-    height: 500px;
+    height: auto;
     border-radius: 10px;
     padding: 30px;
+}
+
+.price-calculate-content {
+    line-height: 0.2;
 }
 
 .price-calculate-content div {
@@ -47,4 +51,21 @@
 
 .apply-coupon-btn:hover {
     background-color: transparent;
+}
+
+.coupon {
+    display: flex;
+    align-items: center;
+}
+
+.coupon img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.coupon .couponName {
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    border: 2px dashed var(--light-purple);
 }

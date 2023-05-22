@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import { handleCartQuantityChange } from "../../utils/handleCartQuantityChange";
-import { ProductContext } from "../../contexts/productContext";
-import { removeFromCartHandler } from "../../utils/removeFromCartHandler";
-import { isItemInWishlist } from "../../utils/isItemInWishlist";
-import { addToWishlistHandler } from "../../utils/addToWishlistHandler";
+import { handleCartQuantityChange } from "../../../utils/handleCartQuantityChange";
+import { ProductContext } from "../../../contexts/productContext";
+import { removeFromCartHandler } from "../../../utils/removeFromCartHandler";
+import { isItemInWishlist } from "../../../utils/isItemInWishlist";
+import { addToWishlistHandler } from "../../../utils/addToWishlistHandler";
 import { useNavigate } from "react-router-dom";
 import "./cartCard.css";
 

@@ -1,6 +1,6 @@
 export const getPriceDetails = (myCart) => {
     return myCart.reduce(({price, discount}, item) =>{
-      price += item.price * item.qty;
+      price += (item.price * item.qty);
       discount += (item.originalPrice - item.price) * item.qty;
       return {price, discount};
     }, {

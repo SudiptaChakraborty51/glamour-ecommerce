@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import "./cartPrice.css";
-import { ProductContext } from "../../contexts/productContext";
-import { getPriceDetails } from "../../utils/getPriceDetails";
+import { ProductContext } from "../../../contexts/productContext";
+import { getPriceDetails } from "../../../utils/getPriceDetails";
+import { OrderContext } from "../../../contexts/orderContext";
+import coupon from "../../../assets/coupon.png";
 
 const CartPrice = ({ setCouponModal }) => {
   const { productState } = useContext(ProductContext);
@@ -10,11 +12,18 @@ const CartPrice = ({ setCouponModal }) => {
     0
   );
 
-  const coupon = 0;
+  const shippingCharge = 10;
+
+  const { couponValue, setCouponValue, orderDispatch } =
+    useContext(OrderContext);
 
   const { price, discount } = getPriceDetails(productState?.cart);
-  const totalAmt = parseFloat(price - discount - coupon).toFixed(2);
-  const totalDiscount = parseFloat(discount + coupon).toFixed(2);
+  const totalAmt = parseFloat(
+    price + shippingCharge - discount - couponValue.value
+  ).toFixed(2);
+  const totalDiscount = parseFloat(
+    discount + parseFloat(couponValue.value)
+  ).toFixed(2);
 
   return (
     <div className="cart-price">
@@ -46,9 +55,30 @@ const CartPrice = ({ setCouponModal }) => {
           <p>FREE</p>
         </div>
         <div>
-          <p>Coupon Discount</p>
-          <p>₹ {coupon.toFixed(2)}</p>
+          <p>Shipping Charges</p>
+          <p>₹ {shippingCharge}</p>
         </div>
+        <div>
+          <p>Coupon Discount</p>
+          <p>
+            {parseFloat(couponValue.value) !== 0 && "- "}₹{" "}
+            {parseFloat(couponValue.value).toFixed(2)}
+          </p>
+        </div>
+        {parseFloat(couponValue.value) !== 0 && (
+          <div className="coupon">
+            <p className="couponName">
+              <img src={coupon} alt="coupon" />
+              <p>{couponValue.couponName}</p>
+            </p>
+            <p
+              className="remove-coupon"
+              onClick={() => setCouponValue({ couponName: "", value: 0 })}
+            >
+              <i className="fa fa-times" aria-hidden="true" />
+            </p>
+          </div>
+        )}
         <hr />
         <div>
           <h3>Total Amount</h3>
