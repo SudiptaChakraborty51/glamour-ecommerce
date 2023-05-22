@@ -1,0 +1,13 @@
+.top-brands {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-bottom: 2rem;
+}
+
+.top-brands img {
+  width: 10%;
+  height: 10%;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

@@ -7,6 +7,7 @@ import { ProductContext } from "../../contexts/productContext";
 import ProductCard from "../../components/ProductCard/productCard";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Brand from "../../components/Brand/brand";
 
 const Home = () => {
   const responsive = {
@@ -28,6 +29,7 @@ const Home = () => {
       items: 1,
     },
   };
+
   const { bestSellerProductData } = useContext(ProductContext);
   return (
     <div className="home">
@@ -45,6 +47,8 @@ const Home = () => {
           </button>
         </div>
       </div>
+      <h2>Top Brands</h2>
+        <Brand />
       <h2>First Purchase Offers</h2>
       <div className="offers">
         <div className="offer-card">
