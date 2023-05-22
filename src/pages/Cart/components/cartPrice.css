@@ -69,3 +69,7 @@
     padding: 0 5px;
     border: 2px dashed var(--light-purple);
 }
+
+.coupon i {
+    color: red;
+}
