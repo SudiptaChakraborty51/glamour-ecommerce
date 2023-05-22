@@ -1,5 +1,4 @@
 export const initialOrder = {
-  orderAddress: {},
   priceDetails: {
     price: 0,
     discount: 0,
@@ -23,11 +22,6 @@ export const orderReducer = (state, action) => {
           totalAmt,
           totalDiscount,
         },
-      };
-    case "SET_ORDER_ADDRESS":
-      return {
-        ...state,
-        orderAddress: { ...action.payload },
       };
     case "RESET_PRICE":
       return initialOrder;

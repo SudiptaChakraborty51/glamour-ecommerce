@@ -3,7 +3,8 @@ import "./cartPrice.css";
 import { ProductContext } from "../../../contexts/productContext";
 import { getPriceDetails } from "../../../utils/getPriceDetails";
 import { OrderContext } from "../../../contexts/orderContext";
-import coupon from "../../../assets/coupon.png";
+import couponImg from "../../../assets/coupon.png";
+import { useNavigate } from "react-router-dom";
 
 const CartPrice = ({ setCouponModal }) => {
   const { productState } = useContext(ProductContext);
@@ -11,20 +12,19 @@ const CartPrice = ({ setCouponModal }) => {
     (acc, { qty }) => acc + qty,
     0
   );
-
   const shippingCharge = 10;
 
   const { couponValue, setCouponValue, orderDispatch } =
     useContext(OrderContext);
 
   const { price, discount } = getPriceDetails(productState?.cart);
+  const coupon = parseFloat(couponValue.value);
   const totalAmt = parseFloat(
-    price + shippingCharge - discount - couponValue.value
+    price + shippingCharge - discount - coupon
   ).toFixed(2);
-  const totalDiscount = parseFloat(
-    discount + parseFloat(couponValue.value)
-  ).toFixed(2);
+  const totalDiscount = parseFloat(discount + coupon).toFixed(2);
 
+  const navigate = useNavigate();
   return (
     <div className="cart-price">
       <div className="coupon-content">
@@ -61,14 +61,13 @@ const CartPrice = ({ setCouponModal }) => {
         <div>
           <p>Coupon Discount</p>
           <p>
-            {parseFloat(couponValue.value) !== 0 && "- "}₹{" "}
-            {parseFloat(couponValue.value).toFixed(2)}
+            {coupon !== 0 && "- "}₹ {coupon.toFixed(2)}
           </p>
         </div>
-        {parseFloat(couponValue.value) !== 0 && (
+        {coupon !== 0 && (
           <div className="coupon">
             <p className="couponName">
-              <img src={coupon} alt="coupon" />
+              <img src={couponImg} alt="coupon" />
               <p>{couponValue.couponName}</p>
             </p>
             <p
@@ -88,7 +87,18 @@ const CartPrice = ({ setCouponModal }) => {
         <p className="save-msg">
           You will save ₹ {totalDiscount} on this order
         </p>
-        <button className="checkout-btn">Checkout</button>
+        <button
+          className="checkout-btn"
+          onClick={() => {
+            orderDispatch({
+              type: "SET_PRICE_DETAILS",
+              payload: { price, discount, coupon, totalAmt, totalDiscount },
+            });
+            navigate("/checkout");
+          }}
+        >
+          Checkout
+        </button>
       </div>
     </div>
   );

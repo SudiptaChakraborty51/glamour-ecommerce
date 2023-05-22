@@ -7,12 +7,26 @@ import { getWishlistItems } from "../utils/getWishlistItems";
 
 export const ProductContext = createContext();
 
+const testUserAddress = [
+  {
+    id: 1,
+    userName: "Sudipta Chakraborty",
+    houseNumber: "168/A, Ajay Nagar",
+    city: "Jadavpur, Kolkata",
+    state: "West Bengal",
+    country: "India",
+    pincode: 700032,
+    mobileNumber: 9831578456,
+  },
+];
+
 const ProductProvider = ({ children }) => {
   const initialState = {
     products: [],
     cart: [],
     wishlist: [],
     categories: [],
+    address: testUserAddress,
   };
 
   const [productState, productDispatch] = useReducer(

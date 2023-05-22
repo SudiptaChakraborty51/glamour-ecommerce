@@ -14,7 +14,6 @@ const OrderProvider = ({ children }) => {
     <OrderContext.Provider
       value={{
         priceDetails: orderState.priceDetails,
-        orderAddress: orderState.orderAddress,
         orderDispatch,
         couponValue,
         setCouponValue,
