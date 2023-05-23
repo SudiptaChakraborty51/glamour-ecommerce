@@ -3,12 +3,14 @@ import "./checkoutPrice.css";
 import { ProductContext } from "../../../contexts/productContext";
 import { OrderContext } from "../../../contexts/orderContext";
 import couponImg from "../../../assets/coupon.png";
+import { useNavigate } from "react-router-dom";
 
 const CheckoutPrice = () => {
-  const { productState } = useContext(ProductContext);
+  const { productState, productDispatch } = useContext(ProductContext);
   const { couponValue, priceDetails } =
     useContext(OrderContext);
   const { price, discount, coupon, totalAmt } = priceDetails;
+  const navigate = useNavigate();
   return (
     <div className="checkout-price">
       <hr />
@@ -76,10 +78,12 @@ const CheckoutPrice = () => {
       <button
         className="place-order-btn"
         onClick={() => {
-          if (productState?.address?.length <= 1) {
+          if (productState?.address?.length === 0 ) {
             alert("Please select address!");
           } else {
             alert("Order Placed!");
+            navigate("/");
+            productDispatch({ type: "SET_CART", payload: [] });
           }
         }}
       >
