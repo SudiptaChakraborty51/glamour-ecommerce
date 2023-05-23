@@ -21,6 +21,8 @@ const testUserAddress = [
 ];
 
 const ProductProvider = ({ children }) => {
+  const { authState } = useContext(AuthContext);
+
   const initialState = {
     products: [],
     cart: [],
@@ -33,8 +35,6 @@ const ProductProvider = ({ children }) => {
     productReducer,
     initialState
   );
-
-  const { authState } = useContext(AuthContext);
 
   const encodedToken = localStorage.getItem("token");
 

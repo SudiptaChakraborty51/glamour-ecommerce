@@ -1,3 +1,29 @@
 .checkout {
     text-align: center;
 }
+
+.checkout-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2rem;
+}
+
+.checkout-address {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    width: 500px;
+    height: fit-content;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.add-new-address-btn {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}

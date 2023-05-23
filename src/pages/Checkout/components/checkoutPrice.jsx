@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import "./checkoutPrice.css";
-import { ProductContext } from "../../contexts/productContext";
-import { OrderContext } from "../../contexts/orderContext";
-import couponImg from "../../assets/coupon.png";
+import { ProductContext } from "../../../contexts/productContext";
+import { OrderContext } from "../../../contexts/orderContext";
+import couponImg from "../../../assets/coupon.png";
 
 const CheckoutPrice = () => {
-  const { productState, productDispatch } = useContext(ProductContext);
-  const { couponValue, priceDetails, orderdispatch, order, setOrder } =
+  const { productState } = useContext(ProductContext);
+  const { couponValue, priceDetails } =
     useContext(OrderContext);
   const { price, discount, coupon, totalAmt } = priceDetails;
   return (

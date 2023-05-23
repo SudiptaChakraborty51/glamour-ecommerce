@@ -33,6 +33,7 @@
 .checkout-calculate-content div {
     display: flex;
     justify-content: space-between;
+    line-height: 0.2;
 }
 
 .checkout-calculate-content div p:first-child {
