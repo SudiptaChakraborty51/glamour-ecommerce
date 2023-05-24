@@ -11,15 +11,6 @@ const CheckoutPrice = () => {
     useContext(OrderContext);
   const { price, discount, coupon, totalAmt } = priceDetails || {};
   const {addressDetails} = useContext(OrderContext);
-  const {
-    userName,
-    houseNumber,
-    city,
-    state,
-    pincode,
-    country,
-    mobileNumber
-  } = addressDetails;
 
   const navigate = useNavigate();
   
@@ -87,17 +78,19 @@ const CheckoutPrice = () => {
       </div>
       <h3>Deliver To</h3>
       {
-        Object.keys(addressDetails).length === 0 ? <p>No address is added!</p> : 
-         <div>
-          <strong>{userName}</strong>
+        addressDetails ?
+         <div className="delivery-address">
+          <strong>{addressDetails?.userName}</strong>
                 <p>
-                  {houseNumber}, {city}, {state}
+                  {addressDetails?.houseNumber}, {addressDetails?.city}, {addressDetails?.state}
                 </p>
                 <p>
-                  Pincode: {pincode}, {country}
+                  Pincode: {addressDetails?.pincode}, {addressDetails?.country}
                 </p>
-                <p>Phone Number: {mobileNumber}</p>
+                <p>Phone Number: {addressDetails?.mobileNumber}</p>
         </div>
+        :
+        <p>No address is added!</p>
       }
       <hr />
       <button

@@ -49,7 +49,14 @@ function App() {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/account-details" element={<AccountDetails />} />
+        <Route
+          path="/account-details"
+          element={
+            <RequireAuth>
+              <AccountDetails />
+            </RequireAuth>
+          }
+        />
       </Routes>
     </div>
   );

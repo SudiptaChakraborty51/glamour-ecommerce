@@ -2,12 +2,14 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "../../contexts/authContext";
 import "./accountDetails.css";
 import { ProductContext } from "../../contexts/productContext";
-import AddressForm from "../Checkout/components/addressForm";
+import AddressForm from "../../utils/addressForm";
+import EditAddress from "../../utils/editAddress";
 
 const AccountDetails = () => {
   const { authState, userLogout } = useContext(AuthContext);
   const { productState, productDispatch } = useContext(ProductContext);
   const [isAddAddress, setIsAddAddress] = useState(false);
+
   return (
     <div
       className="account-details"
@@ -39,6 +41,7 @@ const AccountDetails = () => {
             country,
             pincode,
             mobileNumber,
+            isEdit
           }) => {
             return (
               <div key={id}>
@@ -50,6 +53,7 @@ const AccountDetails = () => {
                   Pincode: {pincode}, {country}
                 </p>
                 <p>Phone Number: {mobileNumber}</p>
+                {isEdit && <EditAddress editAddressId={id}/>}
                 <button
                   className="edit-address-btn"
                   onClick={() =>

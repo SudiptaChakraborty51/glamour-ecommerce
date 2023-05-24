@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./addressForm.css";
-import { ProductContext } from "../../../contexts/productContext";
+import { ProductContext } from "../contexts/productContext";
 import { v4 as uuid } from "uuid";
 
 const AddressForm = ({ setIsAddAddress }) => {

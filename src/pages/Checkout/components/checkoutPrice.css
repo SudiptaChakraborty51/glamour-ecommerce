@@ -50,3 +50,7 @@
     font-size: 18px;
     cursor: pointer;
 }
+
+.delivery-address {
+    text-align: left;
+}
