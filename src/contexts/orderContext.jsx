@@ -11,6 +11,7 @@ const OrderProvider = ({ children }) => {
   return (
     <OrderContext.Provider
       value={{
+        addressDetails: orderState.addressDetails,
         priceDetails: orderState.priceDetails,
         orderDispatch,
         couponValue,

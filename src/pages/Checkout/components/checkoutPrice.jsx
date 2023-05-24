@@ -6,11 +6,23 @@ import couponImg from "../../../assets/coupon.png";
 import { useNavigate } from "react-router-dom";
 
 const CheckoutPrice = () => {
-  const { productState, productDispatch } = useContext(ProductContext);
+  const { productState } = useContext(ProductContext);
   const { couponValue, priceDetails } =
     useContext(OrderContext);
-  const { price, discount, coupon, totalAmt } = priceDetails;
+  const { price, discount, coupon, totalAmt } = priceDetails || {};
+  const {addressDetails} = useContext(OrderContext);
+  const {
+    userName,
+    houseNumber,
+    city,
+    state,
+    pincode,
+    country,
+    mobileNumber
+  } = addressDetails;
+
   const navigate = useNavigate();
+  
   return (
     <div className="checkout-price">
       <hr />
@@ -55,7 +67,7 @@ const CheckoutPrice = () => {
         <div>
           <p>Coupon Discount</p>
           <p>
-            {coupon !== 0 && "- "}₹ {coupon.toFixed(2)}
+            {coupon !== 0 && "- "}₹ {coupon?.toFixed(2)}
           </p>
         </div>
         {coupon !== 0 && (
@@ -74,6 +86,19 @@ const CheckoutPrice = () => {
         <hr />
       </div>
       <h3>Deliver To</h3>
+      {
+        Object.keys(addressDetails).length === 0 ? <p>No address is added!</p> : 
+         <div>
+          <strong>{userName}</strong>
+                <p>
+                  {houseNumber}, {city}, {state}
+                </p>
+                <p>
+                  Pincode: {pincode}, {country}
+                </p>
+                <p>Phone Number: {mobileNumber}</p>
+        </div>
+      }
       <hr />
       <button
         className="place-order-btn"
@@ -83,7 +108,6 @@ const CheckoutPrice = () => {
           } else {
             alert("Order Placed!");
             navigate("/");
-            productDispatch({ type: "SET_CART", payload: [] });
           }
         }}
       >

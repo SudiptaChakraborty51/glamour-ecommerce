@@ -1,13 +1,23 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./addressContainer.css";
 import { ProductContext } from "../../../contexts/productContext";
+import { OrderContext } from "../../../contexts/orderContext";
 
 const AddressContainer = () => {
   const { productState } = useContext(ProductContext);
   const [selectedAddress, setSelectedAddress] = useState(
     productState?.address[0]
   );
-  console.log(selectedAddress);
+  const { orderDispatch } = useContext(OrderContext);
+
+  useEffect(() => {
+    orderDispatch({
+      type: "SET_ADDRESS_DETAILS",
+      payload: selectedAddress,
+    });
+    // eslint-disable-next-line
+  }, [selectedAddress]);
+
   return productState?.address?.length === 0 ? (
     <p>No address is added!</p>
   ) : (

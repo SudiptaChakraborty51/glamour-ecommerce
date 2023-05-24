@@ -1,4 +1,5 @@
 export const initialOrder = {
+  addressDetails: {},
   priceDetails: {
     price: 0,
     discount: 0,
@@ -8,6 +9,7 @@ export const initialOrder = {
   },
 };
 export const orderReducer = (state, action) => {
+  console.log(action.payload);
   switch (action.type) {
     case "SET_PRICE_DETAILS":
       const { price, discount, coupon, totalAmt, totalDiscount } =
@@ -25,6 +27,11 @@ export const orderReducer = (state, action) => {
       };
     case "RESET_PRICE":
       return initialOrder;
+    case "SET_ADDRESS_DETAILS":
+      return {
+        ...state,
+        addressDetails: action.payload,
+      };
     default:
       return state;
   }
