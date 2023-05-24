@@ -8,6 +8,7 @@ import ProductProvider from "./contexts/productContext";
 import FilterProvider from "./contexts/filterContext";
 import AuthProvider from "./contexts/authContext";
 import OrderProvider from "./contexts/orderContext";
+import ScrollToTop from "./components/scrollToTop";
 
 import { makeServer } from "./server";
 
@@ -17,6 +18,7 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <Router>
+      <ScrollToTop />
       <OrderProvider>
         <AuthProvider>
           <ProductProvider>
