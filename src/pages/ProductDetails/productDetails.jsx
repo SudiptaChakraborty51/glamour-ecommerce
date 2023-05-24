@@ -13,12 +13,12 @@ const ProductDetails = () => {
   const { productID } = useParams();
   const { productState, getProduct, productDispatch } =
     useContext(ProductContext);
-    const {authState} = useContext(AuthContext);
+  const { authState } = useContext(AuthContext);
 
-    const [singleProduct, setSingleProduct] = useState({});
+  const [singleProduct, setSingleProduct] = useState({});
 
   console.log(productState?.products);
-  const navigate =useNavigate();
+  const navigate = useNavigate();
 
   const getSingleProduct = async () => {
     try {
@@ -46,7 +46,7 @@ const ProductDetails = () => {
     offer,
     ratings,
     inStock,
-    isBestSeller
+    isBestSeller,
   } = singleProduct;
 
   return (
@@ -55,25 +55,31 @@ const ProductDetails = () => {
       <div className="details">
         <div className="card-tag">
           {isBestSeller && <span className="badge-bestseller">BESTSELLER</span>}
-          <button 
-          disabled={!inStock && true}
-          style={{cursor: !inStock && "not-allowed"}}
-          className={`${isItemInWishlist(productState?.wishlist, _id) ? `wishlist-toggle` : `wishlist-icon`}`} onClick={() => {
-          if (authState.isLoggedIn) {
-            if (isItemInWishlist(productState?.wishlist, _id)) {
-              removeFromWishlistHandler(productDispatch, _id);
-              alert("Item is removed from Wishlist!");
-            } else {
-              addToWishlistHandler(singleProduct, productDispatch);
-              alert("Item is added to Wishlist!");
-            }
-          } else {
-            alert("Please login to proceed!");
-            navigate("/login");
-          }
-        }}>
-          <i className="fa fa-heart" aria-hidden="true"></i>
-        </button>
+          <button
+            disabled={!inStock && true}
+            style={{ cursor: !inStock && "not-allowed" }}
+            className={`${
+              isItemInWishlist(productState?.wishlist, _id)
+                ? `wishlist-toggle`
+                : `wishlist-icon`
+            }`}
+            onClick={() => {
+              if (authState.isLoggedIn) {
+                if (isItemInWishlist(productState?.wishlist, _id)) {
+                  removeFromWishlistHandler(productDispatch, _id);
+                  alert("Item is removed from Wishlist!");
+                } else {
+                  addToWishlistHandler(singleProduct, productDispatch);
+                  alert("Item is added to Wishlist!");
+                }
+              } else {
+                alert("Please login to proceed!");
+                navigate("/login");
+              }
+            }}
+          >
+            <i className="fa fa-heart" aria-hidden="true"></i>
+          </button>
         </div>
         <div className="details-content">
           <h2>{name}</h2>
@@ -110,26 +116,35 @@ const ProductDetails = () => {
             <span className="out-of-stock">{!inStock && "Out of Stock"}</span>
           </p>
           <button
-          disabled={!inStock && true}
-          style={{cursor: !inStock && "not-allowed", opacity: !inStock && "0.5"}}
-        className={`${isItemInCart(productState?.cart, _id) ? `go-to-cart` : `add-to-cart`}`}
-        onClick={() => {
-          if (authState.isLoggedIn) {
-            if (isItemInCart(productState?.cart, _id)) {
-              navigate("/cart");
-            } else {
-              addToCartHandler(singleProduct, productDispatch);
-              alert("Item is added to Cart!");
-            }
-          } else {
-            alert("Please login to proceed!");
-            navigate("/login");
-          }
-        }}
-      >
-        <i className="fa fa-shopping-cart"></i>{" "}
-        {isItemInCart(productState?.cart, _id) ? "Go to Cart" : "Add to Cart"}
-      </button>
+            disabled={!inStock && true}
+            style={{
+              cursor: !inStock && "not-allowed",
+              opacity: !inStock && "0.5",
+            }}
+            className={`${
+              isItemInCart(productState?.cart, _id)
+                ? `go-to-cart`
+                : `add-to-cart`
+            }`}
+            onClick={() => {
+              if (authState.isLoggedIn) {
+                if (isItemInCart(productState?.cart, _id)) {
+                  navigate("/cart");
+                } else {
+                  addToCartHandler(singleProduct, productDispatch);
+                  alert("Item is added to Cart!");
+                }
+              } else {
+                alert("Please login to proceed!");
+                navigate("/login");
+              }
+            }}
+          >
+            <i className="fa fa-shopping-cart"></i>{" "}
+            {isItemInCart(productState?.cart, _id)
+              ? "Go to Cart"
+              : "Add to Cart"}
+          </button>
         </div>
       </div>
     </div>

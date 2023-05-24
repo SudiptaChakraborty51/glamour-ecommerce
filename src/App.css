@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
 
 :root {
-    --primary-color: #7e22ce;
-    --light-purple: #d8b4fe;
-    --super-light-purple: #faf5ff;
-    --dark-purple: #3b0764;
-    --light-green : rgb(11, 190, 11);
+  --primary-color: #7e22ce;
+  --light-purple: #d8b4fe;
+  --super-light-purple: #faf5ff;
+  --dark-purple: #3b0764;
+  --light-green: rgb(11, 190, 11);
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
 }

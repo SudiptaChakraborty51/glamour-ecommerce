@@ -1,25 +1,25 @@
 .filters {
-    padding: 10px 30px;
+  padding: 10px 30px;
 }
 
 .filters .filter-heading {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .filters .filter-heading button {
-    background-color: transparent;
-    text-decoration: underline;
-    border: none;
-    color: var(--primary-color);
-    font-size: 16px;
-    cursor: pointer;
+  background-color: transparent;
+  text-decoration: underline;
+  border: none;
+  color: var(--primary-color);
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .filters .filter-heading button:hover {
-    color: var(--dark-purple);
+  color: var(--dark-purple);
 }
 
 .filters .price-filter,
@@ -27,23 +27,25 @@
 .category-filter,
 .brand-filter,
 .price-range-filter {
-    font-size: 14px;
-    display: flex;
-    flex-direction: column;
-    padding: 5px 15px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 15px;
 }
 
 .filters div label {
-    cursor: pointer;
-    padding: 5px 0;
+  cursor: pointer;
+  padding: 5px 0;
 }
 
-.filters input[type="checkbox"], .filters input[type="radio"], .filters input[type="range"] {
-    accent-color: var(--primary-color);
+.filters input[type="checkbox"],
+.filters input[type="radio"],
+.filters input[type="range"] {
+  accent-color: var(--primary-color);
 }
 
 .price-range-filter .price-range {
-    display: flex;
-    justify-content: space-between;
-    gap: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
 }

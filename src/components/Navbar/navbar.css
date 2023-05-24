@@ -1,7 +1,7 @@
 .navbar {
   position: sticky;
   width: 100%;
-  top:0;
+  top: 0;
   z-index: 9999;
   overflow: hidden;
 }
@@ -118,7 +118,7 @@ nav h1 {
   padding: 0.2rem;
   border-radius: 5px;
   color: var(--primary-color);
-} 
+}
 
 .bottom-navbar {
   display: flex;

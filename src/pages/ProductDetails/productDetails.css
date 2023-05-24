@@ -1,75 +1,74 @@
 .product-details {
-    display: flex;
-    background-color: #fefffe;
-    margin: 3rem 5rem;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    align-items: center;
+  display: flex;
+  background-color: #fefffe;
+  margin: 3rem 5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  align-items: center;
 }
 
 .product-details img {
-    width: 50%;
-    height: 100%;
-    object-fit: cover;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .details {
-    border-left: 1px solid #ccc;
-    padding: 10px;
-    margin: auto;
+  border-left: 1px solid #ccc;
+  padding: 10px;
+  margin: auto;
 }
 
 .details-content {
-    padding: 0 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-
 .facility-div {
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    width: 80%;
-    padding: 10px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 80%;
+  padding: 10px;
 }
 
 .fa-tag {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .product-offer {
-    padding: 10px;
-    background-color: lightgrey;
-    width: 50%;
-    margin-bottom: 10px;
-    opacity: 0.7;
+  padding: 10px;
+  background-color: lightgrey;
+  width: 50%;
+  margin-bottom: 10px;
+  opacity: 0.7;
 }
 
 .in-stock {
-    color: green;
+  color: green;
 }
 
 .out-of-stock {
-    color: red;
+  color: red;
 }
 
 .size-brand-reviews {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .size-brand-reviews i {
-    color: #facc15;
+  color: #facc15;
 }
 
 .price-content {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .badge-bestseller {
-    background-color: green;
-    color: white;
-    padding: 10px
+  background-color: green;
+  color: white;
+  padding: 10px;
 }

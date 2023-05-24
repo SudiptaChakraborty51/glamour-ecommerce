@@ -41,7 +41,7 @@ const AccountDetails = () => {
             country,
             pincode,
             mobileNumber,
-            isEdit
+            isEdit,
           }) => {
             return (
               <div key={id}>
@@ -53,7 +53,7 @@ const AccountDetails = () => {
                   Pincode: {pincode}, {country}
                 </p>
                 <p>Phone Number: {mobileNumber}</p>
-                {isEdit && <EditAddress editAddressId={id}/>}
+                {isEdit && <EditAddress editAddressId={id} />}
                 <button
                   className="edit-address-btn"
                   onClick={() =>

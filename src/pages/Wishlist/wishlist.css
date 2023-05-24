@@ -1,40 +1,40 @@
 .emptyWishlist {
-    text-align: center;
-    line-height: 0.5;
+  text-align: center;
+  line-height: 0.5;
 }
 
 .emptyWishlist img {
-    width: 20%;
-    height: auto;
-    object-fit: cover;
+  width: 20%;
+  height: auto;
+  object-fit: cover;
 }
 
 .emptyWishlist h2 {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .emptyWishlist button {
-    background-color: var(--primary-color);
-    color: white;
-    font-size: 18px;
-    border-radius: 5px;
-    border: none;
-    padding: 0.5rem;
-    cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
 }
 
 .wishlist {
-    text-align: center;
+  text-align: center;
 }
 
 .wishlist-container {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 .wishlist-container ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: space-evenly;
-    list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-evenly;
+  list-style: none;
 }

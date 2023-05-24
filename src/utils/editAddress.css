@@ -1,9 +1,9 @@
 .edit-address-form {
-    background: #342e2ebf;
-    width: 100vw;
-    position: fixed;
-    height: 100vh;
-    top: 0;
-    right: 0;
-    z-index: 9999;
+  background: #342e2ebf;
+  width: 100vw;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  z-index: 9999;
 }

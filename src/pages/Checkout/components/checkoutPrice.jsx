@@ -7,13 +7,12 @@ import { useNavigate } from "react-router-dom";
 
 const CheckoutPrice = () => {
   const { productState } = useContext(ProductContext);
-  const { couponValue, priceDetails } =
-    useContext(OrderContext);
+  const { couponValue, priceDetails } = useContext(OrderContext);
   const { price, discount, coupon, totalAmt } = priceDetails || {};
-  const {addressDetails} = useContext(OrderContext);
+  const { addressDetails } = useContext(OrderContext);
 
   const navigate = useNavigate();
-  
+
   return (
     <div className="checkout-price">
       <hr />
@@ -77,26 +76,26 @@ const CheckoutPrice = () => {
         <hr />
       </div>
       <h3>Deliver To</h3>
-      {
-        addressDetails ?
-         <div className="delivery-address">
+      {addressDetails ? (
+        <div className="delivery-address">
           <strong>{addressDetails?.userName}</strong>
-                <p>
-                  {addressDetails?.houseNumber}, {addressDetails?.city}, {addressDetails?.state}
-                </p>
-                <p>
-                  Pincode: {addressDetails?.pincode}, {addressDetails?.country}
-                </p>
-                <p>Phone Number: {addressDetails?.mobileNumber}</p>
+          <p>
+            {addressDetails?.houseNumber}, {addressDetails?.city},{" "}
+            {addressDetails?.state}
+          </p>
+          <p>
+            Pincode: {addressDetails?.pincode}, {addressDetails?.country}
+          </p>
+          <p>Phone Number: {addressDetails?.mobileNumber}</p>
         </div>
-        :
+      ) : (
         <p>No address is added!</p>
-      }
+      )}
       <hr />
       <button
         className="place-order-btn"
         onClick={() => {
-          if (productState?.address?.length === 0 ) {
+          if (productState?.address?.length === 0) {
             alert("Please select address!");
           } else {
             alert("Order Placed!");

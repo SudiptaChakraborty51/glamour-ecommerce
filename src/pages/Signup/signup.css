@@ -27,17 +27,17 @@
 }
 
 .signup input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    box-sizing: border-box;
-    outline: none;
-    border: 1px solid grey;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid grey;
 }
 
 .signup input:focus {
-    border: 2px solid var(--primary-color);
+  border: 2px solid var(--primary-color);
 }
 
 .signup label {
@@ -45,31 +45,31 @@
 }
 
 .signup button {
-    width: 100%;
-    background-color: var(--primary-color);
-    border: none;
-    color: white;
-    padding: 10px;
-    font-size: 15px;
-    cursor: pointer;
-    border-radius: 10px;
+  width: 100%;
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 10px;
 }
 
 .signup button:hover {
-    background-color: var(--dark-purple);
+  background-color: var(--dark-purple);
 }
 
 .signup p {
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
-    color: blue
-  }
-  
-  .signup p i {
-      color: black;
-  }
-  
-  .signup p:hover {
-    color: var(--primary-color);
-  }
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  color: blue;
+}
+
+.signup p i {
+  color: black;
+}
+
+.signup p:hover {
+  color: var(--primary-color);
+}

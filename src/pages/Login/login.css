@@ -65,11 +65,11 @@
   text-decoration: none;
   text-align: center;
   cursor: pointer;
-  color: blue
+  color: blue;
 }
 
 .login p i {
-    color: black;
+  color: black;
 }
 
 .login p:hover {

@@ -99,8 +99,8 @@
 }
 
 footer {
-    margin-top: 2rem;
-    bottom: 0;
+  margin-top: 2rem;
+  bottom: 0;
 }
 
 footer i {
@@ -108,74 +108,74 @@ footer i {
 }
 
 .newsletter {
-    height: 40vh;
-    background-color: var(--dark-purple);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
+  height: 40vh;
+  background-color: var(--dark-purple);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 
 .input-container {
-    width: 50%;
-    height: 40px;
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid lightgray;
+  width: 50%;
+  height: 40px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid lightgray;
 }
 
 .input-container input {
-    border: none;
-    flex: 8;
-    padding-left: 20px;
+  border: none;
+  flex: 8;
+  padding-left: 20px;
 }
 
 .input-container button {
-    flex: 1;
-    border: none;
-    background-color: var(--primary-color);
-    color: white;
-    cursor: pointer
+  flex: 1;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
 }
 
 .facilities {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 2rem 0;
-    text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2rem 0;
+  text-align: center;
 }
 
 .facilities .facilities-icon {
-    border: 2px solid var(--primary-color);
-    border-radius: 50%;
-    padding: 0.5rem;
-    font-size: 20px;
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-size: 20px;
 }
 
 .social-links {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .copyright {
-    background-color: var(--dark-purple);
-    color: white;
-    text-align: center;
-    font-size: 14px;
-    padding: 0.8rem;
+  background-color: var(--dark-purple);
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  padding: 0.8rem;
 }
 
 .copyright div {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .copyright div a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .shopnow-btn {

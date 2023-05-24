@@ -48,7 +48,7 @@ const Home = () => {
         </div>
       </div>
       <h2>Top Brands</h2>
-        <Brand />
+      <Brand />
       <h2>First Purchase Offers</h2>
       <div className="offers">
         <div className="offer-card">

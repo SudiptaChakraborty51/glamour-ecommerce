@@ -33,7 +33,7 @@ const CartCard = ({ product }) => {
                 handleCartQuantityChange(productDispatch, _id, "decrement")
               }
               disabled={product.qty > 1 ? false : true}
-              style={{cursor: product.qty <= 1 && "not-allowed"}}
+              style={{ cursor: product.qty <= 1 && "not-allowed" }}
             >
               -
             </button>

@@ -122,8 +122,15 @@ const AddressForm = ({ setIsAddAddress }) => {
             }
           />
           <div className="address-form-btns">
-            <button type="submit" className="add-btn">Add</button>
-            <button onClick={() => setIsAddAddress(false)} className="cancel-btn">Cancel</button>
+            <button type="submit" className="add-btn">
+              Add
+            </button>
+            <button
+              onClick={() => setIsAddAddress(false)}
+              className="cancel-btn"
+            >
+              Cancel
+            </button>
           </div>
         </form>
       </div>
