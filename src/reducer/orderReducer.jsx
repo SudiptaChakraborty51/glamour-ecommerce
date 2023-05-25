@@ -7,6 +7,7 @@ export const initialOrder = {
     totalAmt: 0,
     totalDiscount: 0,
   },
+  orderHistory: [],
 };
 export const orderReducer = (state, action) => {
   console.log(action.payload);
@@ -27,6 +28,11 @@ export const orderReducer = (state, action) => {
       };
     case "RESET_PRICE":
       return initialOrder;
+    case "SET_ORDER_HISTORY":
+      return {
+        ...state,
+        orderHistory: [...state.orderHistory, action.payload],
+      };
     case "SET_ADDRESS_DETAILS":
       return {
         ...state,

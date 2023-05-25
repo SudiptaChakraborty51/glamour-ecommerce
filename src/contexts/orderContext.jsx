@@ -10,6 +10,7 @@ const OrderProvider = ({ children }) => {
   return (
     <OrderContext.Provider
       value={{
+        orderHistory: orderState.orderHistory,
         addressDetails: orderState.addressDetails,
         priceDetails: orderState.priceDetails,
         orderDispatch,
