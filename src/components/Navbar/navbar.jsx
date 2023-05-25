@@ -40,6 +40,7 @@ const Navbar = () => {
               onChange={(e) => {
                 setSearchText(e.target.value);
                 e.target.value.trim() !== "" && navigate("/products");
+                filterDispatch({ type: "CLEAR_ALL_FILTERS", payload: "" });
               }}
             />
           </div>
