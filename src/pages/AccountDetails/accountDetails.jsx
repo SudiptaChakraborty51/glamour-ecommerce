@@ -1,7 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { AuthContext } from "../../contexts/authContext";
 import "./accountDetails.css";
-import { ProductContext } from "../../contexts/productContext";
 import { NavLink, Outlet } from "react-router-dom";
 
 const AccountDetails = () => {
