@@ -1,11 +1,22 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import ProductCard from "../../components/ProductCard/productCard";
 import "./productListing.css";
 import Sidebar from "../../components/Sidebar/sidebar";
 import { FilterContext } from "../../contexts/filterContext";
+import { ProductContext } from "../../contexts/productContext";
 
 const ProductListing = () => {
   const { sortByPriceFilteredProducts } = useContext(FilterContext);
+  const {setLoader} = useContext(ProductContext);
+
+  useEffect(() => {
+    setLoader(true);
+    const id = setTimeout(() => {
+      setLoader(false);
+    }, 500);
+    return () => clearTimeout(id);
+    // eslint-disable-next-line
+  }, [])
 
   return (
     <div className="products">

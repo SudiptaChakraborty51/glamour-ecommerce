@@ -16,10 +16,16 @@ import Checkout from "./pages/Checkout/checkout";
 import UserDetails from "./pages/AccountDetails/components/userDetails";
 import AddressDetails from "./pages/AccountDetails/components/addressDetails";
 import OrderHistory from "./pages/AccountDetails/components/orderHistory";
+import Loader from "./components/Loader/loader";
+import { useContext } from "react";
+import { ProductContext } from "./contexts/productContext";
 
 function App() {
+  const {loader} = useContext(ProductContext);
+
   return (
     <div className="App">
+      {loader && <Loader />}
       <Navbar />
       <Routes>
         <Route path="/mockman" element={<Mockman />} />

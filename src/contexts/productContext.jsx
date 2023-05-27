@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useReducer } from "react";
+import React, { createContext, useContext, useEffect, useReducer, useState } from "react";
 import productReducer from "../reducer/productReducer";
 import axios from "axios";
 import { getCartItems } from "../utils/getCartItems";
@@ -22,6 +22,7 @@ const testUserAddress = [
 
 const ProductProvider = ({ children }) => {
   const { authState } = useContext(AuthContext);
+  const [loader, setLoader] = useState(false);
 
   const initialState = {
     products: [],
@@ -104,10 +105,15 @@ const ProductProvider = ({ children }) => {
   };
 
   useEffect(() => {
+    setLoader(true);
     getData();
     getCategories();
     !authState?.isLoggedIn && clearItems();
     authState?.isLoggedIn && setItems();
+    const id = setTimeout(() => {
+      setLoader(false);
+    }, 1000);
+    return () => clearTimeout(id);
     // eslint-disable-next-line
   }, [productDispatch, authState?.isLoggedIn]);
 
@@ -124,6 +130,8 @@ const ProductProvider = ({ children }) => {
         productDispatch,
         bestSellerProductData,
         getProduct,
+        loader, 
+        setLoader
       }}
     >
       {children}
