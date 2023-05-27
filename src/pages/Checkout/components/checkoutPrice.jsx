@@ -7,6 +7,7 @@ import couponImg from "../../../assets/coupon.png";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/authContext";
 import { orderReducer } from "../../../reducer/orderReducer";
+import clearCartItems from "../../../utils/clearCartItems";
 
 const CheckoutPrice = () => {
   const { productState, productDispatch } = useContext(ProductContext);
@@ -95,6 +96,7 @@ const CheckoutPrice = () => {
           `Payment of Rs. ${totalAmt} is Succesful !`
         );
         Popper();
+        clearCartItems(productDispatch, productState);
         productDispatch({type: "SET_CART", payload: []})
         navigate("/account-details/orderHistory");
       },

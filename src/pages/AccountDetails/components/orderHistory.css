@@ -25,6 +25,9 @@
 
 .order-history-main .order-history-right {
     padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .order-history-right-card {
