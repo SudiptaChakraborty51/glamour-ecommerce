@@ -112,7 +112,7 @@ const ProductProvider = ({ children }) => {
     authState?.isLoggedIn && setItems();
     const id = setTimeout(() => {
       setLoader(false);
-    }, 1000);
+    }, 500);
     return () => clearTimeout(id);
     // eslint-disable-next-line
   }, [productDispatch, authState?.isLoggedIn]);

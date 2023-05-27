@@ -7,6 +7,7 @@ import couponImg from "../../../assets/coupon.png";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/authContext";
 import clearCartItems from "../../../utils/clearCartItems";
+import { toast } from "react-toastify";
 
 const CheckoutPrice = () => {
   const { productState, productDispatch } = useContext(ProductContext);
@@ -69,7 +70,7 @@ const CheckoutPrice = () => {
       "https://checkout.razorpay.com/v1/checkout.js"
     );
     if (!res) {
-      alert("Razorpay SDK failed to load, check you internet connection");
+      toast.error("Razorpay SDK failed to load, check you internet connection");
       return;
     }
     const options = {
@@ -91,7 +92,7 @@ const CheckoutPrice = () => {
           type: "SET_ORDER_HISTORY",
           payload: orderData,
         });
-        alert(
+        toast.success(
           `Payment of Rs. ${totalAmt} is Succesful !`
         );
         Popper();
@@ -115,7 +116,7 @@ const CheckoutPrice = () => {
 
   const placeOrderHandler = () => {
     if(totalAmt === 0) {
-      alert("Please add products to the cart!");
+      toast.error("Please add products to the cart!");
       navigate("/products");
     } else {
       displayRazorpay();
@@ -205,7 +206,7 @@ const CheckoutPrice = () => {
         className="place-order-btn"
         onClick={() => {
           if (productState?.address?.length === 0) {
-            alert("Please select address!");
+            toast.warn("Please select address!");
           } else {
             placeOrderHandler();
           }

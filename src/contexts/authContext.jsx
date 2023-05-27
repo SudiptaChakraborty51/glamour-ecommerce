@@ -1,7 +1,9 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useContext, useReducer } from "react";
 import authReducer from "../reducer/authReducer";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { OrderContext } from "./orderContext";
 
 export const AuthContext = createContext();
 
@@ -11,6 +13,8 @@ const AuthProvider = ({ children }) => {
     user: {},
     token: "",
   };
+
+  const {orderDispatch} = useContext(OrderContext);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -25,7 +29,7 @@ const AuthProvider = ({ children }) => {
         authDispatch({ type: "SET_LOGGEDIN_TRUE", payload: true });
         authDispatch({ type: "SET_USER", payload: data?.foundUser });
         authDispatch({ type: "SET_TOKEN", payload: data?.encodedToken });
-        alert("Login Successful!");
+        toast.success("Login Successful!");
         navigate(
           location?.state?.from?.pathname
             ? location?.state?.from?.pathname
@@ -35,7 +39,7 @@ const AuthProvider = ({ children }) => {
     } catch (e) {
       authDispatch({ type: "SET_LOGGEDIN_FALSE", payload: false });
       console.error(e);
-      alert(e.response.data.errors);
+      toast.error(e.response.data.errors[0]);
     }
   };
 
@@ -47,13 +51,13 @@ const AuthProvider = ({ children }) => {
         authDispatch({ type: "SET_LOGGEDIN_TRUE", payload: true });
         authDispatch({ type: "SET_USER", payload: data?.createdUser });
         authDispatch({ type: "SET_TOKEN", payload: data?.encodedToken });
-        alert("Signup Successful!");
+        toast.success("Signup Successful!");
         navigate("/");
       }
     } catch (e) {
       authDispatch({ type: "SET_LOGGEDIN_FALSE", payload: false });
       console.error(e);
-      alert(e.response.data.errors);
+      toast.error(e.response.data.errors[0]);
     }
   };
 
@@ -62,7 +66,8 @@ const AuthProvider = ({ children }) => {
     authDispatch({ type: "SET_LOGGEDIN_FALSE", payload: false });
     authDispatch({ type: "SET_USER", payload: {} });
     authDispatch({ type: "SET_TOKEN", payload: "" });
-    alert("You're logged out!");
+    orderDispatch({type: "CLEAR_ORDER_HISTORY"});
+    toast.success("You're logged out!");
     navigate("/");
   };
 

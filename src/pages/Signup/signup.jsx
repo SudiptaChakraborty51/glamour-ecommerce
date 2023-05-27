@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import "./signup.css";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/authContext";
+import { toast } from "react-toastify";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -23,9 +24,9 @@ const Signup = () => {
       !userDetails?.password.trim() ||
       !userDetails?.confirmPassword.trim()
     ) {
-      alert("Enter valid input!");
+      toast.error("Enter valid input!");
     } else if (userDetails?.password !== userDetails?.confirmPassword) {
-      alert("Password & Confirm password should match!");
+      toast.error("Password & Confirm password should match!");
     } else {
       userSignup(userDetails);
     }

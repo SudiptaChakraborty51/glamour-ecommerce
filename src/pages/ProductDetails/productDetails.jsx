@@ -8,6 +8,7 @@ import { removeFromWishlistHandler } from "../../utils/removeFromWishlistHandler
 import { addToWishlistHandler } from "../../utils/addToWishlistHandler";
 import { isItemInCart } from "../../utils/isItemInCart";
 import { addToCartHandler } from "../../utils/addToCartHandler";
+import { toast } from "react-toastify";
 
 const ProductDetails = () => {
   const { productID } = useParams();
@@ -67,13 +68,13 @@ const ProductDetails = () => {
               if (authState.isLoggedIn) {
                 if (isItemInWishlist(productState?.wishlist, _id)) {
                   removeFromWishlistHandler(productDispatch, _id);
-                  alert("Item is removed from Wishlist!");
+                  toast.success("Item is removed from Wishlist!");
                 } else {
                   addToWishlistHandler(singleProduct, productDispatch);
-                  alert("Item is added to Wishlist!");
+                  toast.success("Item is added to Wishlist!");
                 }
               } else {
-                alert("Please login to proceed!");
+                toast.warn("Please login to proceed!");
                 navigate("/login");
               }
             }}
@@ -132,10 +133,10 @@ const ProductDetails = () => {
                   navigate("/cart");
                 } else {
                   addToCartHandler(singleProduct, productDispatch);
-                  alert("Item is added to Cart!");
+                  toast.success("Item is added to Cart!");
                 }
               } else {
-                alert("Please login to proceed!");
+                toast.warn("Please login to proceed!");
                 navigate("/login");
               }
             }}

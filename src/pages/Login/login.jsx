@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import "./login.css";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/authContext";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const Login = () => {
   const loginHandler = (e) => {
     e.preventDefault();
     if (!userData.email.trim() || !userData.password.trim()) {
-      alert("Enter valid input!");
+      toast.error("Enter valid input!");
     } else {
       userLogin(userData);
     }

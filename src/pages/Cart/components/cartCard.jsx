@@ -6,6 +6,7 @@ import { isItemInWishlist } from "../../../utils/isItemInWishlist";
 import { addToWishlistHandler } from "../../../utils/addToWishlistHandler";
 import { useNavigate } from "react-router-dom";
 import "./cartCard.css";
+import { toast } from "react-toastify";
 
 const CartCard = ({ product }) => {
   const { _id, name, image, size, price, originalPrice, off } = product;
@@ -55,7 +56,7 @@ const CartCard = ({ product }) => {
           className="remove-cart-btn"
           onClick={() => {
             removeFromCartHandler(productDispatch, _id);
-            alert("Item is removed from Cart!");
+            toast.success("Item is removed from Cart!");
           }}
         >
           Remove From Cart
@@ -67,7 +68,7 @@ const CartCard = ({ product }) => {
               navigate("/wishlist");
             } else {
               addToWishlistHandler(product, productDispatch);
-              alert("Item is added to Wishlist!");
+              toast.success("Item is added to Wishlist!");
             }
           }}
         >

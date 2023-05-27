@@ -19,6 +19,8 @@ import OrderHistory from "./pages/AccountDetails/components/orderHistory";
 import Loader from "./components/Loader/loader";
 import { useContext } from "react";
 import { ProductContext } from "./contexts/productContext";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const {loader} = useContext(ProductContext);
@@ -71,6 +73,18 @@ function App() {
           <Route path="orderHistory" element={<OrderHistory />}/>
         </Route>
       </Routes>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 }
