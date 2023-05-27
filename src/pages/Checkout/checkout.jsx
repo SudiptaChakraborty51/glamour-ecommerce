@@ -22,7 +22,7 @@ const Checkout = () => {
             <hr />
             <AddressContainer />
             <button
-              onClick={() => navigate("/account-details")}
+              onClick={() => navigate("/account-details/addressDetails")}
               className="add-new-address-btn"
             >
               Add new Address

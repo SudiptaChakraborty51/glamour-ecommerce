@@ -63,7 +63,7 @@ const Navbar = () => {
               )}
             </NavLink>
             <NavLink
-              to={authState?.isLoggedIn ? "/account-details" : "/login"}
+              to={authState?.isLoggedIn ? "/account-details/userDetails" : "/login"}
               className={authState?.isLoggedIn ? "login-user" : ""}
             >
               {authState?.isLoggedIn ? (

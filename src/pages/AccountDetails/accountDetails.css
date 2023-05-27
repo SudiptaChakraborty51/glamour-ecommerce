@@ -12,10 +12,10 @@
 .account-details-div .account-details-nav {
   display: flex;
   justify-content: space-between;
+  background-color: var(--primary-color);
 }
 
 .account-details-nav .profile-tab{
-  background-color: var(--primary-color);
   color: white;
   font-size: 18px;;
   text-decoration: none;
