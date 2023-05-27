@@ -13,6 +13,9 @@ import Signup from "./pages/Signup/signup";
 import RequireAuth from "./components/Auth/requireAuth";
 import AccountDetails from "./pages/AccountDetails/accountDetails";
 import Checkout from "./pages/Checkout/checkout";
+import UserDetails from "./pages/AccountDetails/components/userDetails";
+import AddressDetails from "./pages/AccountDetails/components/addressDetails";
+import OrderHistory from "./pages/AccountDetails/components/orderHistory";
 
 function App() {
   return (
@@ -56,7 +59,11 @@ function App() {
               <AccountDetails />
             </RequireAuth>
           }
-        />
+        >
+          <Route path="userDetails" element={<UserDetails />} />
+          <Route path="addressDetails" element={<AddressDetails />}/>
+          <Route path="orderHistory" element={<OrderHistory />}/>
+        </Route>
       </Routes>
     </div>
   );

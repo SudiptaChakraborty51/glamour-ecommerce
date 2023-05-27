@@ -4,6 +4,7 @@
   position: fixed;
   height: 100vh;
   top: 0;
+  right: 0;
   z-index: 9999;
 }
 

@@ -2,16 +2,25 @@
   text-align: center;
 }
 
-.account-details h3 {
-  text-align: center;
-}
-
 .account-details .account-details-div {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  width: 400px;
-  margin: auto;
+  width: 550px;
+  margin: 0rem auto 5rem;
   text-align: left;
-  padding: 1rem;
+}
+
+.account-details-div .account-details-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.account-details-nav .profile-tab{
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 18px;;
+  text-decoration: none;
+  padding: 1rem 1.7rem;
+  text-align: center;
 }
 
 .account-details .logout-btn {
@@ -67,3 +76,9 @@
 .profile-address-content {
   width: 100vw;
 }
+
+.user-details, 
+.address-details {
+  padding: 1rem;
+}
+

@@ -1,10 +1,12 @@
 import React, { useContext } from "react";
 import "./checkoutPrice.css";
+import confetti from 'canvas-confetti';
 import { ProductContext } from "../../../contexts/productContext";
 import { OrderContext } from "../../../contexts/orderContext";
 import couponImg from "../../../assets/coupon.png";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/authContext";
+import { orderReducer } from "../../../reducer/orderReducer";
 
 const CheckoutPrice = () => {
   const { productState, productDispatch } = useContext(ProductContext);
@@ -13,7 +15,7 @@ const CheckoutPrice = () => {
   const { addressDetails } = useContext(OrderContext);
   const {orderDispatch} = useContext(OrderContext);
 
-  // const {user: {firstName, lastName, email}} = useContext(AuthContext);
+  const {authState} = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -33,6 +35,34 @@ const CheckoutPrice = () => {
       document.body.appendChild(script);
     });
   };
+
+  const Popper = () => {
+    var end = Date.now() + 3 * 1000;
+    // go Buckeyes!
+    var colors = ['#7e22ce', '#d8b4fe'];
+
+    (function frame() {
+      confetti({
+        particleCount: 2,
+        angle: 40,
+        spread: 55,
+        origin: { x: 0 },
+        colors: colors,
+      });
+      confetti({
+        particleCount: 2,
+        angle: 140,
+        spread: 55,
+        origin: { x: 1 },
+        colors: colors,
+      });
+
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    })();
+  };
+
 
   const displayRazorpay = async () => {
     const res = await loadScript(
@@ -56,7 +86,7 @@ const CheckoutPrice = () => {
           deliveryAddress: addressDetails,
           paymentId: response.razorpay_payment_id,
         };
-
+        console.log(orderData);
         orderDispatch({
           type: "SET_ORDER_HISTORY",
           payload: orderData,
@@ -64,15 +94,15 @@ const CheckoutPrice = () => {
         alert(
           `Payment of Rs. ${totalAmt} is Succesful !`
         );
+        Popper();
         productDispatch({type: "SET_CART", payload: []})
-        orderDispatch({type: "RESET_PRICE", payload: {}})
-        navigate("/order-history");
+        navigate("/account-details/orderHistory");
       },
-      // prefill: {
-      //   name: `${firstName} ${lastName}`,
-      //   email: email,
-      //   contact: "9831578456",
-      // },
+      prefill: {
+        name: `${authState?.user?.firstName} ${authState?.user?.lastName}`,
+        email: authState?.user?.email,
+        contact: "9831578456",
+      },
       theme: {
         color: "#7e22ce",
       },
