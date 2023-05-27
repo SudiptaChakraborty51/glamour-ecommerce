@@ -6,7 +6,6 @@ import { OrderContext } from "../../../contexts/orderContext";
 import couponImg from "../../../assets/coupon.png";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/authContext";
-import { orderReducer } from "../../../reducer/orderReducer";
 import clearCartItems from "../../../utils/clearCartItems";
 
 const CheckoutPrice = () => {

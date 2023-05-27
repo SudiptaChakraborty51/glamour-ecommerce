@@ -18,6 +18,10 @@
 }
 
 .top-navbar p {
+  font-size: 14px;
+}
+
+.top-navbar p {
   animation: 2s anim-lineUp ease-out infinite;
 }
 
@@ -50,7 +54,6 @@ nav {
 
 nav h1 {
   color: var(--primary-color);
-  cursor: pointer;
 }
 
 .right-nav {
@@ -137,5 +140,4 @@ nav h1 {
 
 .nav-link {
   text-decoration: none;
-  font-size: 22px;
 }
