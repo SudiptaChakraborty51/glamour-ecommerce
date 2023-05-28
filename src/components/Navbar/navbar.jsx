@@ -18,6 +18,14 @@ const Navbar = () => {
     filterDispatch({ type: "SEARCH", payload: searchText });
   }, [searchText, filterDispatch]);
 
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  const selectedCatogoryStyle = (categoryName) => {
+    if(categoryName === selectedCategory) {
+      return {color: "var(--primary-color)"}
+    }
+  }
+
   return (
     <div className="navbar">
       <div className="top-navbar">
@@ -79,14 +87,16 @@ const Navbar = () => {
         {productState?.categories?.map(({ _id, categoryName }) => (
           <NavLink
             className="navlink"
+            style={selectedCatogoryStyle(categoryName)}
             key={_id}
             to="/products"
-            onClick={() => {
+            onClick={(e) => {
               filterDispatch({ type: "CLEAR_ALL_FILTERS", payload: "" });
               filterDispatch({
                 type: "SET_CATEGORY_FILTER",
                 payload: categoryName,
               });
+              setSelectedCategory(e.target.textContent);
             }}
           >
             {categoryName}
