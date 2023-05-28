@@ -15,7 +15,11 @@ const CartCard = ({ product }) => {
   const navigate = useNavigate();
 
   return (
-    <div key={_id} className="cart-card-container">
+    <div
+      key={_id}
+      className="cart-card-container"
+      onClick={() => navigate(`/products/${_id}`)}
+    >
       <div className="cart-card-content">
         <img src={image} alt={name} />
         <div className="cart-card-right-container">
