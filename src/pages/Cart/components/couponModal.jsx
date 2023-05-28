@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { OrderContext } from "../../../contexts/orderContext";
 import "./couponModal.css";
+import { toast } from "react-toastify";
 
 const COUPONS = [
   { couponName: "FIRSTGLAM", value: "10" },
@@ -47,6 +48,7 @@ export const CouponModal = ({ setCouponModal }) => {
           onClick={() => {
             setCouponModal(false);
             setCouponValue(input);
+            toast.success("Coupon is applied!");
           }}
         >
           Apply

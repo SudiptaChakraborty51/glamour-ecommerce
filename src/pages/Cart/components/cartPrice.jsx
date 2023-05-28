@@ -5,6 +5,7 @@ import { getPriceDetails } from "../../../utils/getPriceDetails";
 import { OrderContext } from "../../../contexts/orderContext";
 import couponImg from "../../../assets/coupon.png";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const CartPrice = ({ setCouponModal }) => {
   const { productState } = useContext(ProductContext);
@@ -72,7 +73,10 @@ const CartPrice = ({ setCouponModal }) => {
             </p>
             <p
               className="remove-coupon"
-              onClick={() => setCouponValue({ couponName: "", value: 0 })}
+              onClick={() => {
+                setCouponValue({ couponName: "", value: 0 });
+                toast.success("Coupon is removed!");
+              }}
             >
               <i className="fa fa-times" aria-hidden="true" />
             </p>
