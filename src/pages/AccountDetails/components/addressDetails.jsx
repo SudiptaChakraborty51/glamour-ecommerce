@@ -3,6 +3,7 @@ import { ProductContext } from "../../../contexts/productContext";
 import EditAddress from "../../../utils/editAddress";
 import AddressForm from "../../../utils/addressForm";
 import "../accountDetails.css";
+import { toast } from "react-toastify";
 
 const AddressDetails = () => {
   const { productState, productDispatch } = useContext(ProductContext);
@@ -43,11 +44,13 @@ const AddressDetails = () => {
               </button>
               <button
                 className="delete-address-btn"
-                onClick={() =>
+                onClick={() => {
                   productDispatch({
                     type: "DELETE_USER_ADDRESS",
                     payload: id,
-                  })
+                  });
+                  toast.success("Deleted Address successfully!");
+                }
                 }
               >
                 Delete

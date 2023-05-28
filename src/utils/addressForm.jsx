@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import "./addressForm.css";
 import { ProductContext } from "../contexts/productContext";
 import { v4 as uuid } from "uuid";
+import { toast } from "react-toastify";
 
 const AddressForm = ({ setIsAddAddress }) => {
   const { productDispatch } = useContext(ProductContext);
@@ -22,6 +23,7 @@ const AddressForm = ({ setIsAddAddress }) => {
       type: "SET_USER_ADDRESS",
       payload: addressForm,
     });
+    toast.success("New Address is added successfully!");
     setIsAddAddress(false);
   };
 
