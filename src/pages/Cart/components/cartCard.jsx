@@ -18,12 +18,11 @@ const CartCard = ({ product }) => {
     <div
       key={_id}
       className="cart-card-container"
-      onClick={() => navigate(`/products/${_id}`)}
     >
       <div className="cart-card-content">
-        <img src={image} alt={name} />
+        <img src={image} alt={name} onClick={() => navigate(`/products/${_id}`)}/>
         <div className="cart-card-right-container">
-          <h4>{name.length > 50 ? name.substring(0, 50) + "..." : name}</h4>
+          <h4 onClick={() => navigate(`/products/${_id}`)}>{name.length > 50 ? name.substring(0, 50) + "..." : name}</h4>
           <p className="size">{size}</p>
           <p className="price-text">
             MRP: <strong>₹{price}</strong>{" "}
@@ -33,10 +32,13 @@ const CartCard = ({ product }) => {
           <div className="qty">
             <button
               className="minus"
-              onClick={() =>
-                product.qty > 1 &&
-                handleCartQuantityChange(productDispatch, _id, "decrement")
+              onClick={() =>{
+                if(product.qty > 1) {
+                handleCartQuantityChange(productDispatch, _id, "decrement");
+                toast.success("Decreased quantity of item in cart!");
               }
+            }
+            }
               disabled={product.qty > 1 ? false : true}
               style={{ cursor: product.qty <= 1 && "not-allowed" }}
             >
@@ -45,9 +47,11 @@ const CartCard = ({ product }) => {
             <span className="qty-count">{product.qty}</span>
             <button
               className="add"
-              onClick={() =>
-                handleCartQuantityChange(productDispatch, _id, "increment")
+              onClick={() => {
+                handleCartQuantityChange(productDispatch, _id, "increment");
+                toast.success("Increased quantity of item in cart!");
               }
+            }
             >
               +
             </button>
