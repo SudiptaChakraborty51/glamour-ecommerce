@@ -15,8 +15,3 @@
   justify-content: space-evenly;
   list-style: none;
 }
-
-.sidebar-filter {
-  height: 100vh;
-  border-right: 2px solid var(--primary-color);
-}
