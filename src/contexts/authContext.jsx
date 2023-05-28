@@ -52,6 +52,7 @@ const AuthProvider = ({ children }) => {
         authDispatch({ type: "SET_USER", payload: data?.createdUser });
         authDispatch({ type: "SET_TOKEN", payload: data?.encodedToken });
         toast.success("Signup Successful!");
+        orderDispatch({type: "CLEAR_ORDER_HISTORY"});
         navigate("/");
       }
     } catch (e) {
@@ -66,7 +67,6 @@ const AuthProvider = ({ children }) => {
     authDispatch({ type: "SET_LOGGEDIN_FALSE", payload: false });
     authDispatch({ type: "SET_USER", payload: {} });
     authDispatch({ type: "SET_TOKEN", payload: "" });
-    orderDispatch({type: "CLEAR_ORDER_HISTORY"});
     toast.success("You're logged out!");
     navigate("/");
   };

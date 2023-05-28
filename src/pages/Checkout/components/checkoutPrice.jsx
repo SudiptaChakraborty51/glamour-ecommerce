@@ -97,7 +97,6 @@ const CheckoutPrice = () => {
         );
         Popper();
         clearCartItems(productDispatch, productState);
-        productDispatch({type: "SET_CART", payload: []})
         navigate("/account-details/orderHistory");
       },
       prefill: {

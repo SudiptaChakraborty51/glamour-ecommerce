@@ -31,7 +31,7 @@ export const orderReducer = (state, action) => {
     case "SET_ORDER_HISTORY":
       return {
         ...state,
-        orderHistory: [action.payload, ...state?.orderHistory],
+        orderHistory: [...state?.orderHistory, action.payload],
       };
     case "CLEAR_ORDER_HISTORY": {
       return {
