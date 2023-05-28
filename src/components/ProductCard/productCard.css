@@ -16,17 +16,31 @@
   opacity: 0.5;
 }
 
+.content-product-img {
+  position: relative;
+}
+
+.content-product-img img {
+  height: 100%;
+  width: 100%;
+}
+
+.content-product-img b {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .out-of-stock-overlay {
   position: absolute;
   color: white;
   text-transform: uppercase;
-  letter-spacing: 2.5px;
   background-color: grey;
   font-size: 1.5rem;
-  width: 300px;
-  height: 160px;
-  padding-top: 140px;
-  text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   opacity: 0.7;
 }
 
@@ -41,8 +55,12 @@
 
 .card-tag {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   padding: 5px 10px;
+}
+
+.card-tag span {
+  margin-right: auto;
 }
 
 .card-tag button {

@@ -65,8 +65,10 @@ const ProductCard = ({ productsData }) => {
         onClick={() => navigate(`/products/${_id}`)}
         className="content-product-card"
       >
-        <img src={image} alt={name} />
-        {!inStock && <b className="out-of-stock-overlay">Out of Stock</b>}
+        <div className="content-product-img">
+          <img src={image} alt={name} />
+          {!inStock && <b className="out-of-stock-overlay">Out of Stock</b>}
+        </div>
         <div className="name-rating">
           <h4>{name.length > 50 ? name.substring(0, 50) + "..." : name}</h4>
           <div className="card-star">
