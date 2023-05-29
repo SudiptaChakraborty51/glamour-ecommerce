@@ -75,3 +75,19 @@
 .login p:hover {
   color: var(--primary-color);
 }
+
+.password-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.password-wrapper span {
+  position: absolute;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  padding-right: 0.5rem;
+}

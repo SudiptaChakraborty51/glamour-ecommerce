@@ -44,7 +44,7 @@
   font-size: 14px;
 }
 
-.signup button {
+.signup .signup-button {
   width: 100%;
   background-color: var(--primary-color);
   border: none;
@@ -55,7 +55,7 @@
   border-radius: 10px;
 }
 
-.signup button:hover {
+.signup .signup-button:hover {
   background-color: var(--dark-purple);
 }
 
