@@ -49,3 +49,7 @@
   font-size: 16px;
   cursor: pointer;
 }
+
+.coupon-msg {
+  color: red;
+}

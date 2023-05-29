@@ -56,7 +56,7 @@ const Home = () => {
           <span className="code">USE CODE: FIRSTGLAM</span>
         </div>
         <div className="offer-card">
-          <p className="offer-text">FLAT ₹200 OFF ON ORDERS ABOVE ₹2000</p>
+          <p className="offer-text">FLAT ₹200 OFF ON ORDERS ABOVE ₹1000</p>
           <span className="code">USE CODE: FIRST200</span>
         </div>
       </div>

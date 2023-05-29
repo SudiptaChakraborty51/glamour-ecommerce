@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { OrderContext } from "../../../contexts/orderContext";
 import "./couponModal.css";
 import { toast } from "react-toastify";
+import { getPriceDetails } from "../../../utils/getPriceDetails";
+import { ProductContext } from "../../../contexts/productContext";
 
 const COUPONS = [
   { couponName: "FIRSTGLAM", value: "10" },
@@ -10,7 +12,13 @@ const COUPONS = [
 
 export const CouponModal = ({ setCouponModal }) => {
   const { couponValue, setCouponValue } = useContext(OrderContext);
+  const { productState } = useContext(ProductContext);
   const [input, setInput] = useState(couponValue);
+
+  const { price, discount } = getPriceDetails(productState?.cart);
+  const coupon = parseFloat(couponValue.value);
+  const totalAmt = parseFloat(price + 10 - discount - coupon).toFixed(2);
+
   return (
     <div className="modal-wrapper">
       <div className="modal">
@@ -41,10 +49,17 @@ export const CouponModal = ({ setCouponModal }) => {
                 />
                 Flat {value} OFF : {couponName}
               </label>
+              {totalAmt <= 1000 && value === "200" && (
+                <small className="coupon-msg">
+                  {" "}
+                  (Order amount is not more than ₹1000)
+                </small>
+              )}
             </div>
           ))}
         </div>
         <button
+          disabled={totalAmt <= 1000 && input.value === "200"}
           onClick={() => {
             setCouponModal(false);
             setCouponValue(input);
