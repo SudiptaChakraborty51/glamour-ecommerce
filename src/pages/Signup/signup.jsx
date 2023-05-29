@@ -7,6 +7,10 @@ import { toast } from "react-toastify";
 const Signup = () => {
   const navigate = useNavigate();
   const { userSignup } = useContext(AuthContext);
+
+  const [isPasswordHide, setIsPasswordHide] = useState(true);
+  const [isConfirmPasswordHide, setIsConfirmPasswordHide] = useState(true);
+
   const [userDetails, setUserDetails] = useState({
     firstName: "",
     lastName: "",
@@ -75,6 +79,7 @@ const Signup = () => {
             id="email"
             placeholder="test@gmail.com"
             required
+            type="email"
             value={userDetails.email}
             onChange={(e) =>
               setUserDetails((prev) => ({
@@ -87,39 +92,73 @@ const Signup = () => {
 
         <div>
           <label for="password">Password</label>
-          <input
-            id="password"
-            type="password"
-            placeholder="********"
-            required
-            value={userDetails.password}
-            onChange={(e) =>
-              setUserDetails((prev) => ({
-                ...prev,
-                password: e.target.value,
-              }))
-            }
-          />
+          <div className="password-wrapper">
+            <input
+              id="password"
+              type={isPasswordHide ? "password" : "text"}
+              placeholder={isPasswordHide ? "********" : "Enter password"}
+              minlength="4"
+              maxlength="8"
+              required
+              value={userDetails.password}
+              onChange={(e) =>
+                setUserDetails((prev) => ({
+                  ...prev,
+                  password: e.target.value,
+                }))
+              }
+            />
+            <span
+              onClick={() =>
+                setIsPasswordHide((isPasswordHide) => !isPasswordHide)
+              }
+            >
+              {isPasswordHide ? (
+                <i class="fa-regular fa-eye-slash"></i>
+              ) : (
+                <i class="fa-regular fa-eye"></i>
+              )}
+            </span>
+          </div>
         </div>
 
         <div>
           <label for="confirm-password">Confirm Password</label>
-          <input
-            id="confirm-password"
-            type="password"
-            placeholder="********"
-            required
-            value={userDetails.confirmPassword}
-            onChange={(e) =>
-              setUserDetails((prev) => ({
-                ...prev,
-                confirmPassword: e.target.value,
-              }))
-            }
-          />
+          <div className="password-wrapper">
+            <input
+              id="confirm-password"
+              type={isConfirmPasswordHide ? "password" : "text"}
+              placeholder={
+                isConfirmPasswordHide ? "********" : "Enter password"
+              }
+              required
+              value={userDetails.confirmPassword}
+              onChange={(e) =>
+                setUserDetails((prev) => ({
+                  ...prev,
+                  confirmPassword: e.target.value,
+                }))
+              }
+            />
+            <span
+              onClick={() =>
+                setIsConfirmPasswordHide(
+                  (isConfirmPasswordHide) => !isConfirmPasswordHide
+                )
+              }
+            >
+              {isConfirmPasswordHide ? (
+                <i class="fa-regular fa-eye-slash"></i>
+              ) : (
+                <i class="fa-regular fa-eye"></i>
+              )}
+            </span>
+          </div>
         </div>
 
-        <button type="submit">Signup</button>
+        <button type="submit" className="signup-button">
+          Signup
+        </button>
       </form>
 
       <p onClick={() => navigate("/login")}>

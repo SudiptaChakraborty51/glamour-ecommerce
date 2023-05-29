@@ -8,6 +8,8 @@ const Login = () => {
   const navigate = useNavigate();
   const { userLogin } = useContext(AuthContext);
 
+  const [isPasswordHide, setIsPasswordHide] = useState(true);
+
   const [userData, setUserData] = useState({
     email: "",
     password: "",
@@ -42,6 +44,7 @@ const Login = () => {
             <label for="email">Email</label>
             <input
               id="email"
+              type="email"
               placeholder="test@gmail.com"
               value={userData.email}
               onChange={(e) =>
@@ -53,16 +56,29 @@ const Login = () => {
 
           <div>
             <label for="password">Password</label>
-            <input
-              id="password"
-              type="password"
-              placeholder="********"
-              value={userData.password}
-              onChange={(e) =>
-                setUserData((prev) => ({ ...prev, password: e.target.value }))
-              }
-              required
-            />
+            <div className="password-wrapper">
+              <input
+                id="password"
+                type={isPasswordHide ? "password" : "text"}
+                placeholder={isPasswordHide ? "********" : "Enter password"}
+                value={userData.password}
+                onChange={(e) =>
+                  setUserData((prev) => ({ ...prev, password: e.target.value }))
+                }
+                required
+              />
+              <span
+                onClick={() =>
+                  setIsPasswordHide((isPasswordHide) => !isPasswordHide)
+                }
+              >
+                {isPasswordHide ? (
+                  <i class="fa-regular fa-eye-slash"></i>
+                ) : (
+                  <i class="fa-regular fa-eye"></i>
+                )}
+              </span>
+            </div>
           </div>
 
           <button className="login-button" onClick={loginHandler}>
