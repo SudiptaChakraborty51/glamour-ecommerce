@@ -72,10 +72,10 @@ const Home = () => {
         <div className="newsletter">
           <h2>Newsletter</h2>
           <p>Get timely updates from your favorite products.</p>
-          <div className="input-container">
-            <input placeholder="Your email" />
-            <button>Send</button>
-          </div>
+          <form className="input-container">
+            <input placeholder="Your email" type="email"/>
+            <button type="submit">Send</button>
+          </form>
         </div>
         <div className="facilities">
           <div>
