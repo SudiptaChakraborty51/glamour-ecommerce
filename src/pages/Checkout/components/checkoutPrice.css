@@ -1,6 +1,6 @@
 .checkout-price {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    width: 400px;
+    width: 60%;
     height: fit-content;
     border-radius: 10px;
     padding: 30px;
@@ -54,3 +54,15 @@
 .delivery-address {
     text-align: left;
 }
+
+@media (min-width: 768px) {
+    .checkout-price {
+      width: 40%
+    }
+  } 
+  
+  @media (min-width: 1024px) {
+    .checkout-price {
+      width: 30%
+    }
+  }

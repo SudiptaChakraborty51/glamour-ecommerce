@@ -7,11 +7,12 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 2rem;
+  padding-bottom: 2rem;
 }
 
 .checkout-address {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  width: 500px;
+  width: 60%;
   height: fit-content;
   border-radius: 10px;
   padding: 30px;
@@ -26,4 +27,16 @@
   color: white;
   font-size: 18px;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .checkout-address {
+    width: 50%
+  }
+} 
+
+@media (min-width: 1024px) {
+  .checkout-address {
+    width: 40%
+  }
 }
