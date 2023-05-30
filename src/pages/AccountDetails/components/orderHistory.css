@@ -14,6 +14,7 @@
 
 .order-history-main {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 0.5rem;
@@ -21,21 +22,20 @@
 }
 
 .order-history-main .order-history-left {
-    width: 50%;
-    border-right: 1px solid #ccc;
+    width: 100%;
     padding-right: 1rem;
 }
 
 .order-history-main .order-history-right {
-    padding-left: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    gap: 1rem;
 }
 
 .order-history-right-card {
     width: 100%;
-    height: 40%;
+    height: fit-content;
     display: flex;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -52,4 +52,27 @@
     width: 60%;
     height: 60%;
     object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .order-history-main{
+        flex-direction: row;
+    }
+    .order-history-main .order-history-left {
+        width: 60%;
+        border-right: 1px solid #ccc;
+    }
+    .order-history-main .order-history-right{
+        padding-left: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .order-history-main{
+        flex-direction: row;
+    }
+    .order-history-main .order-history-left {
+        width: 70%;
+        border-right: 1px solid #ccc;
+    }
 }

@@ -12,8 +12,8 @@
   padding: 1rem 2rem 3rem 2rem;
   background-color: white;
   text-align: center;
-  width: 400px;
-  height: auto;
+  width: 50%;
+  height: fit-content;
   margin: auto;
   border-radius: 10px;
 }
@@ -61,4 +61,16 @@
   cursor: pointer;
   color: red;
   font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .address-form-content{
+    width: 40%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .address-form-content{
+    width: 30%;
+  }
 }
