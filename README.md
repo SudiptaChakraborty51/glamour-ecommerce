@@ -1,5 +1,8 @@
+<div align="center">
+  <img src="https://github.com/SudiptaChakraborty51/glamour-ecommerce/blob/master/public/icons8-cosmetic-16.png?raw=true" height="100" width="100" alt="logo"/>
 # Glamour
     An Ecommerce website for beauty products
+</div>
 
 ## **How to install and run locally ?**
 
