@@ -56,7 +56,7 @@
 
 .sales .sales-content {
   position: absolute;
-  bottom: 0; 
+  bottom: 0;
   text-align: center;
   margin: 4rem;
   height: 50%;
@@ -120,36 +120,40 @@ footer i {
 }
 
 .newsletter {
-  height: 40vh;
+  height: 30vh;
   background-color: var(--dark-purple);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: white;
+  padding-bottom: 1rem;
+}
+
+.newsletter p {
+  text-align: center;
 }
 
 .input-container {
-  width: 50%;
-  height: 40px;
   background-color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   border: 1px solid lightgray;
 }
 
 .input-container input {
   border: none;
-  flex: 8;
-  padding-left: 20px;
+  padding: 0.7rem;
 }
 
 .input-container button {
-  flex: 1;
   border: none;
   background-color: var(--primary-color);
   color: white;
   cursor: pointer;
+  height: 100%;
+  padding: 0 1rem;
 }
 
 .facilities {
@@ -157,6 +161,16 @@ footer i {
   justify-content: space-evenly;
   margin: 2rem 0;
   text-align: center;
+  flex-wrap: wrap;
+}
+
+.facilities div {
+  width: 40%;
+}
+
+.facilities div:last-child {
+  width: 100%;
+  font-size: 18px;
 }
 
 .facilities .facilities-icon {
@@ -168,14 +182,15 @@ footer i {
 
 .social-links {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 3rem;
 }
 
 .copyright {
   background-color: var(--dark-purple);
   color: white;
   text-align: center;
-  font-size: 14px;
+  font-size: 12px;
   padding: 0.8rem;
 }
 
@@ -195,26 +210,51 @@ footer i {
   color: white;
 }
 
-@media(min-width: 768px) {
-  .sales{
+@media (min-width: 768px) {
+  .sales {
     height: 40vh;
   }
   .sales-content p {
-    font-size: 28px
+    font-size: 28px;
   }
   .offer-text {
     font-size: 18px;
   }
+  .input-container {
+    justify-content: center;
+  }
+  .facilities div {
+    width: 10%;
+  }
+
+  .facilities div:last-child {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .facilities div:last-child div {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .copyright {
+    font-size: 16px;
+  }
 }
 
-@media(min-width: 1024px) {
-  .sales{
+@media (min-width: 1024px) {
+  .sales {
     height: 60vh;
   }
   .sales-content p {
-    font-size: 32px
+    font-size: 32px;
   }
   .offer-text {
     font-size: 22px;
+  }
+  .input-container {
+    justify-content: space-between;
   }
 }
