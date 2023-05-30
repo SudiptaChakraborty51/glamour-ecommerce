@@ -1,7 +1,8 @@
 .product-details {
   display: flex;
+  flex-direction: column;
   background-color: #fefffe;
-  margin: 3rem 5rem;
+  margin: 2rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   align-items: center;
 }
@@ -71,4 +72,12 @@
   background-color: green;
   color: white;
   padding: 10px;
+}
+
+@media (min-width: 768px) {
+  .product-details {
+    display: flex;
+    flex-direction: row;
+    margin: 3rem 5rem;
+  }
 }
