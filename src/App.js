@@ -23,7 +23,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  const {loader} = useContext(ProductContext);
+  const { loader } = useContext(ProductContext);
 
   return (
     <div className="App">
@@ -69,8 +69,8 @@ function App() {
           }
         >
           <Route path="userDetails" element={<UserDetails />} />
-          <Route path="addressDetails" element={<AddressDetails />}/>
-          <Route path="orderHistory" element={<OrderHistory />}/>
+          <Route path="addressDetails" element={<AddressDetails />} />
+          <Route path="orderHistory" element={<OrderHistory />} />
         </Route>
       </Routes>
       <ToastContainer

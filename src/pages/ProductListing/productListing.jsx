@@ -7,7 +7,7 @@ import { ProductContext } from "../../contexts/productContext";
 
 const ProductListing = () => {
   const { sortByPriceFilteredProducts } = useContext(FilterContext);
-  const {setLoader} = useContext(ProductContext);
+  const { setLoader } = useContext(ProductContext);
 
   useEffect(() => {
     setLoader(true);
@@ -16,7 +16,7 @@ const ProductListing = () => {
     }, 500);
     return () => clearTimeout(id);
     // eslint-disable-next-line
-  }, [])
+  }, []);
 
   return (
     <div className="products">

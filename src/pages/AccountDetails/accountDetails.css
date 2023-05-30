@@ -16,7 +16,7 @@
   width: 100%;
 }
 
-.account-details-nav .profile-tab{
+.account-details-nav .profile-tab {
   color: white;
   font-size: 16px;
   text-decoration: none;
@@ -79,18 +79,18 @@
   width: 100vw;
 }
 
-.user-details, 
+.user-details,
 .address-details {
   padding: 1rem;
 }
 
-@media(min-width: 768px) {
+@media (min-width: 768px) {
   .account-details .account-details-div {
     width: 60%;
   }
 }
 
-@media(min-width: 1024px) {
+@media (min-width: 1024px) {
   .account-details .account-details-div {
     width: 50%;
   }

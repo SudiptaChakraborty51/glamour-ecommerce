@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "./checkoutPrice.css";
-import confetti from 'canvas-confetti';
+import confetti from "canvas-confetti";
 import { ProductContext } from "../../../contexts/productContext";
 import { OrderContext } from "../../../contexts/orderContext";
 import couponImg from "../../../assets/coupon.png";
@@ -14,15 +14,15 @@ const CheckoutPrice = () => {
   const { couponValue, priceDetails } = useContext(OrderContext);
   const { price, discount, coupon, totalAmt } = priceDetails || {};
   const { addressDetails } = useContext(OrderContext);
-  const {orderDispatch} = useContext(OrderContext);
+  const { orderDispatch } = useContext(OrderContext);
 
-  const {authState} = useContext(AuthContext);
+  const { authState } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
-    const loadScript = async (url) => {
+  const loadScript = async (url) => {
     return new Promise((resolve) => {
-      const script = document.createElement('script');
+      const script = document.createElement("script");
       script.src = url;
 
       script.onload = () => {
@@ -40,7 +40,7 @@ const CheckoutPrice = () => {
   const Popper = () => {
     var end = Date.now() + 3 * 1000;
     // go Buckeyes!
-    var colors = ['#7e22ce', '#d8b4fe'];
+    var colors = ["#7e22ce", "#d8b4fe"];
 
     (function frame() {
       confetti({
@@ -64,7 +64,6 @@ const CheckoutPrice = () => {
     })();
   };
 
-
   const displayRazorpay = async () => {
     const res = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
@@ -79,7 +78,8 @@ const CheckoutPrice = () => {
       currency: "INR",
       name: "GLAMOUR",
       description: "Thank you for shopping with us",
-      image: "https://github.com/SudiptaChakraborty51/glamour-ecommerce/blob/master/public/icons8-cosmetic-16.png?raw=true",
+      image:
+        "https://github.com/SudiptaChakraborty51/glamour-ecommerce/blob/master/public/icons8-cosmetic-16.png?raw=true",
       handler: function (response) {
         const orderData = {
           orderProducts: [...productState?.cart],
@@ -93,9 +93,7 @@ const CheckoutPrice = () => {
           type: "SET_ORDER_HISTORY",
           payload: orderData,
         });
-        toast.success(
-          `Payment of Rs. ${totalAmt} is Succesful !`
-        );
+        toast.success(`Payment of Rs. ${totalAmt} is Succesful !`);
         Popper();
         clearCartItems(productDispatch, productState);
         navigate("/account-details/orderHistory");
@@ -115,13 +113,13 @@ const CheckoutPrice = () => {
   };
 
   const placeOrderHandler = () => {
-    if(totalAmt === 0) {
+    if (totalAmt === 0) {
       toast.error("Please add products to the cart!");
       navigate("/products");
     } else {
       displayRazorpay();
     }
-  }
+  };
 
   return (
     <div className="checkout-price">

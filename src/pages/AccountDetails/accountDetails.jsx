@@ -20,13 +20,25 @@ const AccountDetails = () => {
       <h1>Account Details</h1>
       <div className="account-details-div">
         <div className="account-details-nav">
-          <NavLink to="/account-details/userDetails" className="profile-tab" style={getActiveStyle}>
+          <NavLink
+            to="/account-details/userDetails"
+            className="profile-tab"
+            style={getActiveStyle}
+          >
             User Details
           </NavLink>
-          <NavLink to="/account-details/addressDetails" className="profile-tab"  style={getActiveStyle}>
+          <NavLink
+            to="/account-details/addressDetails"
+            className="profile-tab"
+            style={getActiveStyle}
+          >
             Address Details
           </NavLink>
-          <NavLink to="/account-details/orderHistory" className="profile-tab"  style={getActiveStyle}>
+          <NavLink
+            to="/account-details/orderHistory"
+            className="profile-tab"
+            style={getActiveStyle}
+          >
             Order History
           </NavLink>
         </div>

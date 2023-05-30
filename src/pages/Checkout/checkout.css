@@ -31,12 +31,12 @@
 
 @media (min-width: 768px) {
   .checkout-address {
-    width: 50%
+    width: 50%;
   }
-} 
+}
 
 @media (min-width: 1024px) {
   .checkout-address {
-    width: 40%
+    width: 40%;
   }
 }

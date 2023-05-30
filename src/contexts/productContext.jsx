@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useEffect, useReducer, useState } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 import productReducer from "../reducer/productReducer";
 import axios from "axios";
 import { getCartItems } from "../utils/getCartItems";
@@ -130,8 +136,8 @@ const ProductProvider = ({ children }) => {
         productDispatch,
         bestSellerProductData,
         getProduct,
-        loader, 
-        setLoader
+        loader,
+        setLoader,
       }}
     >
       {children}

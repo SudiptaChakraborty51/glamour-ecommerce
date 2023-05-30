@@ -27,7 +27,7 @@
 }
 
 .signup .name input {
-  width: 100%
+  width: 100%;
 }
 
 .signup input {
@@ -85,7 +85,7 @@
 }
 
 @media (min-width: 1024px) {
-  .signup{
+  .signup {
     width: 30%;
   }
 }

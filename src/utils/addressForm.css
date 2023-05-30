@@ -64,13 +64,13 @@
 }
 
 @media (min-width: 768px) {
-  .address-form-content{
+  .address-form-content {
     width: 40%;
   }
 }
 
 @media (min-width: 1024px) {
-  .address-form-content{
+  .address-form-content {
     width: 30%;
   }
 }

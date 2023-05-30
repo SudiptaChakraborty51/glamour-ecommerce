@@ -156,7 +156,7 @@ nav h1 {
 }
 
 @media (min-width: 1024px) {
-  .right-nav  {
+  .right-nav {
     gap: 3rem;
   }
   .nav-icons {

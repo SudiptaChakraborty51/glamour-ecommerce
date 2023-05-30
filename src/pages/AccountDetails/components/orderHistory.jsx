@@ -7,11 +7,16 @@ import { AuthContext } from "../../../contexts/authContext";
 const OrderHistory = () => {
   const navigate = useNavigate();
   const { orderHistory } = useContext(OrderContext);
-  const {authState} = useContext(AuthContext);
+  const { authState } = useContext(AuthContext);
 
   console.log(orderHistory);
 
-  const orderHistoryData = orderHistory && authState?.user && orderHistory?.filter(({userEmail}) => userEmail === authState?.user?.email);
+  const orderHistoryData =
+    orderHistory &&
+    authState?.user &&
+    orderHistory?.filter(
+      ({ userEmail }) => userEmail === authState?.user?.email
+    );
   return (
     <div className="order-history">
       {orderHistoryData.length === 0 ? (

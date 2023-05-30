@@ -50,8 +50,7 @@ const AddressDetails = () => {
                     payload: id,
                   });
                   toast.success("Deleted Address successfully!");
-                }
-                }
+                }}
               >
                 Delete
               </button>

@@ -77,7 +77,7 @@ const Home = () => {
           <h2>Newsletter</h2>
           <p>Get timely updates from your favorite products.</p>
           <form className="input-container">
-            <input placeholder="Your email" type="email"/>
+            <input placeholder="Your email" type="email" />
             <button type="submit">Send</button>
           </form>
         </div>

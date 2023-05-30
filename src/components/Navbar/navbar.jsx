@@ -21,10 +21,10 @@ const Navbar = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const selectedCatogoryStyle = (categoryName) => {
-    if(categoryName === selectedCategory) {
-      return {color: "var(--primary-color)"}
+    if (categoryName === selectedCategory) {
+      return { color: "var(--primary-color)" };
     }
-  }
+  };
 
   return (
     <div className="navbar">
@@ -71,7 +71,11 @@ const Navbar = () => {
               )}
             </NavLink>
             <NavLink
-              to={authState?.isLoggedIn ? "/account-details/userDetails" : "/login"}
+              to={
+                authState?.isLoggedIn
+                  ? "/account-details/userDetails"
+                  : "/login"
+              }
               className={authState?.isLoggedIn ? "login-user" : ""}
             >
               {authState?.isLoggedIn ? (
