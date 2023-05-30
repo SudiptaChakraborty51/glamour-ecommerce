@@ -1,7 +1,7 @@
 .cart-card-container {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  width: 500px;
-  height: 300px;
+  width: 300px;
+  height: 320px;
   border-radius: 10px;
   padding: 10px 10px 20px 10px;
 }
@@ -58,4 +58,18 @@
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .cart-card-container {
+    width: 500px;
+    height: 300px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cart-card-container {
+    width: 600px;
+    height: 350px;
+  }
 }

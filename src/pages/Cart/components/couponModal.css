@@ -11,8 +11,8 @@
   padding: 1rem 2rem 3rem 2rem;
   background-color: white;
   text-align: center;
-  width: 400px;
-  height: 200px;
+  width: fit-content;
+  height: fit-content;
   margin: auto;
   border-radius: 10px;
 }

@@ -30,7 +30,7 @@
 .cart-container {
   display: flex;
   justify-content: space-evenly;
-  padding: 2rem;
+  padding-bottom: 2rem;
   flex-wrap: wrap;
   gap: 2rem;
 }
