@@ -86,6 +86,7 @@ const CheckoutPrice = () => {
           amount: totalAmt,
           deliveryAddress: addressDetails,
           paymentId: response.razorpay_payment_id,
+          userEmail: authState?.user?.email,
         };
         console.log(orderData);
         orderDispatch({

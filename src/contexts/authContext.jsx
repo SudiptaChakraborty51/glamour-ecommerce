@@ -3,7 +3,6 @@ import authReducer from "../reducer/authReducer";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { OrderContext } from "./orderContext";
 
 export const AuthContext = createContext();
 
@@ -13,8 +12,6 @@ const AuthProvider = ({ children }) => {
     user: {},
     token: "",
   };
-
-  const {orderDispatch} = useContext(OrderContext);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -52,7 +49,6 @@ const AuthProvider = ({ children }) => {
         authDispatch({ type: "SET_USER", payload: data?.createdUser });
         authDispatch({ type: "SET_TOKEN", payload: data?.encodedToken });
         toast.success("Signup Successful!");
-        orderDispatch({type: "CLEAR_ORDER_HISTORY"});
         navigate("/");
       }
     } catch (e) {

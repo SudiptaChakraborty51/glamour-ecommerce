@@ -2,14 +2,19 @@ import React, { useContext } from "react";
 import { OrderContext } from "../../../contexts/orderContext";
 import { useNavigate } from "react-router-dom";
 import "./orderHistory.css";
+import { AuthContext } from "../../../contexts/authContext";
 
 const OrderHistory = () => {
   const navigate = useNavigate();
   const { orderHistory } = useContext(OrderContext);
+  const {authState} = useContext(AuthContext);
+
   console.log(orderHistory);
+
+  const orderHistoryData = orderHistory && authState?.user && orderHistory?.filter(({userEmail}) => userEmail === authState?.user?.email);
   return (
     <div className="order-history">
-      {orderHistory.length === 0 ? (
+      {orderHistoryData.length === 0 ? (
         <>
           <h3>Look's like your order is empty!</h3>
           <button
@@ -20,7 +25,7 @@ const OrderHistory = () => {
           </button>
         </>
       ) : (
-        orderHistory?.map(
+        orderHistoryData?.map(
           ({ paymentId, amount, deliveryAddress, orderProducts }) => {
             return (
               <div className="order-history-main">
