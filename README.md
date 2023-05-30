@@ -1,3 +1,12 @@
-## E-Commerce Backend
+# Glamour
+    An Ecommerce website for beauty products
 
-This folder contains the Mock Backend created for E-Commerce App. It contains different API end-points and database configuration for building E-Commerce; so that you can focus on building Frontend.
+## **How to install and run locally ?**
+
+```
+$ git clone https://github.com/SudiptaChakraborty51/glamour-ecommerce.git
+$ cd glamour
+$ npm install
+$ npm start
+```   
+
