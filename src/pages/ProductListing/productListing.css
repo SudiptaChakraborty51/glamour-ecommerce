@@ -5,8 +5,8 @@
 
 .productListing {
   text-align: center;
-  height: calc(100vh - 20vh + 20px); 
-  overflow-y: scroll; 
+  height: calc(100vh - 20vh + 20px);
+  overflow-y: scroll;
 }
 
 .productListing ul {
@@ -16,4 +16,10 @@
   justify-content: space-evenly;
   list-style: none;
   margin-block-start: 0;
+}
+
+@media (max-width: 884px) {
+  .productListing {
+    padding-bottom: 4rem;
+  }
 }
