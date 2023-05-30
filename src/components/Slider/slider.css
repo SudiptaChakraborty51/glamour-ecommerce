@@ -1,6 +1,6 @@
 .slider-card {
-  height: 300px;
-  width: 360px;
+  height: 90%;
+  width: 100%;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -53,4 +53,19 @@
 
 .content button i {
   color: white;
+}
+
+
+@media (min-width: 464px) {
+  .slider-card {
+    height: 90%;
+    width: 90%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slider-card {
+    height: 85%;
+    width: 90%;
+  }
 }
