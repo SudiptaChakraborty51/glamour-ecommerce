@@ -46,10 +46,10 @@
 nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   border-bottom: 0.1px solid #ccc;
   padding: 0.5rem 2rem;
   background-color: white;
+  flex-wrap: wrap;
 }
 
 nav h1 {
@@ -58,9 +58,8 @@ nav h1 {
 
 .right-nav {
   display: flex;
-  width: 50%;
   gap: 1rem;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -93,7 +92,7 @@ nav h1 {
 .nav-icons {
   display: flex;
   gap: 2rem;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 .nav-icons .icon-badge {
@@ -147,3 +146,21 @@ nav h1 {
   text-decoration: none;
 }
 
+@media (min-width: 768px) {
+  .right-nav {
+    gap: 2rem;
+  }
+  .nav-icons {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .right-nav  {
+    gap: 3rem;
+  }
+  .nav-icons {
+    font-size: 24px;
+    gap: 3rem;
+  }
+}
