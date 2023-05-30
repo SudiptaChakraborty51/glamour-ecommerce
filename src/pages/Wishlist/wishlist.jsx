@@ -13,13 +13,13 @@ const Wishlist = () => {
     <div className="wishlist">
       <h1>Wishlist ({productState?.wishlist?.length})</h1>
       <div className="wishlist-container">
-        <ul>
+        <div className="wishlist-list">
           {productState?.wishlist?.map((product) => (
             <li>
               <ProductCard productsData={product} key={product._id} />
             </li>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );

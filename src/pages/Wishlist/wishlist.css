@@ -31,7 +31,7 @@
   padding: 2rem;
 }
 
-.wishlist-container ul {
+.wishlist-container .wishlist-list {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
