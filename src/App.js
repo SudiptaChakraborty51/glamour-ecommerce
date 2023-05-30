@@ -1,7 +1,7 @@
 import "./App.css";
 import Mockman from "mockman-js";
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar/navbar";
 import Home from "./pages/Home/home";
 import ProductListing from "./pages/ProductListing/productListing";
@@ -17,6 +17,7 @@ import UserDetails from "./pages/AccountDetails/components/userDetails";
 import AddressDetails from "./pages/AccountDetails/components/addressDetails";
 import OrderHistory from "./pages/AccountDetails/components/orderHistory";
 import Loader from "./components/Loader/loader";
+import Error from "./pages/Error/error";
 import { useContext } from "react";
 import { ProductContext } from "./contexts/productContext";
 import { ToastContainer } from "react-toastify";
@@ -72,6 +73,8 @@ function App() {
           <Route path="addressDetails" element={<AddressDetails />} />
           <Route path="orderHistory" element={<OrderHistory />} />
         </Route>
+        <Route path="/404" element={<Error />} />
+        <Route path="*" element={<Navigate to={"/404"} />} />
       </Routes>
       <ToastContainer
         position="bottom-right"
