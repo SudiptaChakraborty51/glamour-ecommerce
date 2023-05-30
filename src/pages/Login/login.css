@@ -1,6 +1,6 @@
 .login {
   padding: 10px 40px;
-  width: 300px;
+  width: 50%;
   margin: 20px auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
@@ -91,4 +91,16 @@
   font-size: 16px;
   padding-right: 0.5rem;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .login {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .login{
+    width: 30%;
+  }
 }
