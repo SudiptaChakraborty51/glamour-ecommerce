@@ -1,6 +1,6 @@
 .signup {
   padding: 10px 40px;
-  width: 300px;
+  width: 50%;
   margin: 20px auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
@@ -21,9 +21,13 @@
 
 .signup .name {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   gap: 1rem;
   align-items: center;
+}
+
+.signup .name input {
+  width: 100%
 }
 
 .signup input {
@@ -72,4 +76,16 @@
 
 .signup p:hover {
   color: var(--primary-color);
+}
+
+@media (min-width: 768px) {
+  .signup {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .signup{
+    width: 30%;
+  }
 }
