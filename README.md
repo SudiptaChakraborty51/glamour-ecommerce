@@ -43,4 +43,5 @@ $ npm start
     - Sign-up
     - Login
     - Logout
+- Error Page
 - Responsive UI
