@@ -1,5 +1,8 @@
 .filters {
   padding: 10px 30px;
+  overflow-y: scroll;
+  width: 10rem;
+  height: calc(100vh - 20vh);
 }
 
 .filters .filter-heading {

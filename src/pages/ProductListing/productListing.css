@@ -1,17 +1,19 @@
 .products {
-  display: flex;
-  flex-grow: 1;
+  display: grid;
+  grid-template-columns: auto 1fr;
 }
 
 .productListing {
   text-align: center;
-  border-left: 2px solid var(--primary-color);
+  height: calc(100vh - 20vh + 20px); 
+  overflow-y: scroll; 
 }
 
 .productListing ul {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1rem;
   justify-content: space-evenly;
   list-style: none;
+  margin-block-start: 0;
 }
