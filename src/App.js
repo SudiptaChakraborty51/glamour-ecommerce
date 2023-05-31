@@ -73,8 +73,8 @@ function App() {
           <Route path="addressDetails" element={<AddressDetails />} />
           <Route path="orderHistory" element={<OrderHistory />} />
         </Route>
-        <Route path="/404" element={<Error />} />
-        <Route path="*" element={<Navigate to={"/404"} />} />
+        <Route path="/page-not-found" element={<Error />} />
+        <Route path="*" element={<Navigate to={"/page-not-found"} />} />
       </Routes>
       <ToastContainer
         position="bottom-right"
