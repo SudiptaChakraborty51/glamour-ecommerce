@@ -70,18 +70,22 @@ const ProductCard = ({ productsData }) => {
           {!inStock && <b className="out-of-stock-overlay">Out of Stock</b>}
         </div>
         <div className="name-rating">
-          <h4>{name.length > 50 ? name.substring(0, 50) + "..." : name}</h4>
+          <p className="product-name">
+            {name.length > 30 ? name.substring(0, 30) + "..." : name}
+          </p>
           <div className="card-star">
             <p>{ratings?.value}</p>
             <i className="fa fa-star"></i>
           </div>
         </div>
-        <p className="size">{size}</p>
-        <p className="price-text">
-          MRP: <strong>₹{price}</strong>{" "}
-          <span className="originalPrice">₹{originalPrice}</span> |{" "}
-          <span className="off">{off} Off</span>
-        </p>
+        <div className="product-content">
+          <p className="size">{size}</p>
+          <p className="price-text">
+            MRP: <strong>₹{price}</strong>{" "}
+            <span className="originalPrice">₹{originalPrice}</span> |{" "}
+            <span className="off">{off} Off</span>
+          </p>
+        </div>
       </div>
       <button
         style={{ cursor: !inStock && "not-allowed" }}

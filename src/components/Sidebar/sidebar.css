@@ -97,7 +97,7 @@
   width: 40%;
 }
 
-@media (max-width: 884px) {
+@media (max-width: 500px) {
   .filters {
     display: none;
   }

@@ -10,11 +10,21 @@
   color: var(--primary-color);
 }
 
+.nav-link h1 {
+  margin: 0;
+  padding: 0;
+}
+
 .top-navbar {
   background-color: var(--light-purple);
   padding: 0;
+  margin: 0;
   text-align: center;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .top-navbar p {
@@ -47,7 +57,7 @@ nav {
   display: flex;
   justify-content: space-between;
   border-bottom: 0.1px solid #ccc;
-  padding: 0.5rem 2rem;
+  padding: 1rem 2rem;
   background-color: white;
   flex-wrap: wrap;
 }
@@ -128,7 +138,7 @@ nav h1 {
 .bottom-navbar {
   display: flex;
   justify-content: space-evenly;
-  padding: 0.6rem;
+  padding: 0.4rem;
   border-bottom: 0.1px solid #ccc;
   align-items: center;
   box-shadow: 0px 15px 10px -15px var(--light-purple);

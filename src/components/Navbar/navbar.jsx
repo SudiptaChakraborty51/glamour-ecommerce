@@ -11,6 +11,7 @@ const Navbar = () => {
   const { authState } = useContext(AuthContext);
 
   const [searchText, setSearchText] = useState("");
+  const [showRibbon, setShowRibbon] = useState(true);
 
   const navigate = useNavigate();
 
@@ -28,10 +29,17 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <div className="top-navbar">
-        <p>Get Exclusive offers on your favourite products</p>
-      </div>
-      <nav>
+      {showRibbon && (
+        <div className="top-navbar">
+          <p>Get Exclusive offers on your favourite products</p>
+          <i
+            className="fa fa-times"
+            aria-hidden="true"
+            onClick={() => setShowRibbon(!showRibbon)}
+          />
+        </div>
+      )}
+      <nav style={{backgroundColor: !showRibbon && "var(--secondary-purple)"}}>
         <div>
           <NavLink to="/" className="nav-link">
             <h1>GLAMOUR</h1>

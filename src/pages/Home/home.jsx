@@ -3,38 +3,10 @@ import Slider from "../../components/Slider/slider";
 import "./home.css";
 import summer from "../../assets/summer.jpg";
 import { NavLink } from "react-router-dom";
-import { ProductContext } from "../../contexts/productContext";
-import ProductCard from "../../components/ProductCard/productCard";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
 import Brand from "../../components/Brand/brand";
+import BestSeller from "../../components/BestSeller/bestSeller";
 
 const Home = () => {
-  const responsive = {
-    superLargeDesktop: {
-      // the naming can be any, depends on you.
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1380 },
-      items: 4,
-    },
-    desktop: {
-      breakpoint: { max: 1380, min: 1024 },
-      items: 3,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 684 },
-      items: 2,
-    },
-    mobile: {
-      breakpoint: { max: 684, min: 0 },
-      items: 1,
-    },
-  };
-
-  const { bestSellerProductData } = useContext(ProductContext);
   return (
     <div className="home">
       <h2>Best in Glamour</h2>
@@ -66,11 +38,7 @@ const Home = () => {
       </div>
       <div>
         <h2>Best selling Products</h2>
-        <Carousel responsive={responsive}>
-          {bestSellerProductData?.map((product) => (
-            <ProductCard productsData={product} />
-          ))}
-        </Carousel>
+        <BestSeller />
       </div>
       <footer>
         <div className="newsletter">
