@@ -54,8 +54,8 @@ const ProductDetails = () => {
     <div className="product-details">
       <img src={image} alt={name} />
       <div className="details">
-        <div className="card-tag">
-          {isBestSeller && <span className="badge-bestseller">BESTSELLER</span>}
+        <div className="details-tag">
+          {isBestSeller && <span className="card-badge">BESTSELLER</span>}
           <button
             disabled={!inStock && true}
             style={{ cursor: !inStock && "not-allowed" }}

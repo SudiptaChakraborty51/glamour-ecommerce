@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   background-color: #fefffe;
-  margin: 2rem;
+  margin: 1rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   align-items: center;
 }
@@ -17,6 +17,7 @@
   border-left: 1px solid #ccc;
   padding: 10px;
   margin: auto;
+  width: fit-content;
 }
 
 .details-content {
@@ -24,6 +25,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.details-content h2 {
+  margin: 0;
+  padding: 0;
 }
 
 .facility-div {
@@ -34,6 +40,7 @@
   gap: 0.5rem;
   width: 80%;
   padding: 10px;
+  font-size: 14px;
 }
 
 .fa-tag {
@@ -58,6 +65,7 @@
 
 .size-brand-reviews {
   font-size: 14px;
+  line-height: 0.5;
 }
 
 .size-brand-reviews i {
@@ -74,10 +82,37 @@
   padding: 10px;
 }
 
+.details-tag {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5px 10px;
+}
+
+.details-tag span {
+  margin-right: auto;
+}
+
+.details-tag button {
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+}
+
+.details-tag .wishlist-icon i {
+  color: lightgrey;
+}
+
+.details-tag .wishlist-toggle i {
+  color: red;
+}
+
 @media (min-width: 768px) {
   .product-details {
     display: flex;
     flex-direction: row;
     margin: 3rem 5rem;
+  }
+  .product-details img {
+    width: 30%;
   }
 }
