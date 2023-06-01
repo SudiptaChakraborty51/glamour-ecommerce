@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { ProductContext } from "../contexts/productContext";
 import "./editAddress.css";
+import { toast } from "react-toastify";
 
 const EditAddress = ({ editAddressId }) => {
   const { productState, productDispatch } = useContext(ProductContext);
@@ -124,6 +125,7 @@ const EditAddress = ({ editAddressId }) => {
                   type: "SAVE_EDITED_ADDRESS",
                   payload: [editAddress, editAddressId],
                 });
+                toast.success("The address is edited successfully!");
               }}
             >
               Edit
