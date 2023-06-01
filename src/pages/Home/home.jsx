@@ -101,13 +101,13 @@ const Home = () => {
           <div>
             <p>Show some love on social media</p>
             <div className="social-links">
-              <a href="https://github.com/SudiptaChakraborty51">
+              <a href="https://github.com/SudiptaChakraborty51" target="_blank">
                 <i class="fa-brands fa-github fa-lg"></i>
               </a>
-              <a href="https://twitter.com/Sudipta41158180">
+              <a href="https://twitter.com/Sudipta41158180" target="_blank">
                 <i class="fa-brands fa-twitter fa-lg"></i>
               </a>
-              <a href="https://www.linkedin.com/in/sudipta-chakraborty-4a371a212/">
+              <a href="https://www.linkedin.com/in/sudipta-chakraborty-4a371a212/" target="_blank">
                 <i class="fa-brands fa-linkedin fa-lg"></i>
               </a>
             </div>
