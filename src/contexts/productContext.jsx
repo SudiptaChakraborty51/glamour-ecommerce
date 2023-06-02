@@ -17,11 +17,11 @@ const testUserAddress = [
   {
     id: 1,
     userName: "Sudipta Chakraborty",
-    houseNumber: "168/A, Ajay Nagar",
-    city: "Jadavpur, Kolkata",
-    state: "West Bengal",
+    houseNumber: "98, Chakla Street, Opp Noori Tower, Mandvi",
+    city: " Mumbai",
+    state: "Maharashtra",
     country: "India",
-    pincode: 700032,
+    pincode: 400003,
     mobileNumber: 9831578456,
   },
 ];
