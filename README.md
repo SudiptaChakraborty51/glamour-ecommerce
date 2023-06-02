@@ -15,6 +15,7 @@ $ npm start
 - React JS
 - React Context API + useReducer
 - React Router
+- mockbee server
 - Vanilla CSS with flex, grid and media query
 - Razorpay payment Gateway
 - Toastify
