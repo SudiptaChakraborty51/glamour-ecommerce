@@ -41,7 +41,7 @@ const ProductCard = ({ productsData }) => {
               ? `wishlist-toggle`
               : `wishlist-icon`
           }`}
-          style={{ cursor: !inStock && "not-allowed" }}
+          style={{ cursor: !inStock ? "not-allowed" : "pointer" }}
           disabled={!inStock && true}
           onClick={() => {
             if (authState.isLoggedIn) {
