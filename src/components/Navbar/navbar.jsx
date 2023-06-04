@@ -7,7 +7,7 @@ import { AuthContext } from "../../contexts/authContext";
 
 const Navbar = () => {
   const { productState } = useContext(ProductContext);
-  const { filterDispatch } = useContext(FilterContext);
+  const { filterState, filterDispatch } = useContext(FilterContext);
   const { authState } = useContext(AuthContext);
 
   const [searchText, setSearchText] = useState("");
@@ -22,7 +22,7 @@ const Navbar = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const selectedCatogoryStyle = (categoryName) => {
-    if (categoryName === selectedCategory) {
+    if (categoryName === selectedCategory && filterState?.categoryFilter?.length !== 0) {
       return { color: "var(--primary-color)" };
     }
   };
