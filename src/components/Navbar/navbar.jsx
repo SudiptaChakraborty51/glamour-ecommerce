@@ -22,7 +22,7 @@ const Navbar = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const selectedCatogoryStyle = (categoryName) => {
-    if (categoryName === selectedCategory && filterState?.categoryFilter?.length !== 0 || filterState?.categoryFilter?.includes(categoryName)) {
+    if ((categoryName === selectedCategory && filterState?.categoryFilter?.length !== 0) || filterState?.categoryFilter?.includes(categoryName)) {
       return { color: "var(--primary-color)" };
     }
   };
