@@ -58,7 +58,7 @@ const ProductDetails = () => {
           {isBestSeller && <span className="card-badge">BESTSELLER</span>}
           <button
             disabled={!inStock && true}
-            style={{ cursor: !inStock && "not-allowed" }}
+            style={{ cursor: !inStock ? "not-allowed" : "pointer" }}
             className={`${
               isItemInWishlist(productState?.wishlist, _id)
                 ? `wishlist-toggle`
