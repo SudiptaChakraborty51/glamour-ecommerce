@@ -22,7 +22,7 @@ const Navbar = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
 
   const selectedCatogoryStyle = (categoryName) => {
-    if ((categoryName === selectedCategory && filterState?.categoryFilter?.length !== 0) || filterState?.categoryFilter?.includes(categoryName)) {
+    if ((categoryName === selectedCategory && filterState?.categoryFilter.includes(selectedCategory)) || filterState?.categoryFilter?.includes(categoryName)) {
       return { color: "var(--primary-color)" };
     }
   };
@@ -103,7 +103,7 @@ const Navbar = () => {
             key={_id}
             to="/products"
             onClick={(e) => {
-              filterDispatch({ type: "CLEAR_ALL_FILTERS", payload: "" });
+              filterDispatch({ type: "CLEAR_ALL_FILTERS" });
               filterDispatch({
                 type: "SET_CATEGORY_FILTER",
                 payload: categoryName,
